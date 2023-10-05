@@ -1,0 +1,308 @@
+@media only screen and (max-width: 767px) {
+
+    html,
+    body {
+        font-size: 42.5%;
+    }
+
+    header {
+        height: 80px;
+    }
+
+    .containers {
+
+        margin-left: 36px;
+        margin-right: 36px;
+    }
+
+    .header_logo {
+        margin-left: 36px;
+    }
+
+    .nav_btn {
+        display: none !important;
+    }
+
+    .menu_mobile-btn {
+        padding: 6px 10px;
+    }
+
+    .menu_mobile-list {
+        padding: 0 10px;
+    }
+
+    .header_menu {
+        display: none;
+    }
+
+    .header_language {
+        display: none;
+    }
+
+    .menu_mobile {
+        display: block;
+    }
+
+    .container_menu {
+        margin: 0 60px;
+    }
+
+    .nav_box {
+        left: 20px;
+        bottom: 20px;
+    }
+
+    .box_subs p,
+    .box_sub p {
+        width: 100%;
+        font-size: 1.8rem;
+    }
+
+    .box_video-right {
+        display: none;
+    }
+    .nav_tile{
+        font-size: 2.2rem;
+    }
+    .nav_sub {
+        width: 90%;
+        font-size: 1.6rem;
+    }
+    .box_inner-dec{
+        margin-top: 10px;
+    }
+    .box_inner-dec h2{
+        
+        font-size: 4rem;
+    }
+    .footer_box-2{
+        margin-top: 20px;
+    }
+
+    .nav_inner {
+        padding: 20px 20px;
+    }
+
+    .momo_logo img {
+        width: 40px;
+    }
+
+    .momo_dec img {
+        width: 40px;
+    }
+
+    .momo_dec-conten {}
+
+    .momo_dec-conten img {
+        width: 100%;
+    }
+
+    .table_header {
+        margin: 16px 0;
+        padding: 4px;
+        font-size: 1.2rem !important;
+    }
+    .table_body{
+        font-size: 1.2rem;
+    }
+    .table_btn button{
+        font-size: 1.2rem;
+    }
+    .map_dec-body{
+        padding: 0 10px;
+    }
+    .map_dec-tile {
+        padding: 0;
+    }
+    .box_decs p{
+        width: 100%;
+    }
+    textarea{
+        height: 100px;
+    }
+    .map_dec {
+        padding-right: 0;
+    }
+
+    .map {
+        margin-top: 10px;
+    }
+    input::placeholder,
+    textarea::placeholder {
+        font-size: 2rem;
+        padding-left: 4px
+    }
+    .shadow select,
+    .shadow input[type='text'] {
+        
+    }
+    .shadow button,
+.shadow select,
+.shadow textarea,
+.shadow input[type='text'] {
+    font-size: 2rem;
+
+}
+.bannerpro_baner{
+    display: none;
+}
+.banner_color{
+    
+    display: flex;
+    justify-content: center;
+
+}
+.box_find-baner img{
+    height: 120px;
+}
+.banner_color h1{
+    font-size: 4rem;
+    margin-left: 0px;
+    text-align: center;
+    padding: 40px 20px;
+}
+.content_reason-left{
+    padding: 0!important;
+}
+.banner_color-img{
+    display: none;
+}
+.banner_color{
+    height: auto;
+}
+.box_content-reason{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.content_list-btn{
+    padding: 0;
+}
+.proshow_review-1{
+    margin-bottom: 20px;
+}
+
+.form_option{
+    padding: 0 4px;
+}
+.form_register-box{
+    padding: 0 4px;
+}
+.box_procedure-tile{
+    margin: 20px 0 !important; 
+}
+.banner_overray-dec h2{
+    font-size: 3.8rem;
+}
+.banner_overray-dec span{
+    font-size: 1.8rem;
+
+}
+.info-addres h3{
+    font-size: 1.8rem;
+}
+.info-addres p{
+    font-size: 1.6rem;
+
+}
+.maps_box{
+    margin-top: 36px;
+    margin-left: 36px;
+    margin-right: 36px;
+}
+.box_findProduct{
+    flex-direction: column-reverse;
+}
+.box_find-baner{
+    margin-bottom: 10px;
+}
+.box_tile_sort{
+    display: none;
+}
+
+.box_proshow{
+    display: none;
+}
+.product-list{
+    display: block;
+}
+.box_proshow-buy{
+    width: 200px;
+}
+.proshow_img{
+    height: 200px;
+}
+.product{
+    margin-right: 10px;
+}
+.proshow_dec-item {
+    padding: 4px 6px;
+}
+.proshow_dec-tile h1{
+    margin-top: 6px;
+    margin-bottom: 8px;
+}
+.proshow_buy-btn{
+    margin-top: 10px;
+}
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1023px) {
+
+    html,
+    body {
+        font-size: 46.5%;
+    }
+
+
+    .header_menu {
+        display: none;
+    }
+
+    .header_language {
+        display: none;
+    }
+
+    .menu_mobile {
+        display: block;
+    }
+
+    .container_menu {
+        margin: 0 60px;
+    }
+
+    .nav_box {
+        left: 40px;
+        bottom: 40px;
+    }
+    .form_register-box{
+        padding: 20px 50px;
+    }
+    
+
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1124px) {
+
+    html,
+    body {
+        font-size: 50.5%;
+    }
+
+    .header_language{
+        display: none;
+    }
+}
+
+
+@media only screen and (min-width: 1124px) and (max-width: 1223px) {
+
+    html,
+    body {
+        font-size: 56.5%;
+    }
+
+    .header_logo {}
+    .header_language{
+        display: none;
+    }
+}
