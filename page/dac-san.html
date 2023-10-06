@@ -1,80 +1,74 @@
-
-        <div class="box_findProduct row containers">
-            <div class="box_find col-12 col-md-3 col-sm-12">
-                <div class="box_find">
-                    <div class="find_pro-tile" onclick="toggleFindProBox(this)">
-                        <h3>Danh Mục Sản Phẩm</h3>
-                        <i class="fa-solid fa-caret-down"></i>
-                    </div>
-                    <div class="find_pro-box">
-                        <h4>Tất cả sản phẩm</h4>
-                        <div class="find_pro-checkbox">
-                            <input type="checkbox" name="" id="">
-                            <label for="">Sản phẩm</label>
-                        </div>
-                        <div class="find_pro-checkbox">
-                            <input type="checkbox" name="" id="">
-                            <label for="">Sản phẩm</label>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="box_find">
-                    <div class="find_pro-tile" onclick="toggleFindProBox(this)">
-                        <h3>Lọc giá</h3>
-                        <i class="fa-solid fa-caret-down"></i>
-                    </div>
-                    <div class="find_pro-box">
-                        <div class="find_pro-checkbox">
-                            <input type="checkbox" name="" id="">
-                            <label for="">100.000 VND - 200.000 VND </label>
-                        </div>
-                        <div class="find_pro-checkbox">
-                            <input type="checkbox" name="" id="">
-                            <label for="">200.000 VND - 400.000 VND </label>
-                        </div>
-
-                    </div>
-                </div>
+<div class="box_findProduct row containers">
+    <div class="box_find col-12 col-md-3 col-sm-12">
+        <div class="box_find">
+            <div class="find_pro-tile" ng-click="showChildList = !showChildList">
+                <h3>Danh Mục Sản Phẩm</h3>
+                <i class="fa-solid fa-caret-down"></i>
             </div>
-            <div class="box_find-baner col-12 col-md-9 col-sm-12">
-                <img src="image/9f4effa5de67dc0ca635ec9a2eeb8b99.jpg" alt="">
+            <div class="find_pro-box" ng-show="showChildList">
+                <h4>Tất cả sản phẩm</h4>
+                <div class="find_pro-checkbox">
+                    <input type="checkbox" name="" id="">
+                    <label for="">Nếp Nương</label>
+                </div>
+                <div class="find_pro-checkbox">
+                    <input type="checkbox" name="" id="">
+                    <label for="">Sén Cù</label>
+                </div>
+                <div class="find_pro-checkbox">
+                    <input type="checkbox" name="" id="">
+                    <label for="">Hương Việt</label>
+                </div>
+
             </div>
         </div>
-        <div class="containers box_tile_sort row">
-            <div class="col-lg-3 col-md-12 col-sm-12">
 
+        <div class="box_find">
+            <div class="find_pro-tile"  ng-click="showChildPrice = !showChildPrice">
+                <h3>Lọc giá</h3>
+                <i class="fa-solid fa-caret-down"></i>
             </div>
-            <div class="col-lg-9 col-md-12 col-sm-12 box_sort row">
-
-                <div class="box_sort-1">
-                    <div class="box_favourite">
-                        <div>
-                            <i class="fa-solid fa-user shadow"></i>
-                        </div>
-                        <div>
-                            <i class="fa-solid fa-heart heart shadow"></i>
-                        </div>
-                        <div >
-                            <i class="fa-solid fa-cart-shopping shadow"></i>
-                        </div>
-                    </div>
-                    <div class="box_sort-btn" >
-                        <div>
-                            <i class="fa-solid fa-arrow-down-a-z"></i>
-                        </div>
-                        <div>
-                            Sắp Xếp
-                        </div>
-                        <div>
-                            <i class="fa-solid fa-caret-down"></i>
-                        </div>
-                    </div>
-
+            <div class="find_pro-box"  ng-show="showChildPrice">
+                <div class="find_pro-checkbox">
+                    <input type="checkbox" name="" id="">
+                    <label for="">100.000 VND - 200.000 VND </label>
+                </div>
+                <div class="find_pro-checkbox">
+                    <input type="checkbox" name="" id="">
+                    <label for="">200.000 VND - 400.000 VND </label>
+                </div>
+                <div class="find_pro-checkbox">
+                    <input type="checkbox" name="" id="">
+                    <label for="">400.000 VND - 1.000.000 VND </label>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="box_find-baner col-12 col-md-9 col-sm-12">
+        <img src="image/9f4effa5de67dc0ca635ec9a2eeb8b99.jpg" alt="">
+    </div>
+</div>
+<div class="containers box_tile_sort row">
+    <div class="col-lg-3 col-md-12 col-sm-12">
+
+    </div>
+    <div class="col-lg-9 col-md-12 col-sm-12 box_sort row">
+
+        <div class="box_sort-1">
+            <div class="box_favourite">
+                <div>
+                    <i class="fa-solid fa-user shadow"></i>
+                </div>
+                <div>
+                    <i class="fa-solid fa-heart heart shadow"></i>
+                </div>
+                <div>
+                    <i class="fa-solid fa-cart-shopping shadow"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
         <div class=" box_bannerpro row containers" style="margin-top: 60px;">
             <div class="bannerpro_pro col-lg-8 col-md-8 col-sm-12 row" >

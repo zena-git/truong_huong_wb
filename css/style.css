@@ -265,7 +265,7 @@ flex .menu {
 
 .header_language .language_btn {
 
-    padding: 10px 8px;
+    padding: 10px 20px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -275,7 +275,10 @@ flex .menu {
     background-blend-mode: soft-light, normal;
     box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
 }
-
+.language_btn:hover{
+    cursor: pointer;
+    background-color: #f4ce0e;
+}
 .language_btn i {
     font-size: 1.6rem;
     margin-right: 10px;
@@ -420,6 +423,7 @@ flex .menu {
     min-height: 280px;
     max-height: 280px;
     height: 100%;
+    object-fit: cover;
 }
 
 .box_info {
@@ -942,7 +946,6 @@ textarea::placeholder {
 }
 
 .box_favourite {
-    margin-right: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1905,7 +1908,6 @@ form div {
 
 }
 .find_pro-box {
-    display: none;
     animation: fakeIn 0.4s linear;
 
 }
@@ -1936,7 +1938,10 @@ form div {
     overflow: hidden;
     
 }
-
+.noneHref{
+    text-decoration: none;
+    color: #000;
+}
 .scroll-container {
     width: 100%;
     height: 100%;
@@ -1983,7 +1988,7 @@ form div {
 }
 .proshow_img-hot{
     position: absolute;
-    right: 10px;
+    right: -4px;
     top: 0px;
     /* transform: rotate(30deg); */
 
@@ -2012,19 +2017,29 @@ form div {
 }
 .proshow_buy-dec{
     color: var(--Paragraph-Color, #6E6E6E);
-font-family: Roboto;
-font-size: 1.6rem;
-font-style: normal;
-font-weight: 400;
+    font-family: Roboto;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
 }
 
 .proshow_buy-dec i{
     color: #58CC02;
     margin-right: 6px;
 }
+
+.proshow_buy{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+    
+}
+.proshow_buy>div{
+    margin-top: 16px;
+}
 .proshow_buy-btn{
 
-    padding: 4px 6px;
+    padding: 4px 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2041,7 +2056,7 @@ font-weight: 400;
 }
 .proshow_buy-btn i{
     color: #58CC02;
-
+    margin-right: 4px;
 }
 .proshow_buy-dec{
     margin-top: 16px;
@@ -2053,27 +2068,23 @@ font-weight: 400;
     align-items: flex-end;
     justify-content: flex-end;
 }
-.buy_dec-pice span,
-.proshow_buy-last span{
-    
+.box_proshow-buy a{
+    text-decoration: none;
+    color: #000;
 }
-
 .buy_dec-pice{
     color: #000;
-    display: flex;
-    
-    font-weight: bold;
-    align-items: flex-end;
-    justify-content: flex-end;
-    flex-direction: column;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .buy_dec-p{
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+
 }
 .buy_dec-c{
     font-size: 1.2rem;
     color: #535353;
+    font-weight: 500;
+
 }
 .title h1{
     margin: 20px 0;

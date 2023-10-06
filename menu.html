@@ -19,7 +19,7 @@
                     <li class="menu_child-li" ><a ng-href="#/dac-san">Đặc sản</a></li>
                 </ul>
             </li>
-            <li class="menu_child"  ng-class="{ 'active': isActive('/vi-sao-chon-chung-toi') || isActive('/chinh-sach-phan-phoi') || isActive('/he-thong-cua-hang') || isActive('/dac-san')   }" ><a ng-href="#/dang-ky-dai-ly" >Hệ thống cửa hàng</a>
+            <li class="menu_child"  ng-class="{ 'active': isActive('/vi-sao-chon-chung-toi') || isActive('/chinh-sach-phan-phoi') || isActive('/he-thong-cua-hang')    }" ><a ng-href="#/dang-ky-dai-ly" >Hệ thống cửa hàng</a>
                 <i class="fa-solid fa-chevron-down"></i>
                 <ul class="menu_child-ul">
                     <li class="menu_child-li" ><a ng-href="#/vi-sao-chon-chung-toi">Vì sao chon chúng tôi</a></li>
@@ -45,8 +45,7 @@
     </div>
     <div class="header_language">
         <div class="language_btn">
-          
-            <span>Login</span>
+            <span>Sign in</span>
         </div>
     </div>
     <div class="container_menu">
@@ -98,6 +97,15 @@
                     </li>
                     <li ng-class="{ 'ativice_mobile': isActive('/tin-tuc') }"><a ng-href="#/tin-tuc" class="menu_mobile-link">Tin tức</a></li>
                     <li ng-class="{ 'ativice_mobile': isActive('/lien-he') }"><a ng-href="#/lien-he" class="menu_mobile-link">Liên hệ</a></li>
+                    <li ng-class="{ 'ativice_mobile': isActive('/login') }"><a ng-href="#/login" class="menu_mobile-link">Đăng Nhập</a></li>
+                    <li  class="menu_mobile-child" ng-click="showChildMenunn = !showChildMenunn">Ngôn Ngữ</a>
+                        <ul class="menu_child-list" ng-show="showChildMenunn">
+                            <li><a ng-href="#">Việt Nam</a></li>
+                            <li><a ng-href="#">Nhật Bản</a></li>
+                            <li><a ng-href="#">Hoa Kỳ</a></li>
+                            <li><a ng-href="#">Hàn Quốc</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>
