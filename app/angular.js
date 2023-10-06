@@ -18,7 +18,7 @@ app.config(function ($routeProvider,$locationProvider) {
     $locationProvider.hashPrefix('');
     $routeProvider
         .when('/', {
-            templateUrl: '../page/home.html',
+            templateUrl: './page/home.html',
             controller: 'homeController',
         })
         .when('/login', {

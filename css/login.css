@@ -1,0 +1,45 @@
+
+
+.login{
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../assets/image/backgroud.jpg');
+    background-repeat: no-repeat;
+    position: relative;
+}
+.box_login{
+    position: absolute;
+    right: 10%;
+    top: 50%;
+
+    display: flex;
+    width: 510px;
+    
+    padding: 35px 50px 75px 50px;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 20px;
+    border: 1px solid #FFF;
+    background: linear-gradient(318deg, rgba(0, 0, 0, 0.40) 0%, rgba(255, 255, 255, 0.40) 105.18%), #E7EBF0;
+    background-blend-mode: soft-light, normal;
+    box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
+}
+.box_login-tile{
+
+}
+.box_login_dec{
+
+}
+.box_login-form{
+
+}
+.box_login-forwar{
+
+}
+.box_login-line{
+
+}
+.box_login-gg{
+
+}
