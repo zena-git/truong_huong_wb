@@ -1,13 +1,7 @@
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div ng-controller="slideShow" id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="image/Image.png" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="image/Image.png" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="image/Image.png" class="d-block w-100" alt="...">
+                    <img ng-src="{{ currentImage }}" class="d-block w-100" alt="..." style="height: 38vw; object-fit: cover;">
                 </div>
                 <div class="nav_box">
                     <div class="nav_tile">

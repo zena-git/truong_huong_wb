@@ -1,244 +1,137 @@
-
-
-        <div class="box_findProduct row containers">
-            <div class="box_find col-12 col-md-3 col-sm-12">
-                <div class="box_find">
-                    <div class="find_pro-tile" onclick="toggleFindProBox(this)">
-                        <h3>Danh Mục Sản Phẩm</h3>
-                        <i class="fa-solid fa-caret-down"></i>
-                    </div>
-                    <div class="find_pro-box">
-                        <h4>Tất cả sản phẩm</h4>
-                        <div class="find_pro-checkbox">
-                            <input type="checkbox" name="" id="">
-                            <label for="">Sản phẩm</label>
-                        </div>
-                        <div class="find_pro-checkbox">
-                            <input type="checkbox" name="" id="">
-                            <label for="">Sản phẩm</label>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="box_find">
-                    <div class="find_pro-tile" onclick="toggleFindProBox(this)">
-                        <h3>Lọc giá</h3>
-                        <i class="fa-solid fa-caret-down"></i>
-                    </div>
-                    <div class="find_pro-box">
-                        <div class="find_pro-checkbox">
-                            <input type="checkbox" name="" id="">
-                            <label for="">100.000 VND - 200.000 VND </label>
-                        </div>
-                        <div class="find_pro-checkbox">
-                            <input type="checkbox" name="" id="">
-                            <label for="">200.000 VND - 400.000 VND </label>
-                        </div>
-
-                    </div>
-                </div>
+<div class="box_findProduct row containers">
+    <div class="box_find col-12 col-md-3 col-sm-12">
+        <div class="box_find">
+            <div class="find_pro-tile" onclick="toggleFindProBox(this)">
+                <h3>Danh Mục Sản Phẩm</h3>
+                <i class="fa-solid fa-caret-down"></i>
             </div>
-            <div class="box_find-baner col-12 col-md-9 col-sm-12">
-                <img src="image/3f1602e98beceead7eddeb907a836064 (1).jpg" alt="">
+            <div class="find_pro-box">
+                <h4>Tất cả sản phẩm</h4>
+                <div class="find_pro-checkbox">
+                    <input type="checkbox" name="" id="">
+                    <label for="">Sản phẩm</label>
+                </div>
+                <div class="find_pro-checkbox">
+                    <input type="checkbox" name="" id="">
+                    <label for="">Sản phẩm</label>
+                </div>
+
             </div>
         </div>
-        <div class="containers box_tile_sort row">
-            <div class="col-lg-3 col-md-12 col-sm-12">
+
+        <div class="box_find">
+            <div class="find_pro-tile" onclick="toggleFindProBox(this)">
+                <h3>Lọc giá</h3>
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="find_pro-box">
+                <div class="find_pro-checkbox">
+                    <input type="checkbox" name="" id="">
+                    <label for="">100.000 VND - 200.000 VND </label>
+                </div>
+                <div class="find_pro-checkbox">
+                    <input type="checkbox" name="" id="">
+                    <label for="">200.000 VND - 400.000 VND </label>
+                </div>
 
             </div>
-            <div class="col-lg-9 col-md-12 col-sm-12 box_sort row">
+        </div>
+    </div>
+    <div class="box_find-baner col-12 col-md-9 col-sm-12">
+        <img src="image/3f1602e98beceead7eddeb907a836064 (1).jpg" alt="">
+    </div>
+</div>
+<div class="containers box_tile_sort row">
+    <div class="col-lg-3 col-md-12 col-sm-12">
 
-                <div class="box_sort-1">
-                    <div class="box_favourite">
-                        <div>
-                            <i class="fa-solid fa-user shadow"></i>
-                        </div>
-                        <div>
-                            <i class="fa-solid fa-heart heart shadow"></i>
-                        </div>
-                        <div >
-                            <i class="fa-solid fa-cart-shopping shadow"></i>
-                        </div>
+    </div>
+    <div class="col-lg-9 col-md-12 col-sm-12 box_sort row">
+
+        <div class="box_sort-1">
+            <div class="box_favourite">
+                <div>
+                    <i class="fa-solid fa-user shadow"></i>
+                </div>
+                <div>
+                    <i class="fa-solid fa-heart heart shadow"></i>
+                </div>
+                <div>
+                    <i class="fa-solid fa-cart-shopping shadow"></i>
+                </div>
+            </div>
+            <div class="box_sort-btn">
+                <div>
+                    <i class="fa-solid fa-arrow-down-a-z"></i>
+                </div>
+                <div>
+                    Sắp Xếp
+                </div>
+                <div>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="containers title">
+    <h1>Sản Phẩm Hot</h1>
+</div>
+<div class="containers box_proshow row">
+    <div ng-repeat="pro in lstProduct" class="box_proshow-buy col-4">
+        <div class="proshow_img">
+            <img class="shadow" ng-src="/assets/image/product/{{pro.avatar}}"  alt="{{ pro.name }}">
+        </div>
+        <div class="proshow_dec">
+            <div class="proshow_dec-item shadow">'
+                <div class="proshow_img-hot">
+                    <img src="/assets/image/icon-hot.gif" alt="">
+                </div>
+                <div class="proshow_dec-tile">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <h1> {{pro.name}}</h1>
+                </div>
+                <div class="proshow_buy-dec ">
+
+                    <div class="" ng-repeat="property in pro.properties">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>{{property}}</span>
                     </div>
-                    <div class="box_sort-btn" >
-                        <div>
-                            <i class="fa-solid fa-arrow-down-a-z"></i>
+                    
+
+                </div>
+                <div class="proshow_buy-dec row">
+                    <div class="proshow_buy-btn col-lg-6 col-md-6 col-sm-12">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Mua Ngay</span>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 buy_dec-pice">
+                        <div class="buy_dec-p">
+                            Giá bán: <span>{{pro.price || number}} đ</span>
                         </div>
-                        <div>
-                            Sắp Xếp
+                        <div class="buy_dec-c">
+                            Giá niêm yết: <span>{{pro.listedPrice || number}} đ</span>
                         </div>
-                        <div>
-                            <i class="fa-solid fa-caret-down"></i>
-                        </div>
+
                     </div>
 
                 </div>
             </div>
         </div>
-        <div class="containers title">
-            <h1>Sản Phẩm Hot</h1>
-        </div>
-        <div class="containers box_proshow row">
-            <div class="box_proshow-buy col-4">
-                <div class="proshow_img">
-                    <img class="shadow" src="image/17b1e33edd1bc410eed36cdd32f09e43.jpg" alt="">
-                </div>
-                <div class="proshow_dec">
-                    <div class="proshow_dec-item shadow">
-                        <div class="proshow_dec-tile">
-                            <h1>Gạo séng cù</h1>
-                        </div>
-                       <div class="proshow_buy-dec">
-                            <div>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <span>Màu trắng sữa</span>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <span>To tròn</span>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <span>Hạt Mấy</span>
-                            </div>
-                        </div>
-                        <div class="proshow_buy-btn">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <span>Mua Ngay</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="box_proshow-buy col-4">
-                <div class="proshow_img">
-                    <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
-                </div>
-                <div class="proshow_dec">
-                    <div class="proshow_dec-item shadow">
-                        <div class="proshow_dec-tile">
-                            <h1>Gạo hương việt</h1>
-                        </div>
-                       <div class="proshow_buy-dec">
-                            <div>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <span>Màu trắng sữa</span>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <span>To tròn</span>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <span>Hạt Mấy</span>
-                            </div>
-                        </div>
-                        <div class="proshow_buy-btn">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <span>Mua Ngay</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="box_proshow-buy col-4">
-                <div class="proshow_img">
-                    <img class="shadow" src="image/213924d8301b3181ee556bf304e06e71.jpg" alt="">
-                </div>
-                <div class="proshow_dec">
-                    <div class="proshow_dec-item shadow">
-                        <div class="proshow_dec-tile">
-                            <h1>Gạo nếp nương</h1>
-                        </div>
-                       <div class="proshow_buy-dec">
-                            <div>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <span>Màu trắng sữa</span>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <span>To tròn</span>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <span>Hạt Mấy</span>
-                            </div>
-                        </div>
-                        <div class="proshow_buy-btn">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <span>Mua Ngay</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="box_proshow-buy col-4">
-                <div class="proshow_img">
-                    <img class="shadow" src="image/17b1e33edd1bc410eed36cdd32f09e43.jpg" alt="">
-                </div>
-                <div class="proshow_dec">
-                    <div class="proshow_dec-item shadow">
-                        <div class="proshow_dec-tile">
-                            <h1>Gạo séng cù</h1>
-                        </div>
-                       <div class="proshow_buy-dec">
-                            <div>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <span>Màu trắng sữa</span>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <span>To tròn</span>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <span>Hạt Mấy</span>
-                            </div>
-                        </div>
-                        <div class="proshow_buy-btn">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <span>Mua Ngay</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="box_proshow-buy col-4">
+    </div>
+   
+</div>
+<div class="product-list">
+    <div class="scroll-container containers">
+        <div class="product">
+            <div class="box_proshow-buy">
                 <div class="proshow_img">
                     <img class="shadow" src="image/0a2bfdea369c16f5bf4735beae6066d7 (1).jpg" alt="">
                 </div>
                 <div class="proshow_dec">
                     <div class="proshow_dec-item shadow">
                         <div class="proshow_dec-tile">
-                            <h1>Gạo hương việt</h1>
-                        </div>
-                       <div class="proshow_buy-dec">
-                            <div>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <span>Màu trắng sữa</span>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <span>To tròn</span>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-circle-check"></i>
-                                <span>Hạt Mấy</span>
-                            </div>
-                        </div>
-                        <div class="proshow_buy-btn">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            <span>Mua Ngay</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="box_proshow-buy col-4">
-                <div class="proshow_img">
-                    <img class="shadow" src="image/213924d8301b3181ee556bf304e06e71.jpg" alt="">
-                </div>
-                <div class="proshow_dec">
-                    <div class="proshow_dec-item shadow">
-                        <div class="proshow_dec-tile">
-                            <h1>Gạo nếp nương</h1>
+                            <h1> hương việt</h1>
                         </div>
                         <div class="proshow_buy-dec">
                             <div>
@@ -247,11 +140,11 @@
                             </div>
                             <div>
                                 <i class="fa-solid fa-circle-check"></i>
-                                <span>To tròn</span>
+                                <span>Thơm nức</span>
                             </div>
                             <div>
                                 <i class="fa-solid fa-circle-check"></i>
-                                <span>Hạt Mấy</span>
+                                <span>To tròn</span>
                             </div>
                         </div>
                         <div class="proshow_buy-btn">
@@ -262,556 +155,457 @@
                 </div>
             </div>
         </div>
-        <div class="product-list">
-            <div class="scroll-container containers">
-                <div class="product">
-                    <div class="box_proshow-buy">
-                        <div class="proshow_img">
-                            <img class="shadow" src="image/0a2bfdea369c16f5bf4735beae6066d7 (1).jpg" alt="">
+        <div class="product">
+            <div class="box_proshow-buy">
+                <div class="proshow_img">
+                    <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
+                </div>
+                <div class="proshow_dec">
+                    <div class="proshow_dec-item shadow">
+                        <div class="proshow_dec-tile">
+                            <h1> hương việt</h1>
                         </div>
-                        <div class="proshow_dec">
-                            <div class="proshow_dec-item shadow">
-                                <div class="proshow_dec-tile">
-                                    <h1>Gạo hương việt</h1>
-                                </div>
-                               <div class="proshow_buy-dec">
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Màu trắng sữa</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Thơm nức</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>To tròn</span>
-                                    </div>
-                                </div>
-                                <div class="proshow_buy-btn">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                    <span>Mua Ngay</span>
-                                </div>
+                        <div class="proshow_buy-dec">
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Màu trắng sữa</span>
                             </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Thơm nức</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>To tròn</span>
+                            </div>
+                        </div>
+                        <div class="proshow_buy-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>Mua Ngay</span>
                         </div>
                     </div>
                 </div>
-                <div class="product">
-                    <div class="box_proshow-buy">
-                        <div class="proshow_img">
-                            <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
-                        </div>
-                        <div class="proshow_dec">
-                            <div class="proshow_dec-item shadow">
-                                <div class="proshow_dec-tile">
-                                    <h1>Gạo hương việt</h1>
-                                </div>
-                               <div class="proshow_buy-dec">
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Màu trắng sữa</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Thơm nức</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>To tròn</span>
-                                    </div>
-                                </div>
-                                <div class="proshow_buy-btn">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                    <span>Mua Ngay</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            </div>
+        </div>
 
-                <div class="product">
-                    <div class="box_proshow-buy">
-                        <div class="proshow_img">
-                            <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
+        <div class="product">
+            <div class="box_proshow-buy">
+                <div class="proshow_img">
+                    <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
+                </div>
+                <div class="proshow_dec">
+                    <div class="proshow_dec-item shadow">
+                        <div class="proshow_dec-tile">
+                            <h1> séng cù</h1>
                         </div>
-                        <div class="proshow_dec">
-                            <div class="proshow_dec-item shadow">
-                                <div class="proshow_dec-tile">
-                                    <h1>Gạo séng cù</h1>
-                                </div>
-                               <div class="proshow_buy-dec">
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Màu trắng sữa</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Thơm nức</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>To tròn</span>
-                                    </div>
-                                </div>
-                                <div class="proshow_buy-btn">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                    <span>Mua Ngay</span>
-                                </div>
+                        <div class="proshow_buy-dec">
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Màu trắng sữa</span>
                             </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Thơm nức</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>To tròn</span>
+                            </div>
+                        </div>
+                        <div class="proshow_buy-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>Mua Ngay</span>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="product">
-                    <div class="box_proshow-buy">
-                        <div class="proshow_img">
-                            <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
+        <div class="product">
+            <div class="box_proshow-buy">
+                <div class="proshow_img">
+                    <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
+                </div>
+                <div class="proshow_dec">
+                    <div class="proshow_dec-item shadow">
+                        <div class="proshow_dec-tile">
+                            <h1> nếp nương</h1>
                         </div>
-                        <div class="proshow_dec">
-                            <div class="proshow_dec-item shadow">
-                                <div class="proshow_dec-tile">
-                                    <h1>Gạo nếp nương</h1>
-                                </div>
-                               <div class="proshow_buy-dec">
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Màu trắng sữa</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Thơm nức</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>To tròn</span>
-                                    </div>
-                                </div>
-                                <div class="proshow_buy-btn">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                    <span>Mua Ngay</span>
-                                </div>
+                        <div class="proshow_buy-dec">
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Màu trắng sữa</span>
                             </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Thơm nức</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>To tròn</span>
+                            </div>
+                        </div>
+                        <div class="proshow_buy-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>Mua Ngay</span>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="product">
-                    <div class="box_proshow-buy">
-                        <div class="proshow_img">
-                            <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
+        <div class="product">
+            <div class="box_proshow-buy">
+                <div class="proshow_img">
+                    <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
+                </div>
+                <div class="proshow_dec">
+                    <div class="proshow_dec-item shadow">
+                        <div class="proshow_dec-tile">
+                            <h1> nếp nương</h1>
                         </div>
-                        <div class="proshow_dec">
-                            <div class="proshow_dec-item shadow">
-                                <div class="proshow_dec-tile">
-                                    <h1>Gạo nếp nương</h1>
-                                </div>
-                               <div class="proshow_buy-dec">
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Màu trắng sữa</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Thơm nức</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>To tròn</span>
-                                    </div>
-                                </div>
-                                <div class="proshow_buy-btn">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                    <span>Mua Ngay</span>
-                                </div>
+                        <div class="proshow_buy-dec">
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Màu trắng sữa</span>
                             </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Thơm nức</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>To tròn</span>
+                            </div>
+                        </div>
+                        <div class="proshow_buy-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>Mua Ngay</span>
                         </div>
                     </div>
                 </div>
-                <div class="product">
-                    <div class="box_proshow-buy">
-                        <div class="proshow_img">
-                            <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
+            </div>
+        </div>
+        <div class="product">
+            <div class="box_proshow-buy">
+                <div class="proshow_img">
+                    <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
+                </div>
+                <div class="proshow_dec">
+                    <div class="proshow_dec-item shadow">
+                        <div class="proshow_dec-tile">
+                            <h1> nếp nương</h1>
                         </div>
-                        <div class="proshow_dec">
-                            <div class="proshow_dec-item shadow">
-                                <div class="proshow_dec-tile">
-                                    <h1>Gạo nếp nương</h1>
-                                </div>
-                                <div class="proshow_buy-dec">
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Màu trắng sữa</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Thơm nức</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>To tròn</span>
-                                    </div>
-                                </div>
-                                <div class="proshow_buy-btn">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                    <span>Mua Ngay</span>
-                                </div>
+                        <div class="proshow_buy-dec">
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Màu trắng sữa</span>
                             </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Thơm nức</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>To tròn</span>
+                            </div>
+                        </div>
+                        <div class="proshow_buy-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>Mua Ngay</span>
                         </div>
                     </div>
                 </div>
-                <!-- Thêm các sản phẩm khác vào đây -->
+            </div>
+        </div>
+        <!-- Thêm các sản phẩm khác vào đây -->
+    </div>
+</div>
+<div class="product-list">
+    <div class="scroll-container containers">
+        <div class="product">
+            <div class="box_proshow-buy">
+                <div class="proshow_img">
+                    <img class="shadow" src="image/0a2bfdea369c16f5bf4735beae6066d7 (1).jpg" alt="">
+                </div>
+                <div class="proshow_dec">
+                    <div class="proshow_dec-item shadow">
+                        <div class="proshow_dec-tile">
+                            <h1> hương việt</h1>
+                        </div>
+                        <div class="proshow_buy-dec">
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Màu trắng sữa</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Thơm nức</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>To tròn</span>
+                            </div>
+                        </div>
+                        <div class="proshow_buy-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>Mua Ngay</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <div class="box_proshow-buy">
+                <div class="proshow_img">
+                    <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
+                </div>
+                <div class="proshow_dec">
+                    <div class="proshow_dec-item shadow">
+                        <div class="proshow_dec-tile">
+                            <h1> hương việt</h1>
+                        </div>
+                        <div class="proshow_buy-dec">
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Màu trắng sữa</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Thơm nức</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>To tròn</span>
+                            </div>
+                        </div>
+                        <div class="proshow_buy-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>Mua Ngay</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="box_proshow-buy">
+                <div class="proshow_img">
+                    <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
+                </div>
+                <div class="proshow_dec">
+                    <div class="proshow_dec-item shadow">
+                        <div class="proshow_dec-tile">
+                            <h1> séng cù</h1>
+                        </div>
+                        <div class="proshow_buy-dec">
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Màu trắng sữa</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Thơm nức</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>To tròn</span>
+                            </div>
+                        </div>
+                        <div class="proshow_buy-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>Mua Ngay</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="box_proshow-buy">
+                <div class="proshow_img">
+                    <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
+                </div>
+                <div class="proshow_dec">
+                    <div class="proshow_dec-item shadow">
+                        <div class="proshow_dec-tile">
+                            <h1> nếp nương</h1>
+                        </div>
+                        <div class="proshow_buy-dec">
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Màu trắng sữa</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Thơm nức</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>To tròn</span>
+                            </div>
+                        </div>
+                        <div class="proshow_buy-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>Mua Ngay</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="box_proshow-buy">
+                <div class="proshow_img">
+                    <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
+                </div>
+                <div class="proshow_dec">
+                    <div class="proshow_dec-item shadow">
+                        <div class="proshow_dec-tile">
+                            <h1> nếp nương</h1>
+                        </div>
+                        <div class="proshow_buy-dec">
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Màu trắng sữa</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Thơm nức</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>To tròn</span>
+                            </div>
+                        </div>
+                        <div class="proshow_buy-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>Mua Ngay</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <div class="box_proshow-buy">
+                <div class="proshow_img">
+                    <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
+                </div>
+                <div class="proshow_dec">
+                    <div class="proshow_dec-item shadow">
+                        <div class="proshow_dec-tile">
+                            <h1> nếp nương</h1>
+                        </div>
+                        <div class="proshow_buy-dec">
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Màu trắng sữa</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Thơm nức</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>To tròn</span>
+                            </div>
+                        </div>
+                        <div class="proshow_buy-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span>Mua Ngay</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Thêm các sản phẩm khác vào đây -->
+    </div>
+</div>
+
+<div class="containers" style="margin-bottom: 40px;">
+    <h2>Liên Quan</h2>
+</div>
+
+<div class="box_proshow-review containers row">
+    <div class="col-12 col-sm-6 .col-md-6 col-lg-3">
+        <div class="proshow_review-1">
+            <div class="proshow_review-img">
+                <img src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
+            </div>
+            <div class="proshow_review-dec">
+                <div class="review_dec-tile">
+                    <h3> nếp nương</h3>
+                </div>
+                <div class="review_dec-sub">
+                    To tròn, hạt mẩy, màu trắng sữa, dẻo, thơm nức
+                </div>
+                <div class="review_dec-btn">
+                    <a href="">Mua Ngay</a>
+                    <i class="fa-solid fa-angle-up fa-rotate-90"></i>
+                </div>
             </div>
         </div>
-        <div class="product-list">
-            <div class="scroll-container containers">
-                <div class="product">
-                    <div class="box_proshow-buy">
-                        <div class="proshow_img">
-                            <img class="shadow" src="image/0a2bfdea369c16f5bf4735beae6066d7 (1).jpg" alt="">
-                        </div>
-                        <div class="proshow_dec">
-                            <div class="proshow_dec-item shadow">
-                                <div class="proshow_dec-tile">
-                                    <h1>Gạo hương việt</h1>
-                                </div>
-                               <div class="proshow_buy-dec">
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Màu trắng sữa</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Thơm nức</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>To tròn</span>
-                                    </div>
-                                </div>
-                                <div class="proshow_buy-btn">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                    <span>Mua Ngay</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="product">
-                    <div class="box_proshow-buy">
-                        <div class="proshow_img">
-                            <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
-                        </div>
-                        <div class="proshow_dec">
-                            <div class="proshow_dec-item shadow">
-                                <div class="proshow_dec-tile">
-                                    <h1>Gạo hương việt</h1>
-                                </div>
-                               <div class="proshow_buy-dec">
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Màu trắng sữa</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Thơm nức</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>To tròn</span>
-                                    </div>
-                                </div>
-                                <div class="proshow_buy-btn">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                    <span>Mua Ngay</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    </div>
 
-                <div class="product">
-                    <div class="box_proshow-buy">
-                        <div class="proshow_img">
-                            <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
-                        </div>
-                        <div class="proshow_dec">
-                            <div class="proshow_dec-item shadow">
-                                <div class="proshow_dec-tile">
-                                    <h1>Gạo séng cù</h1>
-                                </div>
-                               <div class="proshow_buy-dec">
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Màu trắng sữa</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Thơm nức</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>To tròn</span>
-                                    </div>
-                                </div>
-                                <div class="proshow_buy-btn">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                    <span>Mua Ngay</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="col-12 col-sm-6 .col-md-6 col-lg-3">
+        <div class="proshow_review-1">
+            <div class="proshow_review-img">
+                <img src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
+            </div>
+            <div class="proshow_review-dec">
+                <div class="review_dec-tile">
+                    <h3> séng cù</h3>
                 </div>
-
-                <div class="product">
-                    <div class="box_proshow-buy">
-                        <div class="proshow_img">
-                            <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
-                        </div>
-                        <div class="proshow_dec">
-                            <div class="proshow_dec-item shadow">
-                                <div class="proshow_dec-tile">
-                                    <h1>Gạo nếp nương</h1>
-                                </div>
-                               <div class="proshow_buy-dec">
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Màu trắng sữa</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Thơm nức</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>To tròn</span>
-                                    </div>
-                                </div>
-                                <div class="proshow_buy-btn">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                    <span>Mua Ngay</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="review_dec-sub">
+                    Hạt tròn dài, trắng bóng, hàm lượng tinh bột, chất xơ, protein, vitamin rất tốt
                 </div>
-
-                <div class="product">
-                    <div class="box_proshow-buy">
-                        <div class="proshow_img">
-                            <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
-                        </div>
-                        <div class="proshow_dec">
-                            <div class="proshow_dec-item shadow">
-                                <div class="proshow_dec-tile">
-                                    <h1>Gạo nếp nương</h1>
-                                </div>
-                               <div class="proshow_buy-dec">
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Màu trắng sữa</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Thơm nức</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>To tròn</span>
-                                    </div>
-                                </div>
-                                <div class="proshow_buy-btn">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                    <span>Mua Ngay</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="review_dec-btn">
+                    <a href="">Mua Ngay</a>
+                    <i class="fa-solid fa-angle-up fa-rotate-90"></i>
                 </div>
-                <div class="product">
-                    <div class="box_proshow-buy">
-                        <div class="proshow_img">
-                            <img class="shadow" src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
-                        </div>
-                        <div class="proshow_dec">
-                            <div class="proshow_dec-item shadow">
-                                <div class="proshow_dec-tile">
-                                    <h1>Gạo nếp nương</h1>
-                                </div>
-                               <div class="proshow_buy-dec">
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Màu trắng sữa</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>Thơm nức</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-circle-check"></i>
-                                        <span>To tròn</span>
-                                    </div>
-                                </div>
-                                <div class="proshow_buy-btn">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                    <span>Mua Ngay</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Thêm các sản phẩm khác vào đây -->
             </div>
         </div>
+    </div>
 
-        <div class="containers" style="margin-bottom: 40px;">
-            <h2>Liên Quan</h2>
+    <div class="col-12 col-sm-6 .col-md-6 col-lg-3">
+        <div class="proshow_review-1">
+            <div class="proshow_review-img">
+                <img src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
+            </div>
+            <div class="proshow_review-dec">
+                <div class="review_dec-tile">
+                    <h3> nếp nương</h3>
+                </div>
+                <div class="review_dec-sub">
+                    To tròn, hạt mẩy, màu trắng sữa, dẻo, thơm nức
+                </div>
+                <div class="review_dec-btn">
+                    <a href="">Mua Ngay</a>
+                    <i class="fa-solid fa-angle-up fa-rotate-90"></i>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <div class="box_proshow-review containers row">
-            <div class="col-12 col-sm-6 .col-md-6 col-lg-3">
-                <div class="proshow_review-1">
-                    <div class="proshow_review-img">
-                        <img src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
-                    </div>
-                    <div class="proshow_review-dec">
-                        <div class="review_dec-tile">
-                            <h3>Gạo nếp nương</h3>
-                        </div>
-                        <div class="review_dec-sub">
-                            To tròn, hạt mẩy, màu trắng sữa, dẻo, thơm nức
-                        </div>
-                        <div class="review_dec-btn">
-                            <a href="">Mua Ngay</a>
-                            <i class="fa-solid fa-angle-up fa-rotate-90"></i>
-                        </div>
-                    </div>
+
+    <div class="col-12 col-sm-6 .col-md-6 col-lg-3">
+        <div class="proshow_review-1">
+            <div class="proshow_review-img">
+                <img src="image/0a2bfdea369c16f5bf4735beae6066d7 (1).jpg" alt="">
+            </div>
+            <div class="proshow_review-dec">
+                <div class="review_dec-tile">
+                    <h3> nếp nương</h3>
+                </div>
+                <div class="review_dec-sub">
+                    To tròn, hạt mẩy, màu trắng sữa, dẻo, thơm nức
+                </div>
+                <div class="review_dec-btn">
+                    <a href="">Mua Ngay</a>
+                    <i class="fa-solid fa-angle-up fa-rotate-90"></i>
                 </div>
             </div>
-
-            <div class="col-12 col-sm-6 .col-md-6 col-lg-3">
-                <div class="proshow_review-1">
-                    <div class="proshow_review-img">
-                        <img src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
-                    </div>
-                    <div class="proshow_review-dec">
-                        <div class="review_dec-tile">
-                            <h3>Gạo séng cù</h3>
-                        </div>
-                        <div class="review_dec-sub">
-                            Hạt tròn dài, trắng bóng, hàm lượng tinh bột, chất xơ, protein, vitamin rất tốt
-                        </div>
-                        <div class="review_dec-btn">
-                            <a href="">Mua Ngay</a>
-                            <i class="fa-solid fa-angle-up fa-rotate-90"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-sm-6 .col-md-6 col-lg-3">
-                <div class="proshow_review-1">
-                    <div class="proshow_review-img">
-                        <img src="image/b51e97f0ecc9ab7ec6f637fd427fa81b.jpg" alt="">
-                    </div>
-                    <div class="proshow_review-dec">
-                        <div class="review_dec-tile">
-                            <h3>Gạo nếp nương</h3>
-                        </div>
-                        <div class="review_dec-sub">
-                            To tròn, hạt mẩy, màu trắng sữa, dẻo, thơm nức
-                        </div>
-                        <div class="review_dec-btn">
-                            <a href="">Mua Ngay</a>
-                            <i class="fa-solid fa-angle-up fa-rotate-90"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-12 col-sm-6 .col-md-6 col-lg-3">
-                <div class="proshow_review-1">
-                    <div class="proshow_review-img">
-                        <img src="image/0a2bfdea369c16f5bf4735beae6066d7 (1).jpg" alt="">
-                    </div>
-                    <div class="proshow_review-dec">
-                        <div class="review_dec-tile">
-                            <h3>Gạo nếp nương</h3>
-                        </div>
-                        <div class="review_dec-sub">
-                            To tròn, hạt mẩy, màu trắng sữa, dẻo, thơm nức
-                        </div>
-                        <div class="review_dec-btn">
-                            <a href="">Mua Ngay</a>
-                            <i class="fa-solid fa-angle-up fa-rotate-90"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
+    </div>
 
-
-       <footer>
-            <div class="footer_box containers row">
-                   <div class="footer_box-1 col-6">
-                        <div class="footer_box-tile">
-                            <h4>CÔNG TY CỔ PHẦN GIỐNG NÔNG NGHIỆP</h4>
-                            <h3>TRƯỜNG HƯƠNG ĐIỆN BIÊN</h3>
-                        </div>
-                        <div class="footer_box-icon">
-                            <i class="fa-brands fa-facebook"></i>
-                            <i class="fa-brands fa-twitter"></i>
-                            <i class="fa-brands fa-instagram"></i>
-                            <i class="fa-brands fa-linkedin"></i>
-                            <i class="fa-brands fa-youtube"></i>
-                        </div>
-                   </div> 
-                   <div class="footer_box-2 col-6 row">
-                        <div class="footer_box-colum col-3" >
-                            <h5>About</h5>
-                            <ul>
-                                <li>About Us</li>
-                                <li>Find store</li>
-                                <li>Categories</li>
-                                <li>Blogs</li>
-                            </ul>
-                        </div>
-                        <div class="footer_box-colum col-3" >
-                            <h5>About</h5>
-                            <ul>
-                                <li>About Us</li>
-                                <li>Find store</li>
-                                <li>Categories</li>
-                                <li>Blogs</li>
-                            </ul>
-                        </div>
-
-                        <div class="footer_box-colum col-3" >
-                            <h5>About</h5>
-                            <ul>
-                                <li>About Us</li>
-                                <li>Find store</li>
-                                <li>Categories</li>
-                                <li>Blogs</li>
-                            </ul>
-                        </div>
-
-                        <div class="footer_box-colum col-3" >
-                            <h5>About</h5>
-                            <ul>
-                                <li>About Us</li>
-                                <li>Find store</li>
-                                <li>Categories</li>
-                                <li>Blogs</li>
-                            </ul>
-                        </div>
-                   </div> 
-               
-            </div>
-        </footer>
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        <script src="js/main.js"></script>
-</body>
-
-</html>
+</div>

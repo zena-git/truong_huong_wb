@@ -244,6 +244,9 @@
 .proshow_buy-btn{
     margin-top: 10px;
 }
+.content_list-btn{
+    display: none;
+}
 }
 
 @media only screen and (min-width: 767px) and (max-width: 1023px) {

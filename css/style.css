@@ -106,8 +106,10 @@ header {
 }
 
 .header_menu {
-    align-items: center;
+    display: flex;
     width: 100%;
+    justify-content: space-evenly;
+
 }
 
 .menu {
@@ -1971,6 +1973,7 @@ form div {
     justify-content: center;
 }
 .proshow_dec-item{
+    position: relative;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -1978,10 +1981,34 @@ form div {
     padding: 10px 20px;
     transform: translateY(-40px);
 }
+.proshow_img-hot{
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    /* transform: rotate(30deg); */
+
+}
+.proshow_img-hot img{
+    width: 120px;
+    
+}
 .proshow_dec-tile h1{
+    text-transform: capitalize;
     font-size: 2.2rem;
     margin-top: 10px;
-   margin-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.proshow_dec-tile h1{
+    display: inline-block;
+}
+.proshow_dec-tile i{
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    color: #58CC02;
+    margin-right: 6px;
+    opacity: 0;
 }
 .proshow_buy-dec{
     color: var(--Paragraph-Color, #6E6E6E);
@@ -1990,14 +2017,14 @@ font-size: 1.6rem;
 font-style: normal;
 font-weight: 400;
 }
+
 .proshow_buy-dec i{
     color: #58CC02;
-    margin-right: 10px;
+    margin-right: 6px;
 }
 .proshow_buy-btn{
-    margin-top: 20px;
+
     padding: 4px 6px;
-    width: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2013,12 +2040,51 @@ font-weight: 400;
     box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
 }
 .proshow_buy-btn i{
-    margin-right: 10px;
     color: #58CC02;
 
 }
+.proshow_buy-dec{
+    margin-top: 16px;
+}
+.proshow_buy-last{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.buy_dec-pice span,
+.proshow_buy-last span{
+    
+}
+
+.buy_dec-pice{
+    color: #000;
+    display: flex;
+    
+    font-weight: bold;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.buy_dec-p{
+    font-size: 1.4rem;
+}
+.buy_dec-c{
+    font-size: 1.2rem;
+    color: #535353;
+}
 .title h1{
     margin: 20px 0;
+}
+
+.menu_btn_login{
+    border-radius: 10px;
+border: 1px solid #FFF;
+background: linear-gradient(318deg, rgba(0, 0, 0, 0.40) 0%, rgba(255, 255, 255, 0.40) 105.18%), #FCD40B;
+background-blend-mode: soft-light, normal;
+box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
 }
 @keyframes fakeIn {
     from {

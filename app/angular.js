@@ -19,7 +19,7 @@ app.config(function ($routeProvider,$locationProvider) {
     $routeProvider
         .when('/', {
             templateUrl: '/page/home.html',
-            
+            controller: 'homeController',
         })
         .when('/home', {
             templateUrl: '/page/home.html',
@@ -75,9 +75,13 @@ app.config(function ($routeProvider,$locationProvider) {
             templateUrl: '/page/quy-trinh-hop-tac.html',
             
         })
+        .when('/mot-so-hinh-anh', {
+            templateUrl: '/page/mot-so-hinh-anh.html',
+            
+        })
         .when('/san-pham-hot', {
             templateUrl: '/page/san-pham-hot.html',
-            
+            controller: 'productController',
         })
 
         .when('/tin-tuc', {
