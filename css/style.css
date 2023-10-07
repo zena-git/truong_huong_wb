@@ -758,9 +758,9 @@ footer{
     margin: 20px 0;
 }
 
-.shadow button,
 .shadow select,
 .shadow textarea,
+.shadow button,
 .shadow input[type='text'] {
     font-size: 1.6rem;
 

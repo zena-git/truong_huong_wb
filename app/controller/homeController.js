@@ -21,7 +21,7 @@ app.controller('slideShow',function ($scope, $rootScope, $interval) {
 
     $scope.nextImage = function() {
         $scope.currentIndex = ($scope.currentIndex + 1) % $scope.images.length;
-        $scope.currentImage = "/assets/image/slide/"+$scope.images[$scope.currentIndex];
+        $scope.currentImage = "./assets/image/slide/"+$scope.images[$scope.currentIndex];
     };
 
 });
