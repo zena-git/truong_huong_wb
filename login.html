@@ -1,4 +1,4 @@
-<div class="login">
+<div class="login" >
     <div class="box_login shadow" >
         <div class="box_login-tile">
             <h2>Log in</h2>
@@ -7,10 +7,10 @@
             <p>New To Trường Hương <a href="">Sign up</a> </p>
         </div>
         <div class="box_login-form " >
-            <form class="w_form">
-                <input type="text" class="form-control " placeholder="Phone number / Username / Email">
+            <form class="w_form" ng-submit="login()">
+                <input type="text" class="form-control " placeholder="Phone number / Username / Email" ng-model="form_login.username">
                 <br>
-                <input type="text" class="form-control " placeholder="Password">
+                <input type="text" class="form-control " placeholder="Password" ng-model="form_login.password">
                 <br>
                 <button type="submit" class="btn_login">Login</button>
             </form>
@@ -33,6 +33,11 @@
                 <path d="M14 25.6666C17.0135 25.6666 19.7517 24.5134 21.8219 22.638L18.2111 19.5825C17.0004 20.5032 15.521 21.0012 14 21C10.9655 21 8.38894 19.0651 7.41827 16.3648L3.61377 19.2961C5.5446 23.0743 9.46577 25.6666 14 25.6666Z" fill="#4CAF50"/>
                 <path d="M25.4397 11.7151H24.5V11.6667H14V16.3334H20.5934C20.1333 17.6263 19.3045 18.756 18.2093 19.5831L18.2111 19.5819L21.8219 22.6374C21.5664 22.8696 25.6667 19.8334 25.6667 14C25.6667 13.2178 25.5862 12.4542 25.4397 11.7151Z" fill="#1976D2"/>
               </svg> Continue with Google</button>
-        </div>  
+        </div> 
+        
+        <div class="box_login-gg">
+            <button class="btn_login-p3"> Continue with Google</button>
+        </div> 
+        
     </div>
 </div>

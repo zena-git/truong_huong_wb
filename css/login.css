@@ -5,10 +5,20 @@
     background-repeat: no-repeat;
     position: relative;
 }
-
+.login::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(12, 12, 12, 0.418); /* Màu xám với độ trong suốt (opacity) 0.5 */
+    filter: grayscale(90%); /* Đặt hiệu ứng xám 100% */
+  }
 .box_login {
     position: absolute;
     top: 5%;
+    right: 10%;
     margin: 0 auto;
     display: block;
     max-width: 510px;
@@ -147,4 +157,9 @@
     background: linear-gradient(318deg, rgba(0, 0, 0, 0.40) 0%, rgba(255, 255, 255, 0.40) 105.18%), #39B54A;
     background-blend-mode: soft-light, normal;
     box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
+} 
+
+.box_login-gg button{
+    margin-bottom: 20px;
 }
+

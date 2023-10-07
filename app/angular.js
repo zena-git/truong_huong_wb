@@ -23,8 +23,7 @@ app.config(function ($routeProvider,$locationProvider) {
         })
         .when('/login', {
             templateUrl: './login.html',
-            
-            
+            controller: 'loginController',
         })
         .when('/home', {
             templateUrl: './page/home.html',

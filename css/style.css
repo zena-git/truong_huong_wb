@@ -248,7 +248,10 @@ flex .menu {
     font-size: 1.4rem;
     transform: translateX(8px);
 }
+.header_language a{
+    color: #2190AC;
 
+}
 .header_language {
     margin-right: 60px;
     max-width: 138px;
@@ -1906,6 +1909,12 @@ form div {
 .menu_child-list {
     animation: fakeIn 0.4s linear;
 
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px!important;
 }
 .find_pro-box {
     animation: fakeIn 0.4s linear;
