@@ -7,9 +7,13 @@ app.config(function ($routeProvider,$locationProvider) {
             templateUrl: '../admin/home.html',
             
         }) 
+        .when('/page/footer', {
+            templateUrl: '../admin/footer.html',
+            
+        }) 
         .when('/page/home', {
             templateUrl: '../admin/page/home.html',
-            
+
         })
         .when('/page/ve-chung-toi', {
             templateUrl: '../admin/page/ve-chung-toi.html',
@@ -71,6 +75,7 @@ app.config(function ($routeProvider,$locationProvider) {
         })
          .when('/page/san-pham-hot', {
             templateUrl: '../admin/page/san-pham-hot.html',
+            controller: 'productController',
         })
 
          .when('/page/tin-tuc', {
@@ -86,4 +91,39 @@ app.config(function ($routeProvider,$locationProvider) {
             templateUrl: '../admin/home.html',
         });
 });
+
+app.controller('myController',function($scope, $rootScope, $http){
+  $rootScope.lstText = [];
+    $http.get('https://6524c97cea560a22a4ea1a53.mockapi.io/text/1')
+    .then(function(response) {
+        $rootScope.lstText = response.data;
+        console.log($rootScope.lstText);
+    })
+    .catch(function(error) {
+
+        console.error('Error loading data', error);
+    }); 
+
+   $scope.saveText = function(){
+    var confirmation = window.confirm('Bạn có chắc chắn muốn thực hiện hành động này?');
+        
+    if (confirmation) {
+        
+        $http.put('https://6524c97cea560a22a4ea1a53.mockapi.io/text/1', $rootScope.lstText)
+            .then(function(response) {
+                // Xử lý kết quả sau khi PUT thành công (status code 200)
+                console.log('Dữ liệu đã được cập nhật thành công.');
+            })
+            .catch(function(error) {
+                // Xử lý lỗi nếu có
+                console.error('Lỗi khi cập nhật dữ liệu:', error);
+            });
+            alert("Dữ liệu đã được cập nhật thành công.")
+    } else {
+        // Hủy bỏ hành động khi người dùng không xác nhận
+        console.log('Hành động đã bị hủy bỏ.');
+    }
+        
+   }
+})
 

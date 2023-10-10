@@ -23,7 +23,22 @@ html {
     
 }
 
+.transparent-input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgb(0, 0, 0); /*Thêm đường kẻ dưới ô input để tạo hiệu ứng*/
+    outline: none; /*Loại bỏ border xung quanh input khi được focus*/
+    color: rgb(0, 0, 0);
+    width: 100%;
 
+    width: auto;
+    min-width: 50px; /* Đặt giá trị tối thiểu cho chiều rộng */
+    outline: none;
+
+    resize: none; /* Không cho phép thay đổi kích thước của textarea */
+    min-height: 100px;
+    height: auto;
+}
 
 .btn-green {
     color: aliceblue;
@@ -338,6 +353,7 @@ flex .menu {
    
 }
 .box_sub {
+    
     margin-bottom: 10px;
     text-align: center;
 }

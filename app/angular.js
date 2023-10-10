@@ -101,3 +101,16 @@ app.config(function ($routeProvider,$locationProvider) {
             templateUrl: './page/home.html',
         });
 });
+
+app.controller('myController',function($scope, $rootScope, $http){
+    $rootScope.lstText = [];
+      $http.get('https://6524c97cea560a22a4ea1a53.mockapi.io/text/1')
+      .then(function(response) {
+          $rootScope.lstText = response.data;
+          console.log($rootScope.lstText);
+      })
+      .catch(function(error) {
+  
+          console.error('Error loading data', error);
+      }); 
+})
