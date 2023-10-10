@@ -13,7 +13,12 @@ app.controller('loginController', function ($scope,$location , $rootScope, $http
             if (getUser.length != 0) {
                 if (getUser[0].password == $scope.form_login.password) {
                     alert("Đăng Nhập Thành Công")
-                    $window.location.href = '/admin'; // Đổi '/new-page.html' thành URL bạn muốn chuyển hướng đến
+                    var protocol = $location.protocol();
+                    var host = $location.host();
+                    var newURL = protocol + '://' + host +'/admin/';
+                    $window.location.href = newURL;
+                    // $scope.currentURL =  $location.host();
+                    // $window.location.href = $scope.currentURL +'/admin'; // Đổi '/new-page.html' thành URL bạn muốn chuyển hướng đến
                     // $location.path('/admin');
                 } else {
                     alert("Sai Password\nPassword của bạn phải là: " + getUser[0].password)
