@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>Test $scope.$watch</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="myController">
+  <input type="text" ng-model="username" placeholder="Tên người dùng">
+  <p>Chào {{ username }}</p>
+
+  <script>
+    var app = angular.module("myApp", []);
+
+    app.controller("myController", function($scope) {
+      $scope.username = '';
+
+      $scope.$watch('username', function(newVal, oldVal) {
+          console.log('Tên người dùng đã thay đổi thành: ' + newVal);
+      });
+      
+    });
+  </script>
+</body>
+</html>
