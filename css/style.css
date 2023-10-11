@@ -36,7 +36,7 @@ html {
     outline: none;
 
     resize: none; /* Không cho phép thay đổi kích thước của textarea */
-    min-height: 100px;
+    min-height: 50px;
     height: auto;
 }
 
