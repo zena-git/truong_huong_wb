@@ -31,7 +31,7 @@ app.config(function ($routeProvider,$locationProvider) {
             
         })
         .when('/ve-chung-toi', {
-            templateUrl: '../page/ve-chung-toi.html',
+            templateUrl: './page/ve-chung-toi.html',
             
         })
         .when('/chinh-sach-phan-phoi', {
