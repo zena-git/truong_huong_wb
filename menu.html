@@ -1,136 +1,217 @@
-<div ng-controller="MenuController">
+<div ng-controller="MenuController" class="nav">
 
-<header>
     
-    <div class="header_logo">
+<div class="box_header">
+    <div class="box_header-menu">
+        <div class="box_header-menulogo">
+            <div class="header_menu-btn">
+                <label for="menu_mobile">
+                    <i class="bi bi-list toggle-sidebar-btn"></i>
+                </label>
+            </div>
+            <div class="box_header-logo">
+                <img src="assets/image/logo/logo.png" alt="">
+            </div>
+        </div>
+        
+    </div>
+    <div class="header_logo header_left">
         <a href="#/home">
         <img src="image/Rectangle 38.png" alt="">
         </a>
     </div>
-    <div class="header_menu">
-        <ul class="menu">
-            <li ng-class="{ 'active': isActive('/') }"><a ng-href="#/">Trang chủ</a></li>
-            <li ng-class="{ 'active': isActive('/ve-chung-toi') }"><a ng-href="#/ve-chung-toi">Về chúng tôi</a></li>    
-            <li class="menu_child" ng-class="{ 'active': isActive('/san-pham-hot') || isActive('/gao-nuong') || isActive('/com-ngon') || isActive('/dac-san')   }">
-                <a ng-href="#/san-pham-hot">Sản phẩm</a>
-                <i class="fa-solid fa-chevron-down"></i>
-                <ul class="menu_child-ul">
-                    <li class="menu_child-li" ><a ng-href="#/san-pham-hot">Sản phẩm hot</a></li>
-                    <li class="menu_child-li" ><a ng-href="#/gao-nuong">Gạo nương</a></li>
-                    <li class="menu_child-li" ><a ng-href="#/com-ngon">Cơm ngon</a</li>
-                    <li class="menu_child-li" ><a ng-href="#/dac-san">Đặc sản</a></li>
-                </ul>
-            </li>
-            <li class="menu_child"  ng-class="{ 'active': isActive('/vi-sao-chon-chung-toi') || isActive('/chinh-sach-phan-phoi') || isActive('/he-thong-cua-hang')    }" ><a ng-href="#/dang-ky-dai-ly" >Hệ thống cửa hàng</a>
-                <i class="fa-solid fa-chevron-down"></i>
-                <ul class="menu_child-ul">
-                    <li class="menu_child-li" ><a ng-href="#/vi-sao-chon-chung-toi">Vì sao chon chúng tôi</a></li>
-                    <li class="menu_child-li" ><a ng-href="#/chinh-sach-phan-phoi">Chính sách phân phối</a></li>
-                    <li class="menu_child-li" ><a ng-href="#/he-thong-cua-hang">Hệ thống cửa hàng</a</li>
-                    <li class="menu_child-li" ><a ng-href="#/dang-ky-dai-ly">Đăng ký đại lý</a></li>
-                </ul>
-            </li>
-            <li class="menu_child "  ng-class="{ 'active': isActive('/loi-the-mo-hinh') || isActive('/goi-hop-tac') || isActive('/quy-trinh-hop-tac') || isActive('/dang-ky-dai-hop-tac')  || isActive('/dang-ky-dai-hop-tac') }"><a ng-href="#/mot-so-hinh-anh">Cơm Ngon</a>
-                <i class="fa-solid fa-chevron-down"></i>
-                <ul class="menu_child-ul" style="width: 120%;">
-                    <li class="menu_child-li" ><a ng-href="#/loi-the-mo-hinh">Lợi thế mô hình</a>
+    <div class="header_right">
+        <div class="box_search">
+            <div class="form_search">
+                <form>
+                <div class="nav_input-search">
+                    <input   type="text" placeholder="Tìm Kiếm Tại Đây">
+                    <button><i class="bi bi-search"></i></button>
+                </div> 
+                </form>
+            </div>
+            <div class="box_status">
+                <ul class="box_status-ul header-nav"> 
+                    <li class="box_status-inline" ng-hide="isLogin">
+                        <a href="http://">Log in</a>
                     </li>
-                    <li class="menu_child-li"><a ng-href="#/goi-hop-tac">Gói hợp tác</a></li>
-                    <li class="menu_child-li"><a ng-href="#/quy-trinh-hop-tac">Quy trình hợp tác</a></li>
-                    <li class="menu_child-li"><a ng-href="#/dang-ky-dai-hop-tac">Đăng ký đại hợp tác</a></li>
-                    <li class="menu_child-li"><a ng-href="#/mot-so-hinh-anh">Một số hình ảnh</a></li>
-                </ul>
-            </li>
-            <li ng-class="{ 'active': isActive('/tin-tuc') }"><a ng-href="#/tin-tuc">Tin tức</a></li>
-            <li ng-class="{ 'active': isActive('/lien-he') }"><a ng-href="#/lien-he">Liên hệ</a></li>
-        </ul>
-    </div>
-    <div class="header_language">
-        <a href="#/login" class="noneHref">
+                    <li>
+                        <a href="">
+                            <i class="bi bi-suit-heart"></i></li>
+                        </a>
+                    <li ng-show="isLogin">
+                        <a href="">
+                            <i class="bi bi-bell-fill" >
+                                <span class="box_dec">1</span>
 
-        <div class="language_btn">
-            <span>Sign in</span>
+                            </i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            <i class="bi bi-cart4">
+                                <span class="box_dec">1</span>
+                            </i>
+
+                        </a>
+                    </li>
+
+                    <li class="box_status-inline" ng-show="isLogin">
+                        <button ng-click="showProfile = !showProfile" >
+                            <i class="bi bi-person-circle"></i>
+                            <i class="bi bi-caret-down-fill" style="font-size: 1.2rem;"></i>
+                        </button>
+
+                        <ul ng-click="$event.stopPropagation()" ng-show="showProfile" class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile show" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(-16px, 38.4px, 0px);" data-popper-placement="bottom-end">
+                            <li class="dropdown-header">
+                              <h6>Admin</h6>
+                              <span>Admin</span>
+                            </li>
+                            <li>
+                              <hr class="dropdown-divider">
+                            </li>
+                
+                            <li>
+                              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-person"></i>
+                                <span>My Profile</span>
+                              </a>
+                            </li>
+                            <li>
+                              <hr class="dropdown-divider">
+                            </li>
+                
+                            <li>
+                              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-gear"></i>
+                                <span>Account Settings</span>
+                              </a>
+                            </li>
+                            <li>
+                              <hr class="dropdown-divider">
+                            </li>
+                
+                            <li>
+                              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                                <i class="bi bi-question-circle"></i>
+                                <span>Need Help?</span>
+                              </a>
+                            </li>
+                            <li>
+                              <hr class="dropdown-divider">
+                            </li>
+                
+                            <li>
+                              <a class="dropdown-item d-flex align-items-center" href="#">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                              </a>
+                            </li>
+                
+                          </ul>
+                    </li>
+                </ul>
+            </div>
+        
         </div>
-         </a>
+
+        <div class="header_menu">
+            <ul class="menu">
+                <li ng-class="{ 'active': isActive('/') }"><a ng-href="#/">Trang chủ</a></li>
+                <li ng-class="{ 'active': isActive('/ve-chung-toi') }"><a ng-href="#/ve-chung-toi">Về Chúng tôi</a></li>    
+                <li class="menu_child" ng-class="{ 'active': isActive('/san-pham-hot') || isActive('/gao-nuong') || isActive('/com-ngon') || isActive('/dac-san')   }">
+                    <a ng-href="#/san-pham-hot">Sản phẩm</a>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <ul class="menu_child-ul">
+                        <li class="menu_child-li" ><a ng-href="#/san-pham-hot">Sản phẩm hot</a></li>
+                        <li class="menu_child-li" ><a ng-href="#/gao-nuong">Gạo nương</a></li>
+                        <li class="menu_child-li" ><a ng-href="#/com-ngon">Cơm ngon</a</li>
+                        <li class="menu_child-li" ><a ng-href="#/dac-san">Đặc sản</a></li>
+                    </ul>
+                </li>
+                <li class="menu_child"  ng-class="{ 'active': isActive('/vi-sao-chon-chung-toi') || isActive('/chinh-sach-phan-phoi') || isActive('/he-thong-cua-hang')    }" ><a ng-href="#/dang-ky-dai-ly" >Hệ thống phân phối</a>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <ul class="menu_child-ul">
+                        <li class="menu_child-li" ><a ng-href="#/vi-sao-chon-chung-toi">Vì sao chon chúng tôi</a></li>
+                        <li class="menu_child-li" ><a ng-href="#/chinh-sach-phan-phoi">Chính sách phân phối</a></li>
+                        <li class="menu_child-li" ><a ng-href="#/he-thong-cua-hang">Hệ thống phân phối</a</li>
+                        <li class="menu_child-li" ><a ng-href="#/dang-ky-dai-ly">Đăng ký đại lý</a></li>
+                    </ul>
+                </li>
+                <li class="menu_child "  ng-class="{ 'active': isActive('/loi-the-mo-hinh') || isActive('/goi-hop-tac') || isActive('/quy-trinh-hop-tac') || isActive('/dang-ky-dai-hop-tac')  || isActive('/dang-ky-dai-hop-tac') }"><a ng-href="#/mot-so-hinh-anh">Cơm Ngon</a>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    <ul class="menu_child-ul" style="width: 120%;">
+                        <li class="menu_child-li" ><a ng-href="#/loi-the-mo-hinh">Lợi thế mô hình</a>
+                        </li>
+                        <li class="menu_child-li"><a ng-href="#/goi-hop-tac">Gói hợp tác</a></li>
+                        <li class="menu_child-li"><a ng-href="#/quy-trinh-hop-tac">Quy trình hợp tác</a></li>
+                        <li class="menu_child-li"><a ng-href="#/dang-ky-dai-hop-tac">Đăng ký đại hợp tác</a></li>
+                        <li class="menu_child-li"><a ng-href="#/mot-so-hinh-anh">Một số hình ảnh</a></li>
+                    </ul>
+                </li>
+                <li ng-class="{ 'active': isActive('/tin-tuc') }"><a ng-href="#/tin-tuc">Tin tức</a></li>
+                <li ng-class="{ 'active': isActive('/lien-he') }"><a ng-href="#/lien-he">Liên hệ</a></li>
+            </ul>
+        </div>   
     </div>
-    <div class="container_menu">
-        <div class="menu_mobile">
-            <label for="menu_mobile">
-                <div class="menu_mobile-btn">
-                    <div class="mobile_btn-icon">
-                        <i class="fa-solid fa-list"></i>
-                    </div>
-                    <div>
-                        <span>Menu</span>
-                    </div>
+</div>
+<input type="checkbox" class="menu_mobile-input" id="menu_mobile">
+<div class="menu_left-child">
+    <label for="menu_mobile">
+        <div class="gray">
+        </div>
+    </label>
+    <aside id="sidebar" class="sidebar nav_menu-mobile">
+        
+        <div class="">
+            <label for="menu_mobile" class="close_sideber"> 
+                <div class="close_icon">
+                    <i class="bi bi-x-lg"></i>
                 </div>
             </label>
-            <input type="checkbox" class="menu_mobile-input" id="menu_mobile">
-            <nav class="nav_menu-mobile">
-
-                <div class="menu_mobile-close">
-                    <label for="menu_mobile" class="menu_mobile-closelaber">
-                    <i class="fa-solid fa-xmark"></i>
-                    </label>
-                </div>
-                <ul class="menu_mobile-list">
-                    <li ng-class="{ 'ativice_mobile': isActive('/') }"><a ng-href="#/" class="menu_mobile-link">Trang chủ</a></li>
-                    <li ng-class="{ 'ativice_mobile': isActive('/ve-chung-toi') }"><a ng-href="#/ve-chung-toi" class="menu_mobile-link">Về chúng tôi</a></li>
-                    <li class="menu_mobile-child"  ng-class="{ 'ativice_mobile': isActive('/san-pham-hot') || isActive('/gao-nuong') || isActive('/com-ngon') || isActive('/dac-san')   }"  ng-click="showChildMenusp = !showChildMenusp" ><a class="menu_mobile-link">Sản phẩm</a>
-                        <ul class="menu_child-list" ng-show="showChildMenusp">
-                            <li><a ng-href="#/san-pham-hot">Sản phẩm hot</a></li>
-                            <li><a ng-href="#/gao-nuong">Gạo nương</a></li>
-                            <li><a ng-href="#/com-ngon">Cơm ngon</a></li>
-                            <li><a ng-href="#/dac-san">Đặc sản</a></li>
-                        </ul>
-                    </li>
-                    <li  class="menu_mobile-child" ng-click="showChildMenuhtct = !showChildMenuhtct" ng-class="{ 'ativice_mobile': isActive('/vi-sao-chon-chung-toi') || isActive('/chinh-sach-phan-phoi') || isActive('/he-thong-cua-hang') || isActive('/dac-san')   }"><a  class="menu_mobile-link">Hệ thống cửa hàng</a>
-                        <ul class="menu_child-list"ng-show="showChildMenuhtct">
-                            <li ><a ng-href="#/vi-sao-chon-chung-toi">Vì sao chon chúng tôi</a></li>
-                            <li ><a ng-href="#/chinh-sach-phan-phoi">Chính sách phân phối</a></li>
-                            <li ><a ng-href="#/he-thong-cua-hang">Hệ thống cửa hàng</a></li>
-                            <li ><a ng-href="#/dang-ky-dai-ly">Đăng ký đại lý</a></li>
-                        </ul>
-                    </li>
-                    <li  class="menu_mobile-child" ng-click="showChildMenucn = !showChildMenucn" ng-class="{ 'ativice_mobile': isActive('/loi-the-mo-hinh') || isActive('/goi-hop-tac') || isActive('/quy-trinh-hop-tac') || isActive('/dang-ky-dai-hop-tac')  || isActive('/dang-ky-dai-hop-tac') }"><a class="menu_mobile-link">Cơm ngon</a>
-                        <ul class="menu_child-list" ng-show="showChildMenucn">
-                            <li><a ng-href="#/goi-hop-tac">Gói hợp tác</a></li>
-                            <li><a ng-href="#/quy-trinh-hop-tac">Quy trình hợp tác</a></li>
-                            <li><a ng-href="#/dang-ky-dai-hop-tac">Đăng ký đại hợp tác</a></li>
-                            <li><a ng-href="#/mot-so-hinh-anh">Một số hình ảnh</a></li>
-                        </ul>
-                    </li>
-                    <li ng-class="{ 'ativice_mobile': isActive('/tin-tuc') }"><a ng-href="#/tin-tuc" class="menu_mobile-link">Tin tức</a></li>
-                    <li ng-class="{ 'ativice_mobile': isActive('/lien-he') }"><a ng-href="#/lien-he" class="menu_mobile-link">Liên hệ</a></li>
-                    <li ng-class="{ 'ativice_mobile': isActive('/login') }"><a ng-href="#/login" class="menu_mobile-link">Đăng Nhập</a></li>
-                    <li  class="menu_mobile-child" ng-click="showChildMenunn = !showChildMenunn"><a class="menu_mobile-link">Ngôn Ngữ</a>
-                        <ul class="menu_child-list" ng-show="showChildMenunn">
-                            <li><a ng-href="#">Việt Nam</a></li>
-                            <li><a ng-href="#">Nhật Bản</a></li>
-                            <li><a ng-href="#">Hoa Kỳ</a></li>
-                            <li><a ng-href="#">Hàn Quốc</a></li>
-                        </ul>
-                    </li>
+        </div>
+        <ul class="menu_mobile-list">
+            <li ng-class="{ 'ativice_mobile': isActive('/') }"><a ng-href="#/" class="menu_mobile-link">Trang chủ</a></li>
+            <li ng-class="{ 'ativice_mobile': isActive('/ve-chung-toi') }"><a ng-href="#/ve-chung-toi" class="menu_mobile-link">Về Chúng tôi</a></li>
+            <li class="menu_mobile-child"  ng-class="{ 'ativice_mobile': isActive('/san-pham-hot') || isActive('/gao-nuong') || isActive('/com-ngon') || isActive('/dac-san')   }"  ng-click="showChildMenusp = !showChildMenusp" ><a class="menu_mobile-link">Sản phẩm</a>
+                <ul class="menu_child-list" ng-show="showChildMenusp">
+                    <li><a ng-href="#/san-pham-hot">Sản phẩm hot</a></li>
+                    <li><a ng-href="#/gao-nuong">Gạo nương</a></li>
+                    <li><a ng-href="#/com-ngon">Cơm ngon</a></li>
+                    <li><a ng-href="#/dac-san">Đặc sản</a></li>
                 </ul>
-            </nav>
-        </div>
-
-
-    </div>
-</header>
-<!-- <nav>
-    <div class="box_favourite">
-        <div>
-            <i class="fa-solid fa-user shadow"></i>
-        </div>
-        <div>
-            <i class="fa-solid fa-heart heart shadow"></i>
-        </div>
-        <div>
-            <i class="fa-solid fa-cart-shopping shadow"></i>
-        </div>
-    </div>
-</nav> -->
+            </li>
+            <li  class="menu_mobile-child" ng-click="showChildMenuhtct = !showChildMenuhtct" ng-class="{ 'ativice_mobile': isActive('/vi-sao-chon-chung-toi') || isActive('/chinh-sach-phan-phoi') || isActive('/he-thong-cua-hang') || isActive('/dac-san')   }"><a  class="menu_mobile-link">Hệ thống phân phối</a>
+                <ul class="menu_child-list"ng-show="showChildMenuhtct">
+                    <li ><a ng-href="#/vi-sao-chon-chung-toi">Vì sao chon chúng tôi</a></li>
+                    <li ><a ng-href="#/chinh-sach-phan-phoi">Chính sách phân phối</a></li>
+                    <li ><a ng-href="#/he-thong-cua-hang">Hệ thống phân phối</a></li>
+                    <li ><a ng-href="#/dang-ky-dai-ly">Đăng ký đại lý</a></li>
+                </ul>
+            </li>
+            <li  class="menu_mobile-child" ng-click="showChildMenucn = !showChildMenucn" ng-class="{ 'ativice_mobile': isActive('/loi-the-mo-hinh') || isActive('/goi-hop-tac') || isActive('/quy-trinh-hop-tac') || isActive('/dang-ky-dai-hop-tac')  || isActive('/dang-ky-dai-hop-tac') }"><a class="menu_mobile-link">Cơm ngon</a>
+                <ul class="menu_child-list" ng-show="showChildMenucn">
+                    <li><a ng-href="#/goi-hop-tac">Gói hợp tác</a></li>
+                    <li><a ng-href="#/quy-trinh-hop-tac">Quy trình hợp tác</a></li>
+                    <li><a ng-href="#/dang-ky-dai-hop-tac">Đăng ký đại hợp tác</a></li>
+                    <li><a ng-href="#/mot-so-hinh-anh">Một số hình ảnh</a></li>
+                </ul>
+            </li>
+            <li ng-class="{ 'ativice_mobile': isActive('/tin-tuc') }"><a ng-href="#/tin-tuc" class="menu_mobile-link">Tin tức</a></li>
+            <li ng-class="{ 'ativice_mobile': isActive('/lien-he') }"><a ng-href="#/lien-he" class="menu_mobile-link">Liên hệ</a></li>
+            <li ng-class="{ 'ativice_mobile': isActive('/login') }"><a ng-href="#/login" class="menu_mobile-link">Đăng Nhập</a></li>
+            <li  class="menu_mobile-child nav-item" ng-click="showChildMenunn = !showChildMenunn"><a class="menu_mobile-link">Ngôn Ngữ</a>
+                <ul class="menu_child-list" ng-show="showChildMenunn">
+                    <li><a ng-href="#">Việt Nam</a></li>
+                    <li><a ng-href="#">Nhật Bản</a></li>
+                    <li><a ng-href="#">Hoa Kỳ</a></li>
+                    <li><a ng-href="#">Hàn Quốc</a></li>
+                </ul>
+            </li>
+        </ul>
+    
+      </aside>
+</div>
 </div>
 
-<script src="js/main.js"></script>

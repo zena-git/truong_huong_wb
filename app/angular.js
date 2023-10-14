@@ -1,6 +1,7 @@
 var app = angular.module('myApp', ['ngRoute']);
 
 app.controller('MenuController', function($scope, $location) {
+    $scope.isLogin = true;
     $scope.isActive = function(path) {
         return $location.path() === path;
     };
@@ -10,7 +11,9 @@ app.controller('MenuController', function($scope, $location) {
     $scope.toggleMenu = function () {
         $scope.isMenuVisible = !$scope.isMenuVisible;
     };
-
+    $scope.stopPropagation = function(event) {
+        event.stopPropagation();
+    };
 });
 
 

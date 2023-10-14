@@ -132,6 +132,7 @@
         font-size: 2rem;
         padding-left: 4px
     }
+
     .shadow select,
     .shadow input[type='text'] {
         
@@ -280,8 +281,29 @@
 .content_list-btn{
     display: none;
 }
+.form_search{
+    display: none;
+}
+.form_search{
+    padding: 2px 4px!important;
+}
+.header_left{
+    display: none;
+}
+.dropdown-menu{
+    --bs-dropdown-link-active-bg: #e7e7e7b1;
+}
+.box_header-menu{
+    display: block;
+}
+.nav{
+    margin-bottom: 0;
 }
 
+.box_status-inline{
+    padding: 4px 8px !important;
+}
+}
 @media only screen and (min-width: 767px) and (max-width: 1023px) {
 
     html,
@@ -317,6 +339,7 @@
     .proshow_img-hot img{
         width: 50px;
     }
+    
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1124px) {
