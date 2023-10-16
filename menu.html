@@ -30,8 +30,23 @@
                 </div> 
                 </form>
             </div>
+            <div class="form_search-mobile" ng-show="showSearchMbl">
+                <form>
+                <div class="nav_input-search">
+                    <input   type="text" placeholder="Tìm Kiếm Tại Đây">
+                    <button><i class="bi bi-search"></i></button>
+                </div> 
+                </form>
+            </div>
+
             <div class="box_status">
-                <ul class="box_status-ul header-nav"> 
+                <ul class="box_status-ul header-nav">
+                    <li class="form_search-mobilebtn"  ng-click="showSearchMbl = !showSearchMbl">
+                        <button>
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </li>
+
                     <li class="box_status-inline" ng-hide="isLogin">
                         <a href="http://">Log in</a>
                     </li>
