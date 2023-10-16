@@ -1,64 +1,30 @@
 
 
-        <div class="containers box_bannerpro row" style="margin-top: 60px;">
+        <div ng-controller="tintucController" class="containers box_bannerpro row" style="margin-top: 60px;">
             <div class="box_newtime col-lg-9 col-md-12 col-sm-12">
-                <div class="box_newtime-b1 row">
-                    <div class="newtime_b1-img col-lg-8 col-md-12 col-sm-12">
-                        <img class="shadow" src="image/dbqgxtnd202310030800-1696299961575792853672.gif" alt="">
-                    </div>
-                    <div class="newtime_b1-dec col-lg-4 col-md-12 col-sm-12">
-                        <h1 class="limited-text1">{{lstText.news.box1.text1}}</h1>
-                        <p class="limited-text2">
-                            {{lstText.news.box1.text2}}
-                        </p>
-                    </div>
-                </div>
+               <div class="box_newtime-tile">
+                    <h2>Tin Tức Mới</h2>
+               </div>
+               <div class="box_newtime-content">
 
-                <div class="box_newtime-b2">
-                    <div >
-                        <div class="box_proshow-review row" style="margin-bottom: 0;">
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="proshow_review-1 noshadow">
-                                    <div class="proshow_review-img">
-                                        <img src="image/3843122576712629149404612661747032422009914n-16960669144822054837655-1-0-557-889-crop-16960669527311055955141.png" alt="" class="shadow">
-                                    </div>
-                                    <div class="proshow_review-dec">
-                                        <div class="review_dec-tile">
-                                            <h1 class="limited-text1">
-                                                {{lstText.news.box2.text1}}
-                                                
-                                            </h1>
-                                        </div>
-                                        <div class="review_dec-sub limited-text2" >
-                                            {{lstText.news.box2.text2}}   
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="proshow_review-1 noshadow">
-                                    <div class="proshow_review-img">
-                                        <img src="image/79-20230621050259-uzu08.jpg" alt="" class="shadow">
-                                    </div>
-                                    <div class="proshow_review-dec">
-                                        <div class="review_dec-tile">
-                                            <h3 class="limited-text1">
-                                            {{lstText.news.box3.text1}}
-                                            </h3>
-                                        </div>
-                                        <div class="review_dec-sub limited-text2">
-                                            {{lstText.news.box3.text2}}
-                                           
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
+                    <div class="box_new " ng-repeat="tt in lstTinTuc">
+                        <a ng-href="#/tin-tuc/{{tt.url}}" class="row">
+                        <div class="box_new-img col-lg-4 col-md-4 col-sm-12">
+                            <img class="shadow" src="../assets/image/news/e3c2f652d17638a80ecbf15977a253a3.jpg" alt="">
                         </div>
+                        <div class="box_new-text col-lg-8 col-md-8 col-sm-12">
+                            <div class="box_new-tile">
+                                <h3>{{tt.tile | limitTo:100}}</h3>
+                            </div>
 
+                            <div class="box_new-dec">
+                                <p>{{tt.dec | limitTo:300}} ...</p>
+                            </div>
+                        </div>
+                        </a>
                     </div>
-                </div>
+               </div>
             </div>
             <div class="bannerpro_baner col-lg-3 col-md-12 col-sm-12">
                 <div class="baner_img">
@@ -77,7 +43,3 @@
             </div>
 
         </div>
-        <script src="js/main.js"></script>
-</body>
-
-</html>

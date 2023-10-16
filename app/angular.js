@@ -95,6 +95,10 @@ app.config(function ($routeProvider,$locationProvider) {
             templateUrl: './page/tin-tuc.html',
             
         })
+        .when('/tin-tuc/:url', {
+            templateUrl: './page/tin-tuc-new.html',
+            
+        })
 
         .when('/vi-sao-chon-chung-toi', {
             templateUrl: './page/vi-sao-chon-chung-toi.html',

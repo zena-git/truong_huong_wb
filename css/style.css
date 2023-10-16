@@ -1961,41 +1961,81 @@ form div {
 
 /* TIn tức */
 
-.box_newtime {}
+.box_newtime {
 
-.box_newtime-b1 {
-    margin-bottom: 20px;
 }
 
-.newtime_b1-img {
-    /* width: 100%; */
+
+.box_newtime-tile{
+
+}
+.box_newtime-content{
+
 }
 
-.newtime_b1-img img {
+.box_new{
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.box_new>a{
+    text-decoration: none;
+    color: black;
+}
+.box_new-img{
+
+}
+
+.box_new-img>img{
     width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.box_new-text{
+
+}
+.box_new-tile{
+
 }
 
-.newtime_b1-dec {
-    display: flex;
-    flex-direction: column;
-    align-content: space-between;
+.box_new-tile>h3{
+    margin-top: 10px;
+    font-size: 2.4rem;
 }
 
-.newtime_b1-dec h1 {
-    font-size: 3rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 120%;
+.box_new-tile>h3:hover{
+    color: #22682b;
+}
+.box_new-dec{
+
+}
+
+.box_new-dec>p{
+    font-size: 1.8rem;
+    color: #353535;
+}
+
+.box_newdetail-tile>h2{
+    font-size: 2.8rem;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
-
-.newtime_b1-dec p {
-    font-size: 1.6rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
+.box_newdetail-img{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.box_newdetail-img>img{
+    width: 100%;
+    height: auto;
+    max-height: 50rem;
 }
 
+.box_newdetail-dec>p{
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/* menu-mobile */
 .menu_mobile {
     font-weight: 700;
     font-size: 2rem;
@@ -2409,14 +2449,7 @@ box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
     display: none;
 }
 
-.limited-text1 {
-    max-height: 100px; /* Giới hạn chiều cao của vùng văn bản */
-    overflow: hidden; /* Ẩn phần dư thừa */
-}
-.limited-text2 {
-    max-height: 200px; /* Giới hạn chiều cao của vùng văn bản */
-    overflow: hidden; /* Ẩn phần dư thừa */
-}
+
 @keyframes fakeIn {
     from {
 
