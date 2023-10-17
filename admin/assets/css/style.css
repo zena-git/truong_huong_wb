@@ -1231,3 +1231,20 @@ h6 {
   font-size: 13px;
   color: #012970;
 }
+
+.card-body i{
+  font-size: 8rem;
+}
+.card-body button{
+  padding: 20px;
+}
+.modal-body input,
+.modal-title{
+  font-size: 2rem;
+}
+
+.modal-footer button{
+  font-size: 2rem;
+}
+
+

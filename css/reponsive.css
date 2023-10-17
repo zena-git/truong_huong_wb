@@ -310,6 +310,9 @@
 .form_search-mobile{
     display: block;
 }
+.box_status .box_status-ul>li{
+    font-size: 2.6rem;
+}
 }
 @media only screen and (min-width: 767px) and (max-width: 1023px) {
 

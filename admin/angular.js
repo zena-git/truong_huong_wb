@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngRoute']);
+var app = angular.module('myApp', ['ngRoute'],);
 
 app.config(function ($routeProvider,$locationProvider) {
     $locationProvider.hashPrefix('');
@@ -82,7 +82,10 @@ app.config(function ($routeProvider,$locationProvider) {
             templateUrl: '../admin/page/tin-tuc.html',
             
         })
-
+        .when('/page/tin-tuc/:url', {
+            templateUrl: '../admin/page/tin-tuc-new.html',
+            
+        })
          .when('/page/vi-sao-chon-chung-toi', {
             templateUrl: '../admin/page/vi-sao-chon-chung-toi.html',
             

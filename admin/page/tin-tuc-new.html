@@ -1,0 +1,71 @@
+
+
+        <div ng-controller="tintucNewController" class="containers box_bannerpro row" style="margin-top: 60px;">
+
+            <div class="box_newtime col-lg-12 col-md-12 col-sm-12">
+               <div class="box_newtime-tile">
+                    <h2>Tin Tức Mới
+                    </h2>
+               </div>
+               <div class="box_newtime-detail">
+                    <div class="box_newdetail-tile">
+                        <h2>
+                            <input style="font-size: 2rem;" type="text" ng-model="tinTuc.tile" class="form-control">
+                        </h2>
+                    </div>
+                    <div class="box_newdetail-img" style="padding: 0;">
+                        <fieldset class="row mb-3" style="font-size: 2rem;">
+                            <legend class="col-form-label col-sm-2 pt-0">Kho Ảnh Mặc Định</legend>
+                            <div class="col-sm-10" style="display: flex;">
+                              <div class="form-check" style="margin-right: 2rem;">
+                                <input ng-model="defaultImg" class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="../../assets/image/news/c730a76ad3921d3c947f43a77f8c7499.jpg">
+                                <label class="form-check-label" for="gridRadios1">
+                                  <img style="width: 100px;" src="../../assets/image/news/c730a76ad3921d3c947f43a77f8c7499.jpg" alt="">
+                                </label>
+                              </div>
+                              <div class="form-check" style="margin-right: 2rem;">
+                                <input  ng-model="defaultImg" class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="../../assets/image/news/dbqgxtnd202310030800-1696299961575792853672.gif" >
+                                <label class="form-check-label" for="gridRadios2">
+                                  <img style="width: 100px;" src="../../assets/image/news/dbqgxtnd202310030800-1696299961575792853672.gif" alt="">
+                                </label>
+                              </div>
+                              <div class="form-check" style="margin-right: 2rem;">
+                                <input  ng-model="defaultImg" class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="../../assets/image/news/e3c2f652d17638a80ecbf15977a253a3.jpg">
+                                <label class="form-check-label" for="gridRadios3">
+                                  <img style="width: 100px;" src="../../assets/image/news/e3c2f652d17638a80ecbf15977a253a3.jpg" alt="">
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>      
+                          <div class="row mb-3" style="font-size: 2rem; margin: 20px 0;">
+                            <label for="inputText" class="col-sm-2 col-form-label">Url</label>
+                            <div class="col-sm-10">
+                              <input ng-model="inputUrlImg" style="font-size: 2rem;" type="text" class="form-control" placeholder="https://i.imgur.com/pqC9K0p.jpg" ng-model="tinTuc.url">
+                            </div>
+                          </div>             
+                         </div>
+
+                    <div class="box_newdetail-dec" style="height: auto">
+                        <textarea style="font-size: 1.8rem; height: 500px" type="text" ng-model="tinTuc.dec" class="form-control"></textarea>
+                    </div>
+
+                    <div class="row mb-3">
+                        
+                        <div class="col-sm-10">
+                          <button ng-click="saveNews()" style="font-size: 2rem; margin-top: 20px;" type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                      </div>
+               </div>
+            </div>
+        </div>
+
+        <div class="box_banners">
+            <div class="banner_overray">
+                <img src="../image/Image.png" alt="">
+                <div class="banner_overray-dec">
+                    <h2>Grants Area</h2>
+                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                </div>
+            </div>
+
+        </div>

@@ -1,40 +1,45 @@
 
 
-        <div class="containers box_bannerpro row" style="margin-top: 60px;">
+        <div ng-controller="tintucNewController" class="containers box_bannerpro row" style="margin-top: 60px;">
+
             <div class="box_newtime col-lg-9 col-md-12 col-sm-12">
                <div class="box_newtime-tile">
-                    <h2>Tin Tức Mới</h2>
+                    <h2>Tin Tức Mới
+                    </h2>
                </div>
                <div class="box_newtime-detail">
                     <div class="box_newdetail-tile">
-                        <h2>5 lý do các Mẹ nên chọn Gạo Nương Điện Biên – Giao sạch - Gạo Đặc Sản – của Công ty Gạo Trường Hương chúng em</h2>
+                        <h2>{{tinTuc.tile}}</h2>
                     </div>
                     <div class="box_newdetail-img">
                         <img class="shadow" src="../assets/image/news/dbqgxtnd202310030800-1696299961575792853672.gif" alt="">
                     </div>
 
                     <div class="box_newdetail-dec">
-                        <p>1. Viện Nông nghiệp cung cấp cho Công ty những giống lúa ngon nức tiếng như Hương Việt, Séng cù, Nếp nương,… thuần chủng, không lai tạo hay biến đổi gen và được canh tác trên cánh đồng Mường Thanh rộng lớn nhất Tây Bắc\n2. Đảm bảo quy trình sản xuất được kiểm soát nghiêm ngặt, không dư lượng thuốc trừ sâu, phát triển canh tác cận hữu cơ, hữu cơ 100%,...\n3. Sản phẩm được đăng ký khai báo mã vạch, truy xuất nguồn gốc và được Trường Hương bảo hộ thương hiệu → Người tiêu dùng yên tâm khi kiểm tra nguồn gốc xuất xứ.\n4. Sản phẩm được đóng trong bao 5kg, hút chân không, dễ dàng trong việc sử dụng và bảo quản\n5. 100% không có chất bảo quản.\nVà đặc biệt: Hạt gạo mềm dẻo, thơm ngon, đậm đà mà không nơi nào có được.\nVận chuyển: Miễn phí nội thành Hà Nội.</p>
+                        <p>{{tinTuc.dec}}</p>
                     </div>
                </div>
             </div>
             <div class="bannerpro_baner col-lg-3 col-md-12 col-sm-12">
-                <div class="box_new ">
-                    <a href="" class="">
-                    <div class="box_new-img col-lg-12 col-md-12 col-sm-12">
-                        <img class="shadow" src="../assets/image/news/e3c2f652d17638a80ecbf15977a253a3.jpg" alt="">
-                    </div>
-                    <div class="box_new-text col-lg-12 col-md-12 col-sm-12">
-                        <div class="box_new-tile">
-                            <h3>5 lý do các Mẹ nên chọn Gạo Nương Điện Biên – Giao sạch - Gạo Đặc Sản</h3>
+                <div class="">
+                    <div class="box_new " ng-repeat="new in filterTinTuc| limitTo: 5">
+                        <a ng-href="#/tin-tuc/{{new.url}}" class="">
+                        <div class="box_new-img col-lg-12 col-md-12 col-sm-12">
+                            <img class="shadow" src="../assets/image/news/e3c2f652d17638a80ecbf15977a253a3.jpg" alt="">
                         </div>
-
-                        <div class="box_new-dec">
-                            <p>1. Viện Nông nghiệp cung cấp cho Công ty những giống lúa ngon nức tiếng như Hương Việt, Séng cù, Nếp nương,… thuần chủng, không lai tạo hay biến đổi gen và được canh tác trên cánh đồng Mường Thanh rộng lớn nhất Tây Bắc\n2. Đảm bảo quy trình sản xuất được kiểm soát nghiêm ngặt, không dư lượng thuốc trừ sâu, phát triển canh tác cận hữu cơ, hữu cơ 100%,...\n3. Sản phẩm được đăng ký khai báo mã vạch, truy xuất nguồn gốc và được Trường Hương bảo hộ thương hiệu → Người tiêu dùng yên tâm khi kiểm tra nguồn gốc xuất xứ.\n4. Sản phẩm được đóng trong bao 5kg, hút chân không, dễ dàng trong việc sử dụng và bảo quản\n5. 100% không có chất bảo quản.\nVà đặc biệt: Hạt gạo mềm dẻo, thơm ngon, đậm đà mà không nơi nào có được.\nVận chuyển: Miễn phí nội thành Hà Nội.</p>
+                        <div class="box_new-text col-lg-12 col-md-12 col-sm-12">
+                            <div class="box_new-tile">
+                                <h3>{{new.tile | limitTo: 60 }} {{ new.text.length > 60 ? '...' : '' }}</h3>
+                            </div>
+    
+                            <div class="box_new-dec">
+                                <p>{{new.dec | limitTo: 100 }} {{ new.text.length > 100 ? '...' : '' }}</p>
+                            </div>
                         </div>
+                        </a>
                     </div>
-                    </a>
                 </div>
+                
             </div>
         </div>
 

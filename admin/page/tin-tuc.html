@@ -1,88 +1,80 @@
 
 
-        <div class="containers box_bannerpro row" style="margin-top: 60px;">
-            <div class="box_newtime col-lg-9 col-md-12 col-sm-12">
-                <div class="box_newtime-b1 row">
-                    <div class="newtime_b1-img col-lg-8 col-md-12 col-sm-12">
-                        <img class="shadow" src="../../image/dbqgxtnd202310030800-1696299961575792853672.gif" alt="">
-                    </div>
-                    <div class="newtime_b1-dec col-lg-4 col-md-12 col-sm-12">
-                        <h1>
-                            <input  type="text" ng-model="lstText.news.box1.text1" class="transparent-input">
-                        </h1>
-                        <p>
-                            <textarea  style="width: 100% !important; height: 400%;" type="text" ng-model="lstText.news.box1.text2" class="transparent-input"></textarea>
-    
-                        </p>
+<div ng-controller="tintucController" class="containers box_bannerpro row" style="margin-top: 60px;">
+    <div class="box_newtime col-lg-12 col-md-12 col-sm-12">
+       <div class="box_newtime-tile">
+            <h2>Tin Tức Mới</h2>
+       </div>
+       <div class="box_newtime-content">
 
+
+            <div class="box_new " ng-repeat="tt in lstTinTuc">
+                <a ng-href="#/page/tin-tuc/{{tt.url}}" class="row">
+                <div class="box_new-img col-lg-4 col-md-4 col-sm-12">
+                    <img class="shadow" ng-src="{{tt.avatar}}" alt="">
+                </div>
+                <div class="box_new-text col-lg-8 col-md-8 col-sm-12">
+                    <div class="box_new-tile">
+                        <h3>{{tt.tile | limitTo:100}}</h3>
+                    </div>
+
+                    <div class="box_new-dec">
+                        <p>{{tt.dec | limitTo:300}} ...</p>
                     </div>
                 </div>
-
-                <div class="box_newtime-b2">
-                    <div >
-                        <div class="box_proshow-review row" style="margin-bottom: 0;">
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="proshow_review-1 noshadow">
-                                    <div class="proshow_review-img">
-                                        <img src="../../image/3843122576712629149404612661747032422009914n-16960669144822054837655-1-0-557-889-crop-16960669527311055955141.png" alt="" class="shadow">
-                                    </div>
-                                    <div class="proshow_review-dec">
-                                        <div class="review_dec-tile">
-                                            <h3>
-                                             <input  type="text" ng-model="lstText.news.box2.text1" class="transparent-input">
-                                                
-                                            </h3>
-                                        </div>
-                                        <div class="review_dec-sub">
-                                            
-                                            <textarea  style="width: 100% !important;" type="text" ng-model="lstText.news.box2.text2" class="transparent-input"></textarea>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12">
-                                <div class="proshow_review-1 noshadow">
-                                    <div class="proshow_review-img">
-                                        <img src="../../image/79-20230621050259-uzu08.jpg" alt="" class="shadow">
-                                    </div>
-                                    <div class="proshow_review-dec">
-                                        <div class="review_dec-tile">
-                                            <h3>
-                                             <input  type="text" ng-model="lstText.news.box3.text1" class="transparent-input">
-                                                
-                                            </h3>
-                                        </div>
-                                        <div class="review_dec-sub">
-                                            <textarea  style="width: 100% !important;" type="text" ng-model="lstText.news.box3.text2" class="transparent-input"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
+                </a>
             </div>
-            <div class="bannerpro_baner col-lg-3 col-md-12 col-sm-12">
-                <div class="baner_img">
-                    <img src="../../image/c730a76ad3921d3c947f43a77f8c7499.jpg" alt="">
-                </div>
+<!-- modal btn -->
+
+            <div class="box_new">
+                <div class="cards">
+                    <div class="card-body">
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verticalycentered">
+                       
+                            <i class="bi bi-plus-circle"></i>
+                   
+                      </button>
+          
+                    </div>
+                  </div>
             </div>
+         
+<!-- end modal btn  -->
+            
+       </div>
+    </div>
+
+<!-- End Vertically centered Modal-->
+    <div class="modal fade" id="verticalycentered" tabindex="-1" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Nhập Đường Dẫn Cho Bài Viết Mới</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" placeholder="chao-ngay-moi" ng-model="urlNew">
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" ng-click="addNew()">Next</button>
+            </div>
+          </div>
         </div>
+      </div><!-- End Vertically centered Modal-->
 
-        <div class="box_banners">
-            <div class="banner_overray">
-                <img src="../../image/Image.png" alt="">
-                <div class="banner_overray-dec">
-                    <h2>Grants Area</h2>
-                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                </div>
-            </div>
 
+</div>
+
+<div class="box_banners">
+    <div class="banner_overray">
+        <img src="../image/Image.png" alt="">
+        <div class="banner_overray-dec">
+            <h2>Grants Area</h2>
+            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
         </div>
-        <script src="js/main.js"></script>
-</body>
+    </div>
 
-</html>
+</div>
