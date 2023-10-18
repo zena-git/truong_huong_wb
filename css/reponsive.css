@@ -118,7 +118,8 @@
         width: 100%;
     }
     textarea{
-        height: 100px;
+        height: auto;
+        
     }
     .map_dec {
         padding-right: 0;
