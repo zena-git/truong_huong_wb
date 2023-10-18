@@ -364,7 +364,9 @@ header {
     background-color: #39B54A;
     padding: 0;
     width: 100%;
+    left: 0;
     transform: translateY(20px);
+    animation: fakeIn 0.4s;
 
 
 }
@@ -2414,7 +2416,7 @@ box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
 }
 
 
-.sidebar {
+.sidebars {
     position: fixed;
     top:0px;
     left: 0;
@@ -2448,8 +2450,81 @@ box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
 .form_search-mobile{
     display: none;
 }
+/* detail */
 
+.detail_sp{
 
+}
+.box_detail{
+
+}
+.box_detail-img img{
+    width: 100%;
+}
+.box_detail-dec{
+
+}
+.box_detail-feed{
+
+}
+
+.detail_primary{
+
+}
+.detail_foren{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+}
+.detail_foren-sub{
+    width: 20%;
+    margin: 0 0.4rem;
+    border-radius: 10px;
+}
+.detail_foren .active{ 
+    border: 3px solid rgb(13, 255, 0);
+}
+.detail_foren img{
+    border-radius: 9px;
+    width: 100%;
+}
+.detail_dec-tile{
+
+}
+.detail_dec-propoty{
+
+}
+.detail_dec-item{
+
+}
+.detail_dec-pice{
+
+}
+.detail_dec-type{
+
+}
+.detail_dec-quantity{
+
+}
+.detail_dec-cart{
+
+}
+.detail_dec-share{
+
+}
+.card-body{
+    padding: 10px;
+    border-radius: 20px;
+}
+.carousel-indicators button{
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50%;
+}
+.menu_mobile-link:hover{
+    cursor: pointer;
+    color: #00b747;
+}
 @keyframes fakeIn {
     from {
 

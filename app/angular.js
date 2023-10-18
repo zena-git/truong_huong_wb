@@ -14,6 +14,8 @@ app.controller('MenuController', function($scope, $location) {
     $scope.stopPropagation = function(event) {
         event.stopPropagation();
     };
+
+    
 });
 
 
@@ -104,6 +106,12 @@ app.config(function ($routeProvider,$locationProvider) {
             templateUrl: './page/vi-sao-chon-chung-toi.html',
             
         })
+
+        .when('/san-pham', {
+            templateUrl: './page/san-pham-detail.html',
+            
+        })
+
         .otherwise({
             templateUrl: './page/home.html',
         });
