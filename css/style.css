@@ -6,6 +6,12 @@
 
 }
 
+:root{
+    --primary-color: #39b54a;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+}
 
 body,
 html {
@@ -230,7 +236,8 @@ header {
     background-color: transparent; 
 }
 .box_status-inline{
-    width: auto !important;
+    width: 100% !important;
+    max-width: 8rem;
     padding: 8px 14px !important;
     border-radius: 22px !important;
 }
@@ -2453,7 +2460,7 @@ box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
 /* detail */
 
 .detail_sp{
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 .box_detail{
 
@@ -2491,20 +2498,105 @@ box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
 .detail_dec-tile{
 
 }
-.detail_dec-propoty{
 
+.detail_dec-tile>h2{
+    font-size: 2.8rem;
+}
+
+.dec_evaluate{
+    display: flex;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    align-items: center;
+    margin-right: 10px;
+    border-right: 1px solid #ccc;
+    padding-right: 10px;
+}
+.dec_evaluate-tile{
+    align-items: center;
+    font-size: 1.7rem;
+    margin-right: 4px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--primary-color);
+
+}
+.detail_dec-evaluate{
+    display: flex;
+}
+
+.dec_sold{
+    font-size: 1.6rem;
+    color: #5e5e5e;
+    
+}
+.dec_sold>span{
+    color: var(--black-color);
+    border-bottom: 1px solid var(--black-color);
+
+}
+.detail_dec-propoty{
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+}
+.detail_dec-pice{
+    margin-left: 10em;
+    font-size: 1.8rem;
+    
+}
+.detail_dec-pice span{
+    font-size: 1.6rem;
+    font-weight: 600;
 }
 .detail_dec-item{
 
+}
+.detail_dec-item i{
+    color: var(--primary-color);
+    margin-right: 0.4rem;
 }
 .detail_dec-pice{
 
 }
 .detail_dec-type{
+    display: flex;
+    margin-top: 2rem;
+    align-items: center;
+}
+.dec_type-tile{
+    margin-right: 1rem;
+}
+.dec_type-rdo{
+    border: 1px solid #ffffff;
+    border-radius: 6px;
 
 }
-.detail_dec-quantity{
+.dec_type-rdo label {
+    cursor: pointer;
+    padding: 5px 10px;
+}
+.dec_type-rdo input[type="radio"] {
+    display: none;
+}
+.dec_type-rdo input[type="radio"]:checked + label {
+    border-radius: 6px;
+    background-color: var(--primary-color); /* Màu nền khi được chọn */
+    color: #fff; /* Màu chữ khi được chọn */
+}
 
+
+.quantity-tile{
+    margin-right: 1rem;
+}
+.box_quantity input[type="number"]{
+    width: 5rem;
+    align-items: center;
+}
+
+.detail_dec-quantity{
+    display: flex;
+    margin-top: 2rem
 }
 .detail_dec-cart{
 

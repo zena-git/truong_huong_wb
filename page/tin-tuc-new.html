@@ -12,7 +12,7 @@
                         <h2>{{tinTuc.tile}}</h2>
                     </div>
                     <div class="box_newdetail-img">
-                        <img class="shadow" src="../assets/image/news/dbqgxtnd202310030800-1696299961575792853672.gif" alt="">
+                        <img class="shadow" ng-src="{{tinTuc.avatar}}" alt="">
                     </div>
 
                     <div class="box_newdetail-dec">
@@ -25,7 +25,7 @@
                     <div class="box_new " ng-repeat="new in filterTinTuc| limitTo: 5">
                         <a ng-href="#/tin-tuc/{{new.url}}" class="">
                         <div class="box_new-img col-lg-12 col-md-12 col-sm-12">
-                            <img class="shadow" src="../assets/image/news/e3c2f652d17638a80ecbf15977a253a3.jpg" alt="">
+                            <img class="shadow" ng-src="{{new.avatar}}" alt="">
                         </div>
                         <div class="box_new-text col-lg-12 col-md-12 col-sm-12">
                             <div class="box_new-tile">

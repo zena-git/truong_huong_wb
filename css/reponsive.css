@@ -1,3 +1,4 @@
+/* mobile */
 @media only screen and (max-width: 767px) {
 
     html,
@@ -282,7 +283,10 @@
 .form_search{
     display: none;
 }
-
+.box_search{
+    justify-content: flex-end;
+    margin-right: 36px;
+}
 .form_search{
     padding: 2px 4px!important;
 }
@@ -314,10 +318,11 @@
 }
 .box_search{
     justify-content: flex-end;
-    margin-right: 36px;
+    
 }
 
 }
+/* tablet */
 @media only screen and (min-width: 767px) and (max-width: 1023px) {
 
     html,
@@ -389,7 +394,7 @@
     
 }
 
-
+/* desktop */
 @media only screen and (min-width: 1124px) and (max-width: 1223px) {
 
     html,
