@@ -1,41 +1,41 @@
-(
-    function () {
-        const menuMobileChildItems = document.querySelectorAll('.menu_mobile-child');
 
-        // Lặp qua từng phần tử và thêm sự kiện click
-        menuMobileChildItems.forEach(item => {
-            const childList = item.querySelector('.menu_child-list');
-
-            // Thêm sự kiện click vào phần tử cha
-            item.addEventListener('click', () => {
-                console.log(item);
-                // Toggle lớp 'active' trên phần tử con (menu_child-list)
-                childList.classList.toggle('actives');
-            });
-        });
-
+function quantityInput(e){
+    let input_quantity = document.querySelector('.input_quantity')
+    if (input_quantity.value == 1 && e == -1) {
+       return;
     }
-)();
+    let quantity = parseInt(e)
+    input_quantity.value = parseInt(input_quantity.value) + quantity;
+}
 
-
-function toggleFindProBox(element) {
-    var findProBox = element.nextElementSibling; // Lấy phần find_pro-box kế tiếp của phần tử được nhấp
-    if (findProBox.style.display === "block") {
-        findProBox.style.display = "none"; // Ẩn nếu đang hiển thị
-    } else {
-        findProBox.style.display = "block"; // Hiển thị nếu đang ẩn
+function copyToClipboard() {
+    var copyText = document.getElementById("copyText");
+    copyText.select();
+    try {
+        document.execCommand('copy');
+    } catch (err) {
+        alert("Không thể sao chép nội dung vào clipboard. Hãy thử sao chép bằng cách nhấn Ctrl+C hoặc Cmd+C.");
     }
 }
 
+(function(){
 
-document.addEventListener("DOMContentLoaded", function () {
-    const swiper = new Swiper(".swiper-container", {
-        slidesPerView: "auto",
-        spaceBetween: 10,
-        grabCursor: true, // Cho phép con trỏ chuột trở thành biểu tượng "kéo"
-        scrollbar: {
-            el: ".swiper-scrollbar", // Thêm thanh cuộn tùy chỉnh
-            hide: false, // Ẩn thanh cuộn mặc định của Swiper
-        },
-    });
-});
+})();
+
+function modalShare() {
+    let modal = document.querySelector('.modal_sh');
+    modal.classList.toggle("show");
+
+    let modals = document.querySelector('.modal_share-gay');
+    modals.classList.toggle("show");
+}
+
+
+
+
+
+
+
+
+
+

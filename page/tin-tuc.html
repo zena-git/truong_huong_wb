@@ -8,7 +8,7 @@
                <div class="box_newtime-content">
 
 
-                    <div class="box_new " ng-repeat="tt in lstTinTuc">
+                    <div class="box_new " ng-repeat="tt in lstTinTuc | orderBy:'-createdAt'">
                         <a ng-href="#/tin-tuc/{{tt.url}}" class="row">
                         <div class="box_new-img col-lg-4 col-md-4 col-sm-12">
                             <img class="shadow" ng-src="{{tt.avatar}}" alt="">

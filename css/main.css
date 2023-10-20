@@ -1,0 +1,214 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    
+}
+#page-loader {
+    background: #242830;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 99999;
+} 
+
+.loader-icon {
+    background: none repeat scroll 0 0 #242830;
+    border-bottom: 4px solid rgba(19, 19, 19, 0.1) !important;
+    border-left: 4px solid rgba(19, 19, 19, 0.1) !important;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -o-border-radius: 100px;
+    -ms-border-radius: 100px;
+    border-right: 4px solid rgba(19, 19, 19, 0.1) !important;
+    border-top: 4px solid;
+    height: 60px;
+    left: 50%;
+    margin: -20px 0 0 -20px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 60px;
+}
+
+.colored-border {
+    border-color: #2CC9B4;
+}
+
+.fa-spin {
+  -webkit-animation:fa-spin 1.2s infinite linear;
+  animation:fa-spin 1.2s infinite linear
+  }
+  @-webkit-keyframes fa-spin
+  {
+    0%
+    {
+      -webkit-transform:rotate(0deg);
+      transform:rotate(0deg)
+    }
+    100%
+    {
+      -webkit-transform:rotate(359deg);
+      transform:rotate(359deg)
+    }
+  } 
+
+  @keyframes fa-spin 
+  {
+    0%
+    {
+      -webkit-transform:rotate(0deg);
+      transform:rotate(0deg)
+    }
+    100%
+    {
+      -webkit-transform:rotate(359deg);
+      transform:rotate(359deg)
+    }
+  }
+
+
+#message{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+
+}
+.message{
+    display: flex;
+    align-items: center;
+    max-width: 450px;
+    min-width: 400px;
+    background-color: rgb(245, 242, 242);
+    border-left: 4px solid;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+    padding: 20px 0;
+    margin: auto;
+    border-radius: 2px;
+    animation: slideMessage ease 0.3s, hidemessage linear 1s 3s forwards;
+    transition: all linear 0.3s;
+}
+@keyframes slideMessage {
+    from {
+    transform: translateX(calc(100% + 30px));
+    opacity: 0;
+    }
+    to{
+    transform: translateX(0);
+    opacity: 1;
+    }
+
+}
+
+@keyframes hidemessage {
+    to{
+        opacity: 0;
+    }
+}
+
+.message + .message{
+    margin-top: 20px;
+}
+
+
+.message_icon{
+    font-size: 26px;
+}
+
+
+.message_body{
+    flex-grow: 1;
+}
+
+
+.message_tile{
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(26, 25, 25);
+}
+
+
+.message_msg{
+    font-size: 14px;
+    color: rgb(96, 96, 96);
+    margin-top: 2px;
+}
+
+
+.message_close{
+    font-size: 20px;
+}
+.message_icon,
+.message_close{
+    padding: 0 18px;
+    cursor: pointer;
+}
+.message-success{
+    border-color: #47d864;
+}
+.message-success .message_icon{
+    color: #47d864;
+}
+.message-error{
+    border-color: #ff0d04;
+
+}
+.message-error .message_icon{
+    color: #ff0d04;
+}
+.message-info{
+    border-color: #046dff;
+}
+.message-info .message_icon{
+    color: #046dff;
+}
+.message-warning{
+    border-color: #f3de00;
+}
+.message-warning .message_icon{
+    color: #f3de00;
+}
+
+/* Btn */
+
+.button{
+    /* margin: auto; */
+ 
+}
+.btn{
+    
+    padding: 10px 30px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    cursor: pointer;
+}
+.btn + .btn{
+    margin-left: 10px;
+}
+.btn-success{
+    background-color: #47d864;
+}
+.btn-info{
+    background-color: #046dff;
+}
+.btn-warning{
+    background-color: #f3de00;
+}
+.btn-error{
+    background-color: #ff0d04;
+}

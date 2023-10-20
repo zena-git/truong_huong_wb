@@ -1,7 +1,7 @@
 var app = angular.module('myApp', ['ngRoute']);
 
 app.controller('MenuController', function($scope, $location) {
-    $scope.isLogin = true;
+    $scope.isLogin = false;
     $scope.isActive = function(path) {
         return $location.path() === path;
     };
@@ -92,7 +92,14 @@ app.config(function ($routeProvider,$locationProvider) {
             templateUrl: './page/san-pham-hot.html',
             controller: 'productController',
         })
-
+        .when('/san-pham', {
+            templateUrl: './page/san-pham-hot.html',
+            controller: 'productController',
+        })
+        .when('/san-pham/:urlSp', {
+            templateUrl: './page/san-pham-detail.html',
+            controller: 'productDetailController',
+        })
         .when('/tin-tuc', {
             templateUrl: './page/tin-tuc.html',
             

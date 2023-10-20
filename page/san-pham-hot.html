@@ -54,9 +54,9 @@
 </div>
 <div class="containers box_proshow row">
     <div ng-repeat="pro in lstProduct" class="box_proshow-buy col-4">
-        <a href="">
+        <a ng-href="#/san-pham/{{pro.url}}">
         <div class="proshow_img">
-            <img class="shadow" ng-src="./assets/image/product/{{pro.avatar}}"  alt="{{ pro.name }}">
+            <img class="shadow" ng-src="./assets/image/product/{{pro.avatar[0]}}"  alt="{{ pro.name }}">
         </div>
         <div class="proshow_dec">
             <div class="proshow_dec-item shadow">'
@@ -101,11 +101,11 @@
 <div class="product-list">
     <div class="scroll-container containers">
         <div class="product" ng-repeat="pro in lstProduct">
-            <a href="https://www.lazada.vn/?spm=a2o4n.store_shop_fail_page_pc.header.dhome.71e029927NLDu1#hp-just-for-you" class="noneHref">
+            <a ng-href="#/san-pham/{{pro.url}}" class="noneHref">
             <div class="box_proshow-buy">
                 
                 <div class="proshow_img">
-                    <img class="shadow"ng-src="./assets/image/product/{{pro.avatar}}"  alt="{{ pro.name }}">
+                    <img class="shadow" ng-src="./assets/image/product/{{pro.avatar[0]}}" alt="{{ pro.name }}">
                 </div>
                 <div class="proshow_dec">
                     <div class="proshow_dec-item shadow">
@@ -155,10 +155,10 @@
 
 <div class="box_proshow-review containers row">
     <div ng-repeat="pro in lstProduct" class="col-12 col-sm-6 .col-md-6 col-lg-3">
-        <a href="#/san-pham-hot" class="noneHref">
+        <a ng-href="#/san-pham/{{pro.url}}" class="noneHref">
         <div class="proshow_review-1">
             <div class="proshow_review-img">
-                <img ng-src="./assets/image/product/{{pro.avatar}}"  alt="{{ pro.name }}">
+                <img  ng-src="./assets/image/product/{{pro.avatar[0]}}" alt="{{ pro.name }}">
             </div>
             <div class="proshow_review-dec">
                 <div class="review_dec-tile">

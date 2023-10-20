@@ -3,6 +3,7 @@
     margin: 0;
     margin: 0;
     padding: 0;
+    font-family: "Roboto", sans-serif, Arial, Helvetica, sans-serif;
 
 }
 
@@ -31,6 +32,14 @@ html {
 .hide{
     display: none!important;
 }
+.show{
+    display: block!important;
+}
+
+
+
+
+/* tost */
 
 .transparent-input {
     background-color: transparent;
@@ -236,11 +245,18 @@ header {
     background-color: transparent; 
 }
 .box_status-inline{
-    width: 100% !important;
-    max-width: 8rem;
+    width: auto !important;
     padding: 8px 14px !important;
     border-radius: 22px !important;
 }
+
+.box_status-link{
+    width: 10rem!important;
+}
+.box_status-login{
+    width: 8rem!important;
+}
+
 .header_logo img {
     width: 100%;
     height: auto;
@@ -914,6 +930,7 @@ footer{
     color: white;
     font-size: 1.6rem;
     text-decoration: none;
+    background-color: transparent;
     /* line-height: 1.8rem; */
 
 }
@@ -1205,6 +1222,10 @@ textarea::placeholder {
 .proshow_review-dec {
     padding: 0 14px;
 }
+.proshow_review-dec a:hover{
+    color: var(--black-color);
+    
+}
 
 .review_dec-tile {
     margin: 12px 0;
@@ -1435,7 +1456,7 @@ Vi sao chon chung toi
     max-width: 757px;
     width: 100%;
     max-height: 400px;
-    height: 100%;
+  
     border-radius: 20px;
     border: 1px solid #FFF;
     background: linear-gradient(318deg, rgba(0, 0, 0, 0.40) 0%, rgba(255, 255, 255, 0.40) 105.18%), url(<path-to-image>), lightgray 50% / cover no-repeat;
@@ -2460,7 +2481,9 @@ box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
 /* detail */
 
 .detail_sp{
+    position: relative;
     font-size: 1.8rem;
+
 }
 .box_detail{
 
@@ -2541,7 +2564,7 @@ box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
     margin-top: 2rem;
 }
 .detail_dec-pice{
-    margin-left: 10em;
+    margin-top: 2.4rem;
     font-size: 1.8rem;
     
 }
@@ -2568,8 +2591,9 @@ box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
     margin-right: 1rem;
 }
 .dec_type-rdo{
-    border: 1px solid #ffffff;
+    border: 1px solid #e5e5e5;
     border-radius: 6px;
+    margin-right: 1rem;
 
 }
 .dec_type-rdo label {
@@ -2591,19 +2615,147 @@ box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
 }
 .box_quantity input[type="number"]{
     width: 5rem;
-    align-items: center;
+    text-align: center;
+}
+.input_quantity{
+    width: 6rem;
+    border: 1px solid #ccc;
+
+}
+.box_quantity input[type="button"]{
+    width: 3.8rem;
+    border: 1px solid #ccc;
 }
 
 .detail_dec-quantity{
     display: flex;
-    margin-top: 2rem
+    margin-top: 2.4rem;
 }
 .detail_dec-cart{
+    margin-top: 2.4rem;
 
+}
+.detail_dec-cart>button{
+    border-radius: 6px;
+    background-color: #00b747;
+    border: 1px solid #ccc;
+    padding: 1rem 2rem;
+    color: var(--white-color);
+    font-weight: 500;
+
+}
+.detail_dec-cart>button>.bi-cart-plus{
+    margin-right: 2rem;
 }
 .detail_dec-share{
+    display: flex;
+    margin-top: 2rem;
+    align-items: center;
 
 }
+
+.dec_share-btn button{
+    
+    font-size: 2rem;
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    margin-right: 2rem;
+    padding: 0.2rem 0.4rem;
+    cursor: pointer;
+}
+.dec_share-btn button>span{
+    font-size: 1.7rem;
+    margin-right: 10px
+}
+.dec_share-icon>i{
+    font-size: 1.8rem;
+    cursor: pointer;
+
+}
+.dec_share-icon>i:hover,
+.dec_share-btn button:hover{
+    color: var(--primary-color);
+}
+
+.dec_share-icon>i{
+    margin-right: 1rem;
+}
+.detail_dec-box{
+    
+}
+.dec_box-logo{
+    display: flex;
+}
+.dec_box-logoimg>img{
+    width: 50px;
+}
+.dec_box-logoimg{
+    margin-right: 1.4rem;
+}
+.dec_box-right>div{
+    margin-bottom: 1rem;
+}
+.dec_box-right>div>h4{
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+.modal_share{
+    animation: fakeIn 0.4s linear;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+}
+.modal_share-box{
+    width: calc(76%);
+    z-index: 2;
+    display: flex;
+    background-color: var(--white-color);
+    border-radius: 10px;
+    padding: 6rem 8rem;
+    border: 1px solid #ccc;
+    position: relative;
+    
+}
+.share_close-btn{
+    padding:0 1rem;
+    cursor: pointer;
+}
+.share_close-btn>i{
+    font-size: 3rem;
+}
+.modal_share-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+
+}
+.modal_share-gay{
+    position: fixed;
+    background-color: #00000030;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: none;
+}
+.detail_feed-tile{
+    margin-top: 1rem;
+}
+
 .card-body{
     padding: 10px;
     border-radius: 20px;
@@ -2617,6 +2769,128 @@ box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
     cursor: pointer;
     color: #00b747;
 }
+
+.box_share-left{
+
+}
+
+
+.share_left-img{
+    width: 100%;
+    margin-bottom: 0.6rem;
+    
+}
+
+.share_left-img>img{
+    max-width: 280px;
+    width: 100%;
+    max-height: 180px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.share_left-tile{
+    
+}
+
+
+.share_left-tile>h2{
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: var(--black-color);
+    margin: 0;
+}
+.share_left-price{
+    
+}
+.share_left-price>span{
+    font-size: 1.7rem;
+}
+.share_left-dec{
+    font-size: 1.8rem;
+
+}
+.share_left-dec{
+    
+}
+
+
+.box_share-right {
+
+}
+
+
+.share_right-url{
+
+}
+.share_url{
+
+}
+
+.share_mxh-tile>h3,
+.share_qr-tile>h3,
+.share_url-tile>h3{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--black-color);
+    margin: 0;
+}   
+
+.share_url-tile{
+
+}
+.share_url-input{
+    display: flex;
+}
+
+.share_url-input input[type="text"]{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding-left: 10px;
+    width: 80%;
+    margin-right: 10px;
+    color: #4f4f4f;
+    
+}
+.share_url-input input[type="text"]:focus {
+    outline: none;
+}
+.share_url-input button{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 15%;
+   
+
+}
+
+.share_url-input,
+.share_qr,
+.share_mxh{
+    margin-top: 2rem;
+}
+.share_mxh-tile{
+
+}
+.share_mxh-icon{
+    margin-top: 1rem;
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+.share_mxh-icon>i{
+    margin-left: 1rem;
+}
+.share_qr{
+
+}
+.share_qr-tile{
+
+}
+.share_qr-img{
+    display: flex;
+    justify-content: center;
+}
+
 @keyframes fakeIn {
     from {
 

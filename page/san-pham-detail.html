@@ -1,97 +1,112 @@
 <div class="detail_sp containers">
     <div class="box_detail row">
         <div class="box_detail-img col-lg-6 col-md-6 col-sm-12">
-   
-                <div class="card">
-                    <div class="card-body">
-                      <!-- Slides with indicators -->
-                      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+
+            <div class="card">
+                <div class="card-body">
+                    <!-- Slides with indicators -->
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"  class="active" aria-current="true" class="" aria-label="Slide 1"></button>
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3" ></button>
+                            <button  ng-repeat="avt in product.avatar" ng-class="{'first-element-class': $first, 'active': !$first}" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="" aria-current="true" class="" aria-label="Slide 1"></button>
+                            
                         </div>
                         <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img src="assets/img/slides-1.jpg " class="d-block w-100" alt="...">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="assets/img/slides-2.jpg" class="d-block w-100" alt="...">
-                          </div>
-                          <div class="carousel-item ">
-                            <img src="assets/img/slides-3.jpg" class="d-block w-100" alt="...">
-                          </div>
+                            <div class="carousel-item " ng-repeat="avt in product.avatar" ng-class="{'first-element-class': $first, 'active': !$first}">
+                                <img ng-src="/assets/image/product/{{avt}}" class="d-block w-100" alt="...">
+                            </div>
+       
                         </div>
-        
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
-                        </button>
-        
-                      </div><!-- End Slides with indicators -->
 
-                    </div>
-                    
-                  </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+
+                    </div><!-- End Slides with indicators -->
+
+                </div>
+
+            </div>
 
 
         </div>
 
         <div class="box_detail-dec col-lg-6 col-md-6 col-sm-12">
-            <div class="detail_dec-tile">
-                <h2>Nếp Nương</h2>
+       
+            <div class="detail_dec-box row">
+                 <div class="dec_box-left col-lg-6 col-md-6 col-sm-12">
+                    <div class="detail_dec-tile">
+                        <h2>{{product.name}}</h2>
+                    </div>
+                    <div class="detail_dec-evaluate">
+                        <div class="dec_evaluate">
+                            <div class="dec_evaluate-tile">
+                                4.9
+                            </div>
+                            <div class="dec_evaluate-body">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                            </div>
+                        </div>
+                        <div class="dec_sold">
+                            <span>1k</span>
+                            Đã Bán
+                        </div>
+                    </div>
+                    <div class="detail_dec-propoty">
+                        <div class="detail_dec-item">
+                            <div ng-repeat="tt in product.properties">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span class="ng-binding">{{tt}}</span>
+                            </div>
+
+                        </div>
+        
+                    </div>
+                 </div>
+                 <div class="dec_box-right col-lg-6 col-md-6 col-sm-12">
+                    <div class="dec_box-logo">
+                        <div class="dec_box-logoimg">
+                            <img src="/assets/image/logo/fou.png" alt="" >
+                        </div>
+                        <div class="dec_box-tile">
+                            <h4>Công ty cổ phần giống nông nghiệp <span>Trường Hương Hà Nội</span></h4>
+                        </div>
+                    </div>
+                    <div class="dec_box-address">
+                        <h4><i class="bi bi-geo-alt"></i> G10109 Vinhomes GreenBay</h4>
+                    </div>
+                    <div class="dec_box-phone">
+                        <h4><i class="bi bi-telephone"></i> 0869696969</h4>
+                    </div>
+                    <div class="dec_box-tus">
+                        <h4><i class="bi bi-shield-lock"></i> Nhà cung cấp đáng tin cấp</h4>
+                    </div>
+                    <div class="dec_box-tus">
+                        <h4><i class="bi bi-truck"></i> Miễn phí giao hàng</h4>
+                    </div>
+                 </div>
+                
             </div>
-            <div class="detail_dec-evaluate">
-                <div class="dec_evaluate">
-                    <div class="dec_evaluate-tile">
-                        4.9
-                    </div>
-                    <div class="dec_evaluate-body">
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                    </div>
-                </div>
-                <div class="dec_sold">
-                    <span>1k</span>
-                    Đã Bán
-                </div>
-            </div>
-            <div class="detail_dec-propoty">
-                <div class="detail_dec-item">
-                    <div>
-                        <i class="fa-solid fa-circle-check"></i>
-                        <span class="ng-binding">Màu trắng sữa</span>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-circle-check"></i>
-                        <span class="ng-binding">Màu trắng sữa</span>
-                    </div>
-                </div>
-                <div class="detail_dec-pice">
-                    <div>Giá Bán: <span>100,000đ</span></div>
-                    <div>Giá Niêm Yết:<span>100,000đ</span></div>
-                </div>
-            </div>
+            
 
             <div class="detail_dec-type">
                 <div class="dec_type-tile">
                     Loại:
                 </div>
-                <div class="dec_type-rdo">
-                    <input type="radio" name="radioBtn" id="radioBtn" checked>
-                    <label for="radioBtn">5kg</label>
-                </div>
-            
-                <div class="dec_type-rdo">
-                    <input type="radio" name="radioBtn" id="radioBtn2">
-                    <label for="radioBtn2">10kg</label>
+                <div class="dec_type-rdo" ng-repeat="ctg in product.category">
+                    <input type="radio" name="radioBtn" id="radioBtn{{ctg}}" checked>
+                    <label for="radioBtn{{ctg}}">{{ctg}}</label>
                 </div>
             </div>
 
@@ -101,40 +116,124 @@
                     Số Lượng:
                 </div>
                 <div class="box_quantity">
-                    <input type="button" class="inputBo" value="-">
-                    <input name="quantity" type="number" min="1" value="1" class="input_quantity"
-                        style="appearance: none">
-                    <input type="button" class="inputThem" value="+">
+                    <input type="button" class="inputBo" value="-" onclick="quantityInput(-1)">
+                    <input name="quantity" type="text" min="1" value="1" class="input_quantity"
+                        style="text-align: center; appearance: none"
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                    <input type="button" class="inputThem" value="+" onclick="quantityInput(1)">
                 </div>
 
             </div>
 
+
+            <div class="detail_dec-pice">
+                <div>Giá Bán: <span>{{product.price | number}}đ</span></div>
+
+            </div>
+
+
             <div class="detail_dec-cart">
-                    <button>
-                        <i class="bi bi-plus-lg"></i>Thêm Giỏ Hàng
-                    </button>
-                    <button>
-                        Mua Ngay
-                    </button>
+                <button id="show-toast">
+                    <i class="bi bi-cart-plus"></i>Thêm Giỏ Hàng
+                </button>
+                <button>
+                    Mua Ngay
+                </button>
             </div>
 
             <div class="detail_dec-share">
                 <div class="dec_share-btn">
-                    <button>
-                        <i class="bi bi-share"></i>
+                    <button onclick="modalShare()">
+                        <span>Chia Sẻ</span><i class="bi bi-share"></i>
                     </button>
                 </div>
                 <div class="dec_share-icon">
-                    <i class="bi bi-plus-lg"></i>
-                    <i class="bi bi-plus-lg"></i>
-                    <i class="bi bi-plus-lg"></i>
+                    <i class="bi bi-facebook"></i>
+                    <i class="bi bi-messenger"></i>
+                    <i class="bi bi-twitter"></i>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+    <div class="box_detail-feed col-lg-6 col-md-6 col-sm-12">
+        <div class="detail_feed-tile">
+            <h2>MÔ TẢ SẢN PHẨM</h2>
+        </div>
+        <p>
+            {{product.description}}
+        </p>
+    </div>
+    <div class="modal_sh hide">
+        <div class="modal_share">
+
+            <div class="modal_share-box row">
+                <div class="modal_share-close">
+                    <div class="share_close-btn" onclick="modalShare()">
+                        <i class="ri-close-fill"></i>
+                    </div>
+                </div>
+                <div class="box_share-left col-lg-5 col-md-5 col-sm-12">
+                    <div class="share_left-img">
+                        <img src="/assets/image/product/17b1e33edd1bc410eed36cdd32f09e43.jpg" alt="">
+                    </div>
+                    <div class="share_left-tile">
+                        <h2>    {{product.name}}</h2>
+                    </div>
+                    <div class="share_left-price">
+                        <span>    {{product.price | number}}</span>
+                    </div>
+                    <div class="share_left-dec">
+                        {{product.description}}
+                    </div>
+                </div>
+
+                <div class="box_share-right col-lg-7 col-md-7 col-sm-12">
+                    <div class="share_right-url">
+
+                        <div class="share_url">
+                            <div class="share_url-tile">
+                                <h3>Copy URL</h3>
+                            </div>
+                            <div class="share_url-input">
+                                <input type="text" readonly id="copyText" value="{{currentURL}}">
+                                <button onclick="copyToClipboard()"><i class="ri-file-copy-line"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="share_mxh">
+                            <div class="share_mxh-tile">
+                                <h3>Chia Sẻ Lên</h3>
+                            </div>
+                            <div class="share_mxh-icon">
+                                <i class="bi bi-facebook"></i>
+                                <i class="bi bi-messenger"></i>
+                                <i class="bi bi-twitter"></i>
+                                <i class="bi bi-twitch"></i>
+                            </div>
+                        </div>
+
+                        <div class="share_qr">
+                            <div class="share_qr-tile">
+                                <h3>Chia Sẻ QR</h3>
+                            </div>
+                            <div class="share_qr-img">
+                                <img src="https://chart.apis.google.com/chart?cht=qr&chs=150x150&chl={{currentURL}}" alt="">
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="box_detail-feed">
-        <p>
-            ádasdasdasd
-        </p>
+
+
+    <div class="modal_share-gay" onclick="modalShare()">
+
     </div>
 </div>

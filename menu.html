@@ -47,8 +47,8 @@
                         </button>
                     </li>
 
-                    <li class="box_status-inline" ng-hide="isLogin">
-                        <a href="http://">Log in</a>
+                    <li class="box_status-inline box_status-link" ng-hide="isLogin">
+                        <a href="#/login">Log in</a>
                     </li>
                     <li>
                         <a href="">
@@ -72,7 +72,7 @@
                         </a>
                     </li>
 
-                    <li class="box_status-inline" ng-show="isLogin">
+                    <li class="box_status-inline box_status-login" ng-show="isLogin">
                         <button ng-click="showProfile = !showProfile" >
                             <i class="bi bi-person-circle"></i>
                             <i class="bi bi-caret-down-fill" style="font-size: 1.2rem;"></i>
