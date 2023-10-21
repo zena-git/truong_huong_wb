@@ -559,13 +559,13 @@ header {
    
 }
 .box_sub {
-    background-color: transparent;
+   
     margin-bottom: 10px;
     text-align: center;
 }
 .box_subs,
 .box_sub {
-    background-color: white;
+    background-color: transparent;
     margin-top: 20px;
     display: flex;
 
