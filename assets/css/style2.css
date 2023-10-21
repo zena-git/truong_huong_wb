@@ -559,7 +559,7 @@ header {
    
 }
 .box_sub {
-    
+    background-color: transparent;
     margin-bottom: 10px;
     text-align: center;
 }
@@ -1401,7 +1401,7 @@ textarea::placeholder {
     object-fit: cover;
 }
 
-/* 
+/* 4rem
 Vi sao chon chung toi
  */
 .box_content-reason {
