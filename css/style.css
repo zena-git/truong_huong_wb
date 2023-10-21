@@ -779,7 +779,7 @@ footer{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 200px;
+
 }
 
 .box_decs h2 {
@@ -922,6 +922,7 @@ footer{
 
 .table_btn>div {
     width: 100%;
+    background-color: transparent;
 }
 
 .table_btn>div a {
@@ -1416,7 +1417,7 @@ Vi sao chon chung toi
 
 .box_content-reason .content_reason-left h1 {
     color: var(--Black, #000);
-    font-size: 3.2rem;
+    font-size: 2.4rem;
     font-style: normal;
     font-weight: 700;
     line-height: 120%;

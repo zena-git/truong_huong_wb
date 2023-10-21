@@ -1,23 +1,43 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html>
 <head>
-  <title>Test $scope.$watch</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.14.0/cloudinary-core-shrinkwrap.min.js"></script>
 </head>
-<body ng-controller="myController">
-  <input type="text" ng-model="username" placeholder="Tên người dùng">
-  <p>Chào {{ username }}</p>
+<body>
+  <input type="file" id="fileInput" accept="image/*">
+  <button id="uploadButton">Tải lên</button>
+  <div id="result"></div>
 
   <script>
-    var app = angular.module("myApp", []);
+    // Thay thế bằng thông tin xác thực của bạn
+    var cloudName = 'your_cloud_name';
+    var apiKey = '139815731139365';
+    var apiSecret = 'd0C4CRzPiZgEOSfOovNasf-bSSk';
+    var uploadPreset = 'ml_default'; // Thay thế bằng upload preset của bạn
 
-    app.controller("myController", function($scope) {
-      $scope.username = '';
+    var widget = cloudinary.createUploadWidget({
+      cloudName: cloudName,
+      uploadPreset: uploadPreset,
+      apiKey: apiKey,
+      apiSecret: apiSecret,
+      sources: ['local', 'url', 'image_search'],
+      uploadSignature: { apiKey: apiKey },
+      multiple: false,
+      maxFileSize: 15000000,
+      resourceType: 'image',
+    }, (error, result) => {
+      if (!error && result && result.event === 'success') {
+        // Ảnh đã tải lên thành công
+        var img = document.createElement('img');
+        img.src = result.info.secure_url;
+        var resultContainer = document.getElementById('result');
+        resultContainer.innerHTML = '';
+        resultContainer.appendChild(img);
+      }
+    });
 
-      $scope.$watch('username', function(newVal, oldVal) {
-          console.log('Tên người dùng đã thay đổi thành: ' + newVal);
-      });
-      
+    document.getElementById('uploadButton').addEventListener('click', function () {
+      widget.open();
     });
   </script>
 </body>
