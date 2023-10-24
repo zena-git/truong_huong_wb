@@ -29,6 +29,9 @@ html {
     overflow-x: hidden;
     
 }
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto", sans-serif;
+}
 .hide{
     display: none!important;
 }
@@ -613,11 +616,31 @@ header {
     height: 100%;
 
 }
-
+.box_videoo-show{
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
 .box_video_sub {
     margin-top: 10px;
 }
-
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio, thay đổi tùy theo tỷ lệ khung hình */
+  
+    @media (max-width: 768px) {
+      padding-bottom: 75%; /* Tùy chỉnh kích thước cho các màn hình nhỏ hơn 768px */
+    }
+  }
+  
+  .video-container>iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
 
 .box_content {
     /* margin: 0 30px; */
