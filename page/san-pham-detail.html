@@ -13,7 +13,7 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item " ng-repeat="avt in product.avatar" ng-class="{'first-element-class': $first, 'active': !$first}">
-                                <img ng-src="/assets/image/product/{{avt}}" class="d-block w-100" alt="...">
+                                <img ng-src="{{avt}}" class="d-block w-100" alt="...">
                             </div>
        
                         </div>
@@ -139,7 +139,6 @@
                 <button>
                     Mua Ngay
                 </button>
-            </div>
 
             <div class="detail_dec-share">
                 <div class="dec_share-btn">
@@ -179,7 +178,7 @@
                 </div>
                 <div class="box_share-left col-lg-5 col-md-5 col-sm-12">
                     <div class="share_left-img">
-                        <img src="/assets/image/product/17b1e33edd1bc410eed36cdd32f09e43.jpg" alt="">
+                        <img ng-src="{{product.avatar[0]}}" alt="">
                     </div>
                     <div class="share_left-tile">
                         <h2>    {{product.name}}</h2>

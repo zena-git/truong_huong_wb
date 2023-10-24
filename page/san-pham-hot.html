@@ -56,7 +56,7 @@
     <div ng-repeat="pro in lstProduct" class="box_proshow-buy col-4">
         <a ng-href="#/san-pham/{{pro.url}}">
         <div class="proshow_img">
-            <img class="shadow" ng-src="./assets/image/product/{{pro.avatar[0]}}"  alt="{{ pro.name }}">
+            <img class="shadow" ng-src="{{pro.avatar[0]}}"  alt="{{ pro.name }}">
         </div>
         <div class="proshow_dec">
             <div class="proshow_dec-item shadow">'
@@ -105,7 +105,7 @@
             <div class="box_proshow-buy">
                 
                 <div class="proshow_img">
-                    <img class="shadow" ng-src="./assets/image/product/{{pro.avatar[0]}}" alt="{{ pro.name }}">
+                    <img class="shadow" ng-src="{{pro.avatar[0]}}" alt="{{ pro.name }}">
                 </div>
                 <div class="proshow_dec">
                     <div class="proshow_dec-item shadow">
@@ -158,14 +158,14 @@
         <a ng-href="#/san-pham/{{pro.url}}" class="noneHref">
         <div class="proshow_review-1">
             <div class="proshow_review-img">
-                <img  ng-src="./assets/image/product/{{pro.avatar[0]}}" alt="{{ pro.name }}">
+                <img  ng-src="{{pro.avatar[0]}}" alt="{{ pro.name }}">
             </div>
             <div class="proshow_review-dec">
                 <div class="review_dec-tile">
                     <h3 style="text-transform: capitalize;">{{pro.name}}</h3>
                 </div>
                 <div class="review_dec-sub">
-                    {{pro.description}}
+                    {{pro.description | limitTo:70}} ...
                 </div>
                 <div class="review_dec-btn">
                     <a href="">Mua Ngay</a>

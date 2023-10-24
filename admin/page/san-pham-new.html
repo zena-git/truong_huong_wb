@@ -1,0 +1,153 @@
+<div ng-controller="productController" class="product_data">
+    <div style="margin: 20px 0;">
+        <h1>
+            Thêm Sản Phẩm Mới
+        </h1>
+    </div>
+    <div style="font-size: 2rem;">
+           <!-- General Form Elements -->
+           <form>
+            <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label">Code</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" ng-model="form_product.code">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputEmail" class="col-sm-2 col-form-label">Tên</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control"  ng-model="form_product.name">
+                </div>
+            </div>
+            <div ng-controller="uploadProduct">
+                <div class="row mb-3">
+                    <label for="inputNumber" class="col-sm-2 col-form-label">Image</label>
+                    <div class="col-sm-10">
+                        <div class="box_proavt-img"  ng-repeat="(index, img) in form_product.avatar">
+                            <div class="box_proavt-close" ng-click="deleteImgPro(index)">
+                                <i class="bi bi-x-circle-fill"></i>
+                            </div>
+                            <img src="{{img}}" alt="img" style="width: 60px; height: 60px; object-fit: cover; margin-right: 2px;">
+                        </div>
+                        <div class="row" >
+                            <div class="col-12">
+                                <input type="file" file-model="myFile" class="form-control" multiple/>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>                     
+            </div>
+            <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label">Loại: </label>
+                <div class="col-sm-10">
+                    
+                    <div class="box_proCategory">
+                        <div class="box_proCategory-item" ng-repeat="ctg in form_product.category"> 
+                            <div class="box_proCategory-itemclose" ng-click="deleteCategory($index)">
+                                <i class="bi bi-x-circle-fill"></i>
+                            </div>
+                            <span>{{ctg}}</span>
+                        </div>
+                        <button class="box_proCategory-btn btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#verticalycentered">
+                            <i class="bi bi-plus-lg"></i>
+                        </button>
+
+                        <div  class="modal fade" id="verticalycentered" tabindex="-1" aria-hidden="true" style="display: none;" >
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title">Thêm Loại</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <input type="text" class="form-control" ng-model="category"  placeholder="Loại: 1kg">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="background-color: #39b54a; border: none; font-size: 1.6rem;" ng-click="addCategory()">Thêm</button>
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: rgb(246, 59, 59);border: none; font-size: 1.6rem;">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label">Đặc Điểm: </label>
+                <div class="col-sm-10">
+                    
+                    <div class="box_proCategory">
+                        <div class="box_proCategory-item" ng-repeat="propotity in form_product.properties"> 
+                            <div class="box_proCategory-itemclose" ng-click="deletePropotity($index)">
+                                <i class="bi bi-x-circle-fill"></i>
+                            </div>
+                            <span>{{propotity}}</span>
+                        </div>
+                        <button class="box_proCategory-btn btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#verticalycentered2">
+                            <i class="bi bi-plus-lg"></i>
+                        </button>
+
+                        <div  class="modal fade" id="verticalycentered2" tabindex="-1" aria-hidden="true" style="display: none;" >
+                            <div class="modal-dialog modal-dialog-centered">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title">Thêm Đặc Điểm</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <input type="text" class="form-control" ng-model="properties"  placeholder="Đặc điểm: Hạt To">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="background-color: #39b54a; border: none; font-size: 1.6rem;" ng-click="addPropotity()">Thêm</button>
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: rgb(246, 59, 59);border: none; font-size: 1.6rem;">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label">Số Lượng Tồn</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" min="0"  ng-model="form_product.quantity">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label">Giá Vốn</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" min="0"  ng-model="form_product.capitalPrice" ng-change="changePrice()">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label">Giá Bán</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" min="0" ng-model="form_product.price">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputNumber" class="col-sm-2 col-form-label">Giá Niêm Yết</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" min="0"  ng-model="form_product.listedPrice">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Mô Tả</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" style="height: 100px; font-size: 2rem;"  ng-model="form_product.description"></textarea>
+                </div>
+            </div>
+
+        </form><!-- End General Form Elements -->
+
+
+    </div>
+
+    <div class="productBtnAdd" style="display: flex; justify-content: flex-end;">
+        <button type="button" class="btn btn-success" ng-click="saveNews()">Thêm Mới</button>
+        <a href="#/page/san-pham"  class="btn btn-warning" style="margin-left: 2rem; color: white; font-size: 1.6rem;">Quay Lại</a>
+    </div>
+</div>

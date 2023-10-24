@@ -1,44 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.14.0/cloudinary-core-shrinkwrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload ảnh lên Cloudinary</title>
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+#imageContainer {
+    margin-top: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+    </style>
 </head>
 <body>
-  <input type="file" id="fileInput" accept="image/*">
-  <button id="uploadButton">Tải lên</button>
-  <div id="result"></div>
+    <input type="file" id="fileInput">
+    <button id="uploadButton">Tải lên</button>
+    <div id="imageContainer"></div>
+    <script>
+      const CLOUD_NAME = "dgxbxvkso";
+const UPLOAD_PRESET = "upload_truonghuong";
+const API_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
 
-  <script>
-    // Thay thế bằng thông tin xác thực của bạn
-    var cloudName = 'your_cloud_name';
-    var apiKey = '139815731139365';
-    var apiSecret = 'd0C4CRzPiZgEOSfOovNasf-bSSk';
-    var uploadPreset = 'ml_default'; // Thay thế bằng upload preset của bạn
+// Lấy đối tượng input file và theo dõi sự kiện thay đổi
+const fileInput = document.getElementById("fileInput");
+fileInput.addEventListener("change", function () {
+  const file = fileInput.files[0];
+  
+  // Tạo một đối tượng FormData để chứa dữ liệu tệp
+  const formData = new FormData();
+  formData.append("file", file);
+  formData.append("upload_preset", UPLOAD_PRESET);
 
-    var widget = cloudinary.createUploadWidget({
-      cloudName: cloudName,
-      uploadPreset: uploadPreset,
-      apiKey: apiKey,
-      apiSecret: apiSecret,
-      sources: ['local', 'url', 'image_search'],
-      uploadSignature: { apiKey: apiKey },
-      multiple: false,
-      maxFileSize: 15000000,
-      resourceType: 'image',
-    }, (error, result) => {
-      if (!error && result && result.event === 'success') {
-        // Ảnh đã tải lên thành công
-        var img = document.createElement('img');
-        img.src = result.info.secure_url;
-        var resultContainer = document.getElementById('result');
-        resultContainer.innerHTML = '';
-        resultContainer.appendChild(img);
-      }
-    });
+  // Tạo yêu cầu XMLHttpRequest
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", API_URL, true);
 
-    document.getElementById('uploadButton').addEventListener('click', function () {
-      widget.open();
-    });
-  </script>
-</body>
+  // Xác định hành động sau khi tải lên thành công
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      const response = JSON.parse(xhr.responseText);
+      console.log("Tải lên thành công:", response);
+      // Ở đây, bạn có thể lấy URL của ảnh từ response và làm gì bạn muốn với nó
+    } else {
+      console.error("Lỗi khi tải lên:", xhr.statusText);
+    }
+  };
+
+  // Gửi yêu cầu tải lên
+  xhr.send(formData);
+});
+
+
+    </script>
 </html>

@@ -935,9 +935,40 @@ footer{
     /* line-height: 1.8rem; */
 
 }
+.product_data{
+    font-size: 1.6rem;
+}
+.table_db{
+    font-size: 1.6rem;
+}
+.datatable-sorter{
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
 
+}
+.box_proavt-img{
+    position: relative;
+    display: inline-block;
+    margin-right: 1rem;
+}
 
-
+.box_proavt-close{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    z-index: 1;
+    cursor: pointer;
+}
+.box_proavt-close i{
+  font-size: 1.8rem;
+  color: red;
+}
+.productBtnAdd button,
+.product_data .form-upload,
+.product_data .form-control{
+    font-size: 1.6rem;
+}
 .maps_box {
     margin: 0 60px;
     margin-bottom: 100px;
@@ -1216,7 +1247,7 @@ textarea::placeholder {
     /* Kích thước tối đa là 100% của phần tử cha */
     height: auto;
     width: 100%;
-    max-height: 400px;
+    max-height: 200px;
     object-fit: cover;
 }
 
@@ -1245,11 +1276,12 @@ textarea::placeholder {
 .review_dec-btn {
     margin-top: 10px;
     margin-bottom: 20px;
-    display: flex;
-    width: 92px;
+    display: inline-flex;
+    
     height: 34px;
     justify-content: space-evenly;
     align-items: center;
+    padding: 0 10px;
     /* gap: 20px; */
     /* flex-shrink: 0; */
 
@@ -1287,16 +1319,21 @@ textarea::placeholder {
 
 .bannerpro_baner {
     display: flex;
-    height: 1299px;
+   
     flex-shrink: 0;
 }
 
 .baner_img {
     height: 100%;
-    max-height: 100%;
+    max-height: 500px;
+    width: 220px;
+   position: fixed;
+    right: 40px;
+    bottom: 10px;
     overflow: hidden;
     border-radius: 20px;
     border: 1px solid #FFF;
+    z-index: -1;
     background: linear-gradient(318deg, rgba(0, 0, 0, 0.40) 0%, rgba(255, 255, 255, 0.40) 105.18%), url(<path-to-image>), lightgray -586.222px 0px / 583.711% 100% no-repeat;
     background-blend-mode: soft-light, normal;
     box-shadow: 2.5px 2.5px 5px 0px #A6ABBD, -2.5px -2.5px 5px 0px #FAFBFF;
@@ -2891,7 +2928,57 @@ box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
     display: flex;
     justify-content: center;
 }
+.box_proCategory-item{
+    background-color: #39b54a; 
+    display: inline-block;
+     color: white; 
+     padding: 4px;
+     border-radius: 4px;
+}
+.box_proCategory-btn i{
+    font-size: 2.2rem;
+}
+.box_proCategory-item{
+    margin-right: 4px;
+    position: relative;
+}
+.box_proCategory-itemclose{
+    position: absolute;
+    top: -10px;
+    right: -6px;
+    padding: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.box_proCategory-itemclose i{
+    font-size: 1.8rem;
+    color: red;
 
+}
+.box_proCategory-item span{
+    font-size: 1.6rem;
+}
+.box_news-item{
+    position: relative;
+}
+.box_new-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.8rem;
+}
+.box_new-btn .btn:hover{
+    color: var(--black-color);
+    background-color: var(--primary-color);
+    color: white;
+}
+.box_new-btn a{
+    color: var(--black-color);
+}
+.box_new-btn .btn{
+    padding: 6px 6px;
+    font-size: 1.8rem;
+}
 @keyframes fakeIn {
     from {
 

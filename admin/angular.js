@@ -73,17 +73,32 @@ app.config(function ($routeProvider,$locationProvider) {
             templateUrl: '../admin/page/mot-so-hinh-anh.html',
             
         })
-         .when('/page/san-pham-hot', {
-            templateUrl: '../admin/page/san-pham-hot.html',
-            controller: 'productController',
+         .when('/page/san-pham', {
+            templateUrl: '../admin/page/san-pham.html',
+            controller: 'productController'
+        })
+
+        .when('/page/san-pham/new', {
+            templateUrl: '../admin/page/san-pham-new.html',
+           
+        })
+
+        .when('/page/san-pham/:id', {
+            templateUrl: '../admin/page/san-pham-edit.html',
+           
         })
 
          .when('/page/tin-tuc', {
             templateUrl: '../admin/page/tin-tuc.html',
             
         })
+        .when('/page/tin-tuc/new', {
+            templateUrl: '../admin/page/tin-tuc-new.html',
+            controller: 'tintucNewController'
+        })
         .when('/page/tin-tuc/:url', {
             templateUrl: '../admin/page/tin-tuc-new.html',
+            controller: 'tintucDetailController'
             
         })
          .when('/page/vi-sao-chon-chung-toi', {

@@ -6,9 +6,17 @@
             <h2>Tin Tức Mới</h2>
        </div>
        <div class="box_newtime-content">
-
-
-            <div class="box_new " ng-repeat="tt in lstTinTuc | orderBy:'-createdAt'">
+        <div class="box_new">
+          <div class="cards">
+              <div class="card-body">
+                <a href="#/page/tin-tuc/new" class="btn btn-primary">
+                      <i class="bi bi-plus-circle"></i>
+                </a>
+              </div>
+            </div>
+      </div>
+   
+            <div class="box_new box_news-item" ng-repeat="tt in lstTinTuc | orderBy:'-createdAt'">
                 <a ng-href="#/page/tin-tuc/{{tt.url}}" class="row">
                 <div class="box_new-img col-lg-4 col-md-4 col-sm-12">
                     <img class="shadow" ng-src="{{tt.avatar}}" alt="">
@@ -22,49 +30,19 @@
                         <p>{{tt.dec | limitTo:300}} ...</p>
                     </div>
                 </div>
+                
                 </a>
+                <div class="box_new-btn">
+                  <a class="btn" href="#/page/tin-tuc/{{tt.url}}"><i class="bi bi-vector-pen"></i></a>
+                  <button class="btn"><i class="bi bi-trash"></i></button>
+                </div>
             </div>
 <!-- modal btn -->
 
-            <div class="box_new">
-                <div class="cards">
-                    <div class="card-body">
-                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verticalycentered">
-                       
-                            <i class="bi bi-plus-circle"></i>
-                   
-                      </button>
-          
-                    </div>
-                  </div>
-            </div>
-         
 <!-- end modal btn  -->
             
        </div>
     </div>
-
-<!-- End Vertically centered Modal-->
-    <div class="modal fade" id="verticalycentered" tabindex="-1" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Nhập Đường Dẫn Cho Bài Viết Mới</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="col-sm-12">
-                    <input type="text" class="form-control" placeholder="chao-ngay-moi" ng-model="urlNew">
-                  </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" ng-click="addNew()">Next</button>
-            </div>
-          </div>
-        </div>
-      </div><!-- End Vertically centered Modal-->
-
 
 </div>
 
