@@ -2963,7 +2963,7 @@ box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
 }
 .box_new-btn{
     position: absolute;
-    top: 0;
+    top: -20px;
     right: 0;
     font-size: 1.8rem;
 }

@@ -17,6 +17,22 @@ app.controller('tintucController', function ($scope, $rootScope, $http, $locatio
         });
 
 
+        
+    $scope.deleteNews = function(id){
+        var confirmed = window.confirm("Bạn có chắc chắn muốn xóa tin tức này?");
+        if (confirmed) {
+            $http.delete('https://6524c97cea560a22a4ea1a53.mockapi.io/news/'+id)
+            .then(function(){
+                alert("Xóa Thành Công");
+                $http.get('https://6524c97cea560a22a4ea1a53.mockapi.io/news')
+                .then(function (response) {
+                    $scope.lstTinTuc = response.data;
+                })
+            })
+        }
+    }
+
+
 })
 
 
@@ -43,16 +59,6 @@ app.controller('tintucNewController', function ($scope, $http,$rootScope, $locat
                     alert(response.status);
                 }
             })
-    }
-
-    $scope.deleteNews = function(id){
-        var confirmed = window.confirm("Bạn có chắc chắn muốn xóa tin tức này?");
-        if (confirmed) {
-            $http.delete('https://6524c97cea560a22a4ea1a53.mockapi.io/news/'+id)
-            .then(function(){
-                alert("Xóa Thành Công");
-            })
-        }
     }
 
     $scope.deleteImgNews = function(index) {

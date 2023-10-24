@@ -19,7 +19,7 @@
             <div class="box_new box_news-item" ng-repeat="tt in lstTinTuc | orderBy:'-createdAt'">
                 <a ng-href="#/page/tin-tuc/{{tt.url}}" class="row">
                 <div class="box_new-img col-lg-4 col-md-4 col-sm-12">
-                    <img class="shadow" ng-src="{{tt.avatar}}" alt="">
+                    <img class="shadow" ng-src="{{tt.avatar[0]}}" alt="">
                 </div>
                 <div class="box_new-text col-lg-8 col-md-8 col-sm-12">
                     <div class="box_new-tile">
@@ -33,8 +33,8 @@
                 
                 </a>
                 <div class="box_new-btn">
-                  <a class="btn" href="#/page/tin-tuc/{{tt.url}}"><i class="bi bi-vector-pen"></i></a>
-                  <button class="btn"><i class="bi bi-trash"></i></button>
+                  <a class="btn btn-outline-success " href="#/page/tin-tuc/{{tt.url}}"><i class="bi bi-vector-pen"></i></a>
+                  <button class="btn btn-outline-success" ng-click="deleteNews(tt.id)"><i class="bi bi-trash"></i></button>
                 </div>
             </div>
 <!-- modal btn -->
