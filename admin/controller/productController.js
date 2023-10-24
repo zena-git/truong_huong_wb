@@ -26,7 +26,7 @@ app.controller('productController', function ($scope, $rootScope, $http, $locati
     }
     
     $scope.changePrice = function(){
-        $rootScope.form_product.price = Math.floor($rootScope.form_product.capitalPrice * 0.97); // Giảm giá 3%
+        $rootScope.form_product.price = Math.floor($rootScope.form_product.listedPrice * 0.97); // Giảm giá 3%
     }
     $scope.addProduct = function () {
 
@@ -105,9 +105,8 @@ app.controller('productDetailController', function ($scope, $rootScope, $http, $
         code: ""
     }
     $scope.changePrice = function(){
-        $rootScope.form_product_update.price = Math.floor($rootScope.form_product_update.capitalPrice * 0.97);  // Giảm giá 3%
+        $rootScope.form_product_update.price = Math.floor($rootScope.form_product_update.listedPrice * 0.97); // Giảm giá 3%
     }
-
     var url = "https://63f23863f28929a9df564ecd.mockapi.io/product/";
     $http.get(url+id).then(function (response) {
         $rootScope.form_product_update = response.data;

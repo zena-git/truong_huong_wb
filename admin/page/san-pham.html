@@ -16,9 +16,9 @@
                                     <th data-sortable="true"><button class="datatable-sorter">Mã Hàng</button></th>
                                     <th data-sortable="true"><button class="datatable-sorter">Ảnh</button></th>
                                     <th data-sortable="true"><button class="datatable-sorter">Tên Sản Phẩm</button></th>
-                                    <th data-sortable="true"><button class="datatable-sorter">Giá Bán</button></th>
                                     <th data-sortable="true"><button class="datatable-sorter">Giá Nhập</button></th>
                                     <th data-sortable="true"><button class="datatable-sorter">Giá Niệm Yết</button></th>
+                                    <th data-sortable="true"><button class="datatable-sorter">Giá Bán</button></th>
                                     <th data-sortable="true"><button class="datatable-sorter">Tồn</button></th>
                                     <th data-sortable="true"><button class="datatable-sorter">Action</button></th>
                                 </tr>
@@ -32,9 +32,9 @@
                                             ng-src="{{pro.avatar[0]}}" alt="{{pro.avatar[0]}}">
                                     </td>
                                     <td>{{pro.name}}</td>
-                                    <td>{{pro.price}}</td>
                                     <td>{{pro.capitalPrice}}</td>
                                     <td>{{pro.listedPrice}}</td>
+                                    <td>{{pro.price}}</td>
                                     <td>{{pro.quantity}}</td>
                                     <td>
                                         <a href="#/page/san-pham/{{pro.id}}" class="btn btn-success"
