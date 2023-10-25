@@ -166,7 +166,10 @@
         <div class="detail_feed-tile">
             <h2>MÔ TẢ SẢN PHẨM</h2>
         </div>
-        {{product.description}}
+        <p  style="white-space: pre-wrap;">
+            {{product.description}}
+
+        </p>
    
     </div>
     <div class="modal_sh hide">
@@ -188,7 +191,7 @@
                     <div class="share_left-price">
                         <span>    {{product.price | number}}</span>
                     </div>
-                    <div class="share_left-dec">
+                    <div class="share_left-dec" >
                         {{product.description | limitTo : 200}}
                     </div>
                 </div>
