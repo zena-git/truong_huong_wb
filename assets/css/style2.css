@@ -2765,14 +2765,14 @@ box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
 .modal_share{
     animation: fakeIn 0.4s linear;
 
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     z-index: 1;
 
 }
@@ -2863,6 +2863,7 @@ box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
     margin: 0;
 }
 .share_left-price{
+    margin: 0.4rem 0;
     
 }
 .share_left-price>span{

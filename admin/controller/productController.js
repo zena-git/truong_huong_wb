@@ -30,7 +30,7 @@ app.controller('productController', function ($scope, $rootScope, $http, $locati
     }
     $scope.addProduct = function () {
 
-        $scope.form_product.url = $rootScope.form_product.name.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '');;
+        $scope.form_product.url = encodeURIComponent($rootScope.form_product.name)+  Math.floor(Math.random() * 10000) + 1 ;
         $http.post(url, $rootScope.form_product)
         .then(function (response) {
             $http.get(url).then(function (response) {

@@ -49,7 +49,7 @@ app.controller('tintucNewController', function ($scope, $http,$rootScope, $locat
     }
     $scope.saveNews = function () {
 
-        $rootScope.news.url =  $rootScope.news.tile.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '');
+        $rootScope.news.url = encodeURIComponent( $rootScope.news.tile)+  Math.floor(Math.random() * 10000) + 1 ;
         $http.post('https://6524c97cea560a22a4ea1a53.mockapi.io/news', $scope.news)
             .then(function (response) {
                 if (response.status === 201) {

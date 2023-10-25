@@ -13,16 +13,19 @@ app.controller('productController', function ($scope, $http, $location, $routePa
 
 })
 
-app.controller('productDetailController', function ($scope, $http, $routeParams, $location) {
+app.controller('productDetailController', function ($scope, $http, $routeParams, $location, $window) {
     var url = "https://63f23863f28929a9df564ecd.mockapi.io/product";
     $scope.currentURL = $location.absUrl();
     $scope.url = $routeParams.urlSp;
+    $scope.encodedUrlQR =  $window.encodeURIComponent($scope.currentURL);;
     $scope.product = [];
     $http.get(url + "?url=" + $scope.url)
         .then(function (response) {
             $scope.product = response.data[0];
+          
             console.log($scope.product);
         })
+
 })
 
 
