@@ -119,11 +119,17 @@
                     Số Lượng:
                 </div>
                 <div class="box_quantity">
-                    <input type="button" class="inputBo" value="-" onclick="quantityInput(-1)">
-                    <input name="quantity" type="text" min="1" value="1" class="input_quantity"
-                        style="text-align: center; appearance: none"
-                        oninput="this.value = this.value.replace(/[^0-9]/g, '');">
-                    <input type="button" class="inputThem" value="+" onclick="quantityInput(1)">
+                    <div class="input-group form-group mb-0">
+                        <a class="scanner-set input-group-text" onclick="quantityInput(-1)">
+                        <img src="assets/img/icons/minus.svg" alt="img">
+                        </a>
+                        <input type="text" value="1" class="calc-no input_quantity">
+                        <a class="scanner-set input-group-text" onclick="quantityInput(1)">
+                            <img src="assets/img/icons/plus1.svg" alt="img">
+                        
+                        </a>
+                        </div>
+
                 </div>
 
             </div>

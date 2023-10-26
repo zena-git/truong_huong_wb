@@ -1,0 +1,174 @@
+<div ng-controller="productDetailController" class="page-wrapper" style="min-height: 715px;">
+    <div class="content">
+        <div class="page-header">
+            <div class="page-title">
+                <h4>Product Edit</h4>
+                <h6>Edit product</h6>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label>Product Code</label>
+                            <input type="text" ng-model="form_product_update.code">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label>Product Name</label>
+                            <input type="text" ng-model="form_product_update.name">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-sm-12 col-12">
+                        <div class="form-group">
+                            <label>Category</label>
+                            <div class="box_proCategory">
+                                <div class="box_proCategory-item" ng-repeat="ctg in form_product_update.category">
+                                    <div class="box_proCategory-itemclose" ng-click="deleteCategory($index)">
+                                        <i class="ion-close" data-bs-toggle="tooltip" title="" data-bs-original-title="ion-close" aria-label="ion-close"></i>
+
+                                    </div>
+                                    <span>{{ctg}}</span>
+                                </div>
+                                <button class="box_proCategory-btn btn btn-outline-success" data-bs-toggle="modal"
+                                    data-bs-target="#verticalycentered">
+                                    <i class="ion-plus-round" data-bs-toggle="tooltip" title="" data-bs-original-title="ion-plus-round" aria-label="ion-plus-round"></i>
+                                </button>
+
+                                <div class="modal fade" id="verticalycentered" tabindex="-1" aria-hidden="true"
+                                    style="display: none;">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Thêm Loại</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <input type="text" ng-model="category" placeholder="Loại: 1kg">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-submit me-2"
+                                                    data-bs-dismiss="modal"
+                                                    style="background-color: #39b54a; border: none; font-size: 1.6rem;"
+                                                    ng-click="addCategory()">Thêm</button>
+                                                <button type="button" class="btn btn-cancel" data-bs-dismiss="modal"
+                                                    style="background-color: rgb(246, 59, 59);border: none; font-size: 1.6rem;">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-sm-12 col-12">
+                        <div class="form-group">
+                            <label>Properties</label>
+                            <div class="box_proCategory">
+                                <div class="box_proCategory-item" ng-repeat="propotity in form_product_update.properties"> 
+                                    <div class="box_proCategory-itemclose" ng-click="deletePropotity($index)">
+                                        <i class="ion-close" data-bs-toggle="tooltip" title="" data-bs-original-title="ion-close" aria-label="ion-close"></i>
+
+                                    </div>
+                                    <span>{{propotity}}</span>
+                                </div>
+                                <button class="box_proCategory-btn btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#verticalycentered2">
+                                    <i class="ion-plus-round" data-bs-toggle="tooltip" title="" data-bs-original-title="ion-plus-round" aria-label="ion-plus-round"></i>
+                                </button>
+        
+                                <div  class="modal fade" id="verticalycentered2" tabindex="-1" aria-hidden="true" style="display: none;" >
+                                    <div class="modal-dialog modal-dialog-centered">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title">Thêm Đặc Điểm</h5>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <input type="text" class="form-control" ng-model="properties"  placeholder="Đặc điểm: Hạt To">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="background-color: #39b54a; border: none; font-size: 1.6rem;" ng-click="addPropotity()">Thêm</button>
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: rgb(246, 59, 59);border: none; font-size: 1.6rem;">Close</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label>Quantity</label>
+                            <input type="text" min="0"  ng-model="form_product_update.quantity">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label>Capital Price</label>
+                            <input type="text"  min="0"  ng-model="form_product_update.capitalPrice">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label>Listed Price</label>
+                            <input type="text"  min="0"  ng-model="form_product_update.listedPrice" ng-change="changePrice()">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label>Price</label>
+                            <input type="text" min="0" ng-model="form_product_update.price">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea class="form-control"  ng-model="form_product_update.description"></textarea>
+                        </div>
+                    </div>
+
+                    
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label> Product Image</label>
+                            <div class="image-upload" ng-controller="uploadProduct">
+                                <input type="file" file-model="myFile" class="form-control" multiple>
+                                <div class="image-uploads">
+                                    <img src="../assets/img/icons/upload.svg" alt="img">
+                                    <h4>Drag and drop a file to upload</h4>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                               
+                                <div class="box_proavt-img" ng-repeat="(index, img) in form_product_update.avatar">
+                                    <div class="box_proavt-close" ng-click="deleteImgPro(index)">
+                                        <i class="ion-close" data-bs-toggle="tooltip" title="" data-bs-original-title="ion-close" aria-label="ion-close"></i>
+                                    </div>
+                                    <img src="{{img}}" alt="img"
+                                        style="width: 70px; height: 70px; object-fit: cover; margin-right: 2px;">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-12">
+                        <a href="javascript:void(0);" class="btn btn-submit me-2" ng-click="addProduct()">Submit</a>
+                        <a href="#/san-pham" class="btn btn-cancel">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,4 +1,4 @@
-<div ng-controller="productController" class="product_data">
+<div ng-controller="productController" class="product_data" style="font-size: 1rem;">
     <div style="margin: 20px 0;">
         <h1>
             Thêm Sản Phẩm Mới
@@ -42,35 +42,7 @@
                 <label for="inputNumber" class="col-sm-2 col-form-label">Loại: </label>
                 <div class="col-sm-10">
                     
-                    <div class="box_proCategory">
-                        <div class="box_proCategory-item" ng-repeat="ctg in form_product.category"> 
-                            <div class="box_proCategory-itemclose" ng-click="deleteCategory($index)">
-                                <i class="bi bi-x-circle-fill"></i>
-                            </div>
-                            <span>{{ctg}}</span>
-                        </div>
-                        <button class="box_proCategory-btn btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#verticalycentered">
-                            <i class="bi bi-plus-lg"></i>
-                        </button>
-
-                        <div  class="modal fade" id="verticalycentered" tabindex="-1" aria-hidden="true" style="display: none;" >
-                            <div class="modal-dialog modal-dialog-centered">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title">Thêm Loại</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <input type="text" class="form-control" ng-model="category"  placeholder="Loại: 1kg">
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="background-color: #39b54a; border: none; font-size: 1.6rem;" ng-click="addCategory()">Thêm</button>
-                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: rgb(246, 59, 59);border: none; font-size: 1.6rem;">Close</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                    </div>
+                    
                 </div>
             </div>
 

@@ -1130,8 +1130,14 @@ textarea::placeholder {
 .find_pro-box>h4,
 .find_pro-box>.find_pro-checkbox,
 .find_pro-tile>h3 {
+    font-size: 2rem;
     margin: 10px 0;
     margin-left: 12px;
+}
+.find_pro-checkbox > label ,
+.find_pro-box>h4{
+    font-size: 1.8rem;
+
 }
 .find_pro-box{
     margin-bottom: 10px;
@@ -3002,6 +3008,15 @@ box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
 .box_new-btn .btn{
     padding: 6px 6px;
     font-size: 1.8rem;
+}
+.blackPage input[type="text"],
+.blackPage input[type="textarea"]{
+    font-size: 1.6rem!important;
+}
+.modal-body ::placeholder {
+    font-size: 1.2rem; /* Điều chỉnh kích thước font */
+    color: #999; /* Điều chỉnh màu sắc */
+    font-style: italic; /* Điều chỉnh kiểu chữ nếu cần */
 }
 @keyframes fakeIn {
     from {
