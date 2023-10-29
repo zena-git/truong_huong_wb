@@ -25,7 +25,36 @@ app.controller('productDetailController', function ($scope, $http, $routeParams,
           
             console.log($scope.product);
         })
-
 })
 
+app.controller('productAddBuyController', function ($scope,$rootScope,$http,  $location, $window){
+ 
+    $rootScope.account = {
+        id: 1,
+        username: "admin",
+        password: "admin"
+    };
+
+    $scope.billDetail = {
+        idBill: "",
+        idProduct: "",
+        quantity: "",
+    }
+    let input_quantity = document.getElementById("input_quantity");
+    $scope.addCart = function(product){
+        let idBillDetail = $rootScope.bill.id;
+        $scope.billDetail.idBill = idBillDetail;
+        $scope.billDetail.idProduct = product.id;
+        $scope.billDetail.quantity = input_quantity.value;
+        $http.post('https://653b6e8f2e42fd0d54d518a5.mockapi.io/billDetail', $scope.billDetail )
+        .then(function (response) {
+            cart();
+        });
+       
+    }
+
+    $scope.buyProduct = function(product){
+        console.log(product);
+    }
+})
 

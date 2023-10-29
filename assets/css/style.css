@@ -7129,7 +7129,7 @@ span.select2-container.select2-container--default.select2-container--open {
 }
 
 .badges.bg-lightpurple {
-    background: #7367f0
+    background: #72f067
 }
 
 .badges.bg-lightgrey {
@@ -7437,7 +7437,7 @@ span.select2-container.select2-container--default.select2-container--open {
 
 .btn-totallabel {
     color: #fff;
-    background: #7367f0;
+    background: #aa742b;
     border-radius: 5px;
     margin: 0 0 15px;
     padding: 12px
@@ -7479,8 +7479,8 @@ span.select2-container.select2-container--default.select2-container--open {
 }
 
 .setvaluecash ul li a:hover {
-    border: 1px solid #7367f0;
-    color: #7367f0
+    border: 1px solid #aa742b;
+    color: #aa742b
 }
 
 .setvaluecash ul li a img {
@@ -7508,13 +7508,13 @@ span.select2-container.select2-container--default.select2-container--open {
 .setvalue ul li.total-value h5 {
     font-size: 16px;
     font-weight: 600;
-    color: #7367f0
+    color: #aa742b
 }
 
 .setvalue ul li.total-value h6 {
     font-size: 16px;
     font-weight: 600;
-    color: #7367f0
+    color: #aa742b
 }
 
 .product-lists {
@@ -7700,7 +7700,7 @@ span.select2-container.select2-container--default.select2-container--open {
     position: relative;
     height: 19px;
     background: #fff !important;
-    color: #7367f0 !important
+    color: #aa742b !important
 }
 
 .owl-product .owl-nav button span {
@@ -7983,7 +7983,7 @@ span.select2-container.select2-container--default.select2-container--open {
 }
 
 .product-details:hover {
-    background: #7367f0
+    background: #aa742b
 }
 
 .product-details:hover h6 {
@@ -7991,7 +7991,7 @@ span.select2-container.select2-container--default.select2-container--open {
 }
 
 .product-details.active {
-    background-color: #7367f0 !important
+    background-color: #aa742b !important
 }
 
 .product-details.active h6 {
@@ -8009,7 +8009,7 @@ span.select2-container.select2-container--default.select2-container--open {
 }
 
 .btn-scanner-set {
-    background: #7367f0;
+    background: #aa742b;
     max-width: 160px;
     margin-left: auto;
     color: #fff;
@@ -8057,7 +8057,7 @@ span.select2-container.select2-container--default.select2-container--open {
 .totalitem h4 {
     padding: 7px 13px;
     background: #f8f8f8;
-    color: #7367f0;
+    color: #aa742b;
     font-size: 12px;
     font-weight: 700;
     border-radius: 50px
@@ -8133,7 +8133,7 @@ span.select2-container.select2-container--default.select2-container--open {
 }
 
 .productset:hover {
-    border: 1px solid #7367f0
+    border: 1px solid #aa742b
 }
 
 .productset .check-product {
@@ -8144,12 +8144,12 @@ span.select2-container.select2-container--default.select2-container--open {
     position: absolute;
     left: 0;
     top: 0;
-    background: #7367f0;
+    background: #aa742b;
     border-radius: 4px 0
 }
 
 .productset.active {
-    border: 1px solid #7367f0
+    border: 1px solid #aa742b
 }
 
 .productset:hover .productsetimg img {
@@ -8230,7 +8230,7 @@ span.select2-container.select2-container--default.select2-container--open {
 }
 
 .tabs_wrapper ul.tabs li.active {
-    background-color: #7367f0
+    background-color: #aa742b
 }
 
 .tabs_wrapper ul.tabs li.active .product-details {

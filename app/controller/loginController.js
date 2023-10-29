@@ -3,7 +3,11 @@ app.controller('loginController', function ($scope,$location , $rootScope, $http
         username: '',
         password: ''
     }
-    $rootScope.account = {};
+    $rootScope.account = {
+        id: 1,
+        username: "admin",
+        password: "admin"
+    };
 
     $scope.login = function () {
         event.preventDefault();

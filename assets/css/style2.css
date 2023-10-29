@@ -2319,11 +2319,7 @@ nav{
 }
 
 
-.product-list {
-    width: 100%;
-    overflow: hidden;
-    
-}
+
 .noneHref{
     text-decoration: none;
     color: #000;
@@ -3017,6 +3013,27 @@ box-shadow: 5px 5px 10px 0px #A6ABBD, -5px -5px 10px 0px #FAFBFF;
     font-size: 1.2rem; /* Điều chỉnh kích thước font */
     color: #999; /* Điều chỉnh màu sắc */
     font-style: italic; /* Điều chỉnh kiểu chữ nếu cần */
+}
+
+/* Cart */
+
+.product-lists li{
+    font-size: 1.4rem;
+}
+.productimg{
+    flex-wrap: wrap;
+    align-items: center;
+}
+.product_box-right{
+    width: 50%; 
+    display: flex; 
+    justify-content: 
+    space-between; 
+    align-items: center;
+}
+.product-table{
+    height: 100vh;
+    overflow: auto
 }
 @keyframes fakeIn {
     from {

@@ -1,6 +1,6 @@
 var app = angular.module('myApp', ['ngRoute']);
 
-app.controller('MenuController', function($scope, $location) {
+app.controller('MenuController', function($scope,$rootScope, $location) {
     $scope.isLogin = false;
     $scope.isActive = function(path) {
         return $location.path() === path;
@@ -118,6 +118,10 @@ app.config(function ($routeProvider,$locationProvider) {
             templateUrl: './page/san-pham-detail.html',
             
         })
+        .when('/cart', {
+            templateUrl: './page/view/cart.html',
+            
+        })
 
         .otherwise({
             templateUrl: './page/home.html',
@@ -135,4 +139,7 @@ app.controller('myController',function($scope, $rootScope, $http){
   
           console.error('Error loading data', error);
       }); 
+
+
+
 })

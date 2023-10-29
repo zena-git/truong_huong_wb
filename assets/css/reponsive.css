@@ -428,3 +428,15 @@
         width: 80px;
     }
 }
+
+@media (max-width: 568px){
+    
+    .product-checkboxs,
+    .product-header{
+    display: none;
+   }
+   .product-lists{
+    display: flex;
+    justify-content: flex-start;
+   }
+    }
