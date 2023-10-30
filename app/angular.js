@@ -44,11 +44,17 @@ app.config(function ($routeProvider,$locationProvider) {
             
         })
         .when('/com-ngon', {
-            templateUrl: './page/com-ngon.html',
+            templateUrl: './page/san-pham-hot.html',
+            controller: 'productController',
+
+            // templateUrl: './page/com-ngon.html',
             
         })
         .when('/dac-san', {
-            templateUrl: './page/dac-san.html',
+            templateUrl: './page/san-pham-hot.html',
+            controller: 'productController',
+
+            // templateUrl: './page/dac-san.html',
             
         })
         .when('/dang-ky-dai-hop-tac', {
@@ -61,7 +67,10 @@ app.config(function ($routeProvider,$locationProvider) {
         })
 
         .when('/gao-nuong', {
-            templateUrl: './page/gao-nuong.html',
+            templateUrl: './page/san-pham-hot.html',
+            controller: 'productController',
+
+            // templateUrl: './page/gao-nuong.html',
             
         })
         .when('/goi-hop-tac', {
@@ -114,10 +123,6 @@ app.config(function ($routeProvider,$locationProvider) {
             
         })
 
-        .when('/san-pham', {
-            templateUrl: './page/san-pham-detail.html',
-            
-        })
         .when('/cart', {
             templateUrl: './page/view/cart.html',
             
