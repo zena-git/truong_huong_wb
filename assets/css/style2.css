@@ -703,6 +703,10 @@ header {
     font-size: 1.8rem;
     font-weight: 700;
 }
+.info_tile h2{
+    font-size: 2rem;
+    font-weight: 700;
+}
 .info_tile div{
     color: #414B5A;
 }
