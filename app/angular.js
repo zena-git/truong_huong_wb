@@ -67,10 +67,10 @@ app.config(function ($routeProvider,$locationProvider) {
         })
 
         .when('/gao-nuong', {
-            templateUrl: './page/san-pham-hot.html',
+            templateUrl: './page/gao-nuong.html',
+            // templateUrl: './page/san-pham.html',
             controller: 'productController',
 
-            // templateUrl: './page/gao-nuong.html',
             
         })
         .when('/goi-hop-tac', {
