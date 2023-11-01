@@ -10,6 +10,11 @@ app.controller('productController', function ($scope, $http, $location, $routePa
         }
         console.log($scope.lstProduct);
     });
+    $scope.lstProductSale = [];
+
+    $http.get('https://65420720f0b8287df1ff59f4.mockapi.io/sale').then(function (response) {
+        $scope.lstProductSale = response.data;
+    });
 
 })
 

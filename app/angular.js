@@ -97,12 +97,12 @@ app.config(function ($routeProvider,$locationProvider) {
             templateUrl: './page/mot-so-hinh-anh.html',
             
         })
+        // .when('/san-pham-hot', {
+        //     templateUrl: './page/san-pham-hot.html',
+        //     controller: 'productController',
+        // })
         .when('/san-pham-hot', {
-            templateUrl: './page/san-pham-hot.html',
-            controller: 'productController',
-        })
-        .when('/san-pham', {
-            templateUrl: './page/san-pham-hot.html',
+            templateUrl: './page/san-pham.html',
             controller: 'productController',
         })
         .when('/san-pham/:urlSp', {

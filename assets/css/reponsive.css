@@ -339,6 +339,12 @@
 .dec_box-right{
     display: none;
 }
+.product_item .product_item-action{
+    opacity: 1;
+    transform: translateY(-10%);
+    cursor: pointer;
+
+}
 }
 /* tablet */
 @media only screen and (min-width: 767px) and (max-width: 1023px) {
@@ -389,7 +395,12 @@
     .proshow_img-hot img{
         width: 50px;
     }
+    .product_item .product_item-action{
+        opacity: 1;
+        transform: translateY(-10%);
+        cursor: pointer;
     
+    }
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1124px) {
