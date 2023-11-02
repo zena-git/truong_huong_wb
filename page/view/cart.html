@@ -34,6 +34,7 @@
                     <div class="card-body pt-0">
                         <div class="product-table">
                             <ul class="product-lists" ng-repeat="pro in lstCart">
+                             
                                 <li  class="product-checkboxs">
                                     <label class="checkboxs">
                                         <input type="checkbox" value="{{pro.billDetail.id}}">
@@ -64,13 +65,13 @@
                                 <li>
                                     <div class="increment-decrement" ng-controller="quatityController">
                                         <div class="input-groups">
-                                            <input type="button" value="-" class="button-minus dec button" ng-click="addQuantity(pro.billDetail, -1)">
-                                            <input type="text" name="child" value="{{pro.billDetail.quantity}}" class="quantity-field" ng-chance="addQuantity(pro.billDetail, value)">
-                                            <input type="button" value="+" class="button-plus inc button a1 a2 a3 a4" ng-click="addQuantity(pro.billDetail, 1)">
+                                            <input type="button" value="-" class="button-minus dec button" ng-click="addQuantity(pro, -1)">
+                                            <input type="text" name="child" value="{{pro.quantity}}" class="quantity-field" ng-chance="addQuantity(pro, value)">
+                                            <input type="button" value="+" class="button-plus inc button a1 a2 a3 a4" ng-click="addQuantity(pro, 1)">
                                         </div>
                                     </div>
                                 </li>
-                                <li>{{pro.billDetail.quantity * pro.product.price}}</li>
+                                <li>{{pro.quantity * pro.product.price}}</li>
                                 <li ng-controller="deleteCartController">
                                     <a ng-click="deleteProduct(pro.billDetail,$index)" class="confirm-text" href="javascript:void(0);"><img
                                             src="assets/img/icons/delete-2.svg" alt="img"></a>
@@ -78,11 +79,19 @@
                             </div>
 
                             </ul>
-
+                           
                         </div>
+                        
+                    </div>
+                    <div class="cart_btn">
+                        <a  href="#/buy"  class="btn btn-success">Mua Ngay</a>
                     </div>
                 </div>
+
+                
             </div>
         </div>
     </div>
+
+  
 </div>

@@ -1,0 +1,176 @@
+<div class="box_buy containers" ng-controller="buyCartController">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 box_addres">
+            <div class="box_addres-tile">
+                <h3>Địa Chỉ Nhận Hàng</h3>
+            </div>
+            <div class="box_address-form">
+                <div class="card-body card-bodys">
+                    <form action="#">
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-2">Họ Và Tên</label>
+                            <div class="col-md-10">
+                                <input type="text" placeholder="Họ Và Tên" class="form-control" ng-model="form_customer.name">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-2">Số Điện Thoại</label>
+                            <div class="col-md-10">
+                                <input type="text" placeholder="Số Điện Thoại" class="form-control" ng-model="form_customer.phone">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-2">Email</label>
+                            <div class="col-md-10">
+                                <input type="text" placeholder="Email (Không Bắt Buộc)" class="form-control" ng-model="form_customer.email">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-2">Tỉnh/TP</label>
+                            <div class="col-md-10">
+                                <input type="text" placeholder="Tỉnh/TP" class="form-control" ng-model="form_customer.tinh">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-2">Quận/huyện
+                            </label>
+                            <div class="col-md-10">
+                                <input type="text" placeholder="Quận/huyện" class="form-control" ng-model="form_customer.huyen">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-2">Phường/Xã
+                            </label>
+                            <div class="col-md-10">
+                                <input type="text" placeholder="Phường/Xã" class="form-control" ng-model="form_customer.xa">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-2">Địa chỉ/số nhà
+                            </label>
+                            <div class="col-md-10">
+                                <input type="text" placeholder="Địa chỉ/số nhà" class="form-control" ng-model="form_customer.diaChi">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-2">Ghi chú</label>
+                            <div class="col-md-10">
+                                <textarea rows="5" cols="5" class="form-control" placeholder="Ghi chú" ng-model="form_customer.ghiChu"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6" >
+            <div class="col-12">
+                <div class="box_buy-products">
+                    <div class="box_buy-productile">
+                        <h3>Thông Tin Đơn Hàng</h3>
+                    </div>
+                    <div class="box_buy-prodct">
+                        
+                        <div class="page-wrapper ms-0" style="padding: 0;">
+                            <div class="content"  style="padding: 0;">
+                                <div class="row">
+
+                                    <div class="col-lg-12 col-sm-12 ">
+                                        <div class="card-body pt-0" style="padding: 0;">
+
+                                            <div class="product-header">
+                                                <ul class="product-lists" style="padding: 0;">
+                                                    <li style="width: 50%;">
+                                                        Sản Phẩm
+                                                    </li>
+                                                    <div class="product_box-right">
+                                                        <li>Số Lượng</li>
+                                                        <li>Thành Tiền</li>
+
+                                                    </div>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card-body pt-0"  style="padding: 0;">
+                                            <div class="product-table" style="height: 50vh;">
+                                                <ul class="product-lists" ng-repeat="pro in lstCart"
+                                                    style="padding: 0;">
+                                                    <li style="width: 50%;">
+                                                        <div class="productimg">
+                                                            <div class="productimgs">
+                                                                <img ng-src="{{pro.product.avatar[0]}}" alt="img">
+                                                            </div>
+                                                            <div class="productcontet">
+                                                                <h4>{{pro.product.name}}
+                                                                    <a href="javascript:void(0);" class="ms-2"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#edit"><img
+                                                                            src="assets/img/icons/edit-5.svg"
+                                                                            alt="img"></a>
+                                                                </h4>
+                                                                <div class="productlinkset">
+                                                                    <h5>{{pro.product.category[0]}}</h5>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <div class="product_box-right">
+
+                                                        <li>{{pro.quantity}}</li>
+
+                                                        <li>{{pro.quantity * pro.product.price}}</li>
+
+                                                    </div>
+
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="form-group row">
+                        <label class="col-form-label col-md-12">Tổng tiền: <span
+                                style="color: rgb(226, 43, 43);">{{toltalAmount}}</span> đ</label>
+                        <label class="col-form-label col-md-12">Phí Giao Hàng: <span
+                                style="color: rgb(226, 43, 43);">shop sẽ báo sau</span> đ</label>
+                        <label class="col-form-label col-md-12">Thành tiền (tạm tính): <span
+                                style="color: rgb(226, 43, 43);">{{toltalAmount}}</span> đ</label>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="form-group row">
+                        <label class="col-form-label col-md-12">Hình Thức Giao Hàng</label>
+                        <div class="col-md-12">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="radio" checked> Thanh Toán Khi Nhận Hàng
+                                </label>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="buy_btn" style="margin-top: 2rem; ">
+                        <button type="button" class="btn btn-success" style="width: 100%;" ng-click="buyProduct()">Đặt Hàng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

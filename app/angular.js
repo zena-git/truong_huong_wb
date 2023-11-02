@@ -1,6 +1,8 @@
-var app = angular.module('myApp', ['ngRoute']);
+var app = angular.module('myApp', ['ngRoute','LocalStorageModule']);
 
-app.controller('MenuController', function($scope,$rootScope, $location) {
+app.controller('MenuController', function($scope,$rootScope, $location,localStorageService) {
+   
+    
     $scope.isLogin = false;
     $scope.isActive = function(path) {
         return $location.path() === path;
@@ -14,8 +16,14 @@ app.controller('MenuController', function($scope,$rootScope, $location) {
     $scope.stopPropagation = function(event) {
         event.stopPropagation();
     };
-
-    
+    $rootScope.countCart = 0;
+    var cart = localStorageService.get('cart') || [];
+    if (cart && angular.isArray(cart)) {
+     
+        $rootScope.countCart = cart.length;
+    } else {
+        $rootScope.countCart = 0; // Nếu 'cart' không tồn tại hoặc không phải là mảng, thiết lập giá trị mặc định.
+    }
 });
 
 
@@ -127,13 +135,17 @@ app.config(function ($routeProvider,$locationProvider) {
             templateUrl: './page/view/cart.html',
             
         })
+        .when('/buy', {
+            templateUrl: './page/view/buy.html',
+            
+        })
 
         .otherwise({
             templateUrl: './page/home.html',
         });
 });
 
-app.controller('myController',function($scope, $rootScope, $http){
+app.controller('myController',function($scope, $rootScope, $http,localStorageService){
     $rootScope.lstText = [];
       $http.get('https://6524c97cea560a22a4ea1a53.mockapi.io/text/1')
       .then(function(response) {
@@ -144,7 +156,6 @@ app.controller('myController',function($scope, $rootScope, $http){
   
           console.error('Error loading data', error);
       }); 
-
-
-
+     
+     
 })

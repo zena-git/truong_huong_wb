@@ -3323,6 +3323,43 @@ nav {
     font-size: 1.8rem;
     font-weight: bold;
 }
+
+.box_buy-prodct,
+.box_address-form{
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 1rem 2rem;
+
+}
+
+.box_buy-prodct{
+    margin-bottom: 2rem;
+}
+.box_buy-productile,
+.box_buy-product,
+.box_addres-tile{
+    margin-bottom: 2rem;
+}
+
+.box_buy{
+    margin: 6rem;
+}
+
+
+.cart_btn{
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100px;
+    background-color: var(--white-color);
+    border: 1px solid #f3f3f3;
+}
+.cart_btn .btn{
+    margin-right: 2rem;
+    width: 20rem;
+}
 @keyframes fakeIn {
     from {
 
