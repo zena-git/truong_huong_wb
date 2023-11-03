@@ -78,6 +78,17 @@ app.config(function ($routeProvider,$locationProvider) {
             templateUrl: '../admin/view/product/product-edit.html',
            
         })
+        .when('/order', {
+            templateUrl: '../admin/view/order/order.html',
+            controller: 'orderController'
+           
+        })
+
+        .when('/order/:idOder', {
+            templateUrl: '../admin/view/order/orderDetail.html',
+            controller: 'orderDetailController'
+           
+        })
 
          .when('/tin-tuc', {
             templateUrl: '../admin/page/tin-tuc.html',

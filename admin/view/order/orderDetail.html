@@ -1,0 +1,229 @@
+<div class="page-wrapper" style="min-height: 715px;" data-select2-id="7">
+    <div class="content" data-select2-id="6">
+        <div class="page-header">
+            <div class="page-title">
+                <h4>Thông Tin Chi Tiết Đơn Hàng</h4>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="card-sales-split">
+                    <h2>Mã : DH0{{order.id}}</h2>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);"><img src="../assets/img/icons/edit.svg" alt="img"></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><img src="../assets/img/icons/pdf.svg" alt="img"></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><img src="../assets/img/icons/excel.svg" alt="img"></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><img src="../assets/img/icons/printer.svg" alt="img"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="invoice-box table-height"
+                    style="max-width: 1600px;width:100%;overflow: auto;margin:15px auto;padding: 0;font-size: 14px;line-height: 24px;color: #555;">
+                    <table cellpadding="0" cellspacing="0" style="width: 100%;line-height: inherit;text-align: left;">
+                        <tbody>
+                            <tr class="top">
+                                <td colspan="6" style="padding: 5px;vertical-align: top;">
+                                    <table style="width: 100%;line-height: inherit;text-align: left;">
+                                        <tbody>
+                                            <tr>
+                                                <td
+                                                    style="padding:5px;vertical-align:top;text-align:left;padding-bottom:20px">
+                                                    <font style="vertical-align: inherit;margin-bottom:25px;">
+                                                        <font
+                                                            style="vertical-align: inherit;font-size:14px;color:#7367F0;font-weight:600;line-height: 35px; ">
+                                                            Khách Hàng</font>
+                                                    </font><br>
+                                                    <font style="vertical-align: inherit;">
+                                                        <font
+                                                            style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;">
+                                                            Khách Lẻ</font>
+                                                    </font><br>
+                                                    
+                                                </td>
+                                                <td
+                                                    style="padding:5px;vertical-align:top;text-align:left;padding-bottom:20px">
+                                                    <font style="vertical-align: inherit;margin-bottom:25px;">
+                                                        <font
+                                                            style="vertical-align: inherit;font-size:14px;color:#7367F0;font-weight:600;line-height: 35px; ">
+                                                            Thông Tin Người Nhận</font>
+                                                    </font><br>
+                                                    <font style="vertical-align: inherit;">
+                                                        <font
+                                                            style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;">
+                                                            Tên: {{order.customer.name}} </font>
+                                                    </font><br>
+                                                    <font style="vertical-align: inherit;">
+                                                        <font
+                                                            style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;">
+                                                            SDT: {{order.customer.phone}} </font>
+                                                    </font><br>
+                                                    <font style="vertical-align: inherit;">
+                                                        <font
+                                                            style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;">
+                                                            Email: {{order.customer.email}} </font>
+                                                    </font><br>
+
+                                                    <font style="vertical-align: inherit;">
+                                                        <font
+                                                            style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;">
+                                                            Địa Chỉ:  {{order.customer.diaChi}} </font>
+                                                    </font><br>
+                                                </td>
+                                                <td
+                                                    style="padding:5px;vertical-align:top;text-align:left;padding-bottom:20px">
+                                                    <font style="vertical-align: inherit;margin-bottom:25px;">
+                                                        <font
+                                                            style="vertical-align: inherit;font-size:14px;color:#7367F0;font-weight:600;line-height: 35px; ">
+                                                            </font>
+                                                    </font><br>
+                                                    
+                                                    <font style="vertical-align: inherit;">
+                                                        <font
+                                                            style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;">
+                                                            Tình trạng thanh toán: Đang Xử Lý</font>
+                                                    </font><br>
+                                                    <font style="vertical-align: inherit;">
+                                                        <font
+                                                            style="vertical-align: inherit;font-size: 14px;color:#000;font-weight: 400;">
+                                                            Trạng Thái: Đang Xử Lý</font>
+                                                    </font><br>
+                                                </td>
+                                                
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr class="heading " style="background: #F3F2F7;">
+                                <td
+                                    style="padding: 5px;vertical-align: middle;font-weight: 600;color: #5E5873;font-size: 14px;padding: 10px; ">
+                                    Sản Phẩm
+                                </td>
+                                <td
+                                    style="padding: 5px;vertical-align: middle;font-weight: 600;color: #5E5873;font-size: 14px;padding: 10px; ">
+                                    Số Lượng
+                                </td>
+                                <td
+                                    style="padding: 5px;vertical-align: middle;font-weight: 600;color: #5E5873;font-size: 14px;padding: 10px; ">
+                                    Giá
+                                </td>
+                                <td
+                                    style="padding: 5px;vertical-align: middle;font-weight: 600;color: #5E5873;font-size: 14px;padding: 10px; ">
+                                    Giảm Giá
+                                </td>
+
+                                <td
+                                    style="padding: 5px;vertical-align: middle;font-weight: 600;color: #5E5873;font-size: 14px;padding: 10px; ">
+                                    Tổng Tiền
+                                </td>
+                            </tr>
+                            <tr class="details" style="border-bottom:1px solid #E9ECEF ;" ng-repeat="pro in order.product">
+                                <td style="padding: 10px;vertical-align: top; display: flex;align-items: center;">
+                                    <img ng-src="{{pro.product.avatar[0]}}" alt="{{pro.product.name}}" class="me-2"
+                                        style="width:40px;height:40px;">
+                                    {{pro.product.name}}
+                                </td>
+                                <td style="padding: 10px;vertical-align: top; ">
+                                    {{pro.quantity}}
+                                </td>
+                                <td style="padding: 10px;vertical-align: top; ">
+                                    {{pro.product.price}}
+                                </td>
+                                <td style="padding: 10px;vertical-align: top; ">
+                                    0.00
+                                </td>
+
+                                <td style="padding: 10px;vertical-align: top; ">
+                                    {{pro.quantity*pro.product.price}}
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label>Order Tax</label>
+                            <input type="text" disabled>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label>Discount</label>
+                            <input type="text" disabled>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="form-group">
+                            <label>Shipping</label>
+                            <input type="text" disabled>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="form-group" data-select2-id="5">
+                            <label>Trạng Thái</label>
+                            <select class="select select2-hidden-accessible" data-select2-id="1" tabindex="-1"
+                                aria-hidden="true">
+                                <option data-select2-id="3">Chọn trạng thái</option>
+                                <option data-select2-id="11">Đã hoàn thành</option>
+                                <option data-select2-id="12">Đang tiến hành</option>
+                            </select><span
+                                class="select2 select2-container select2-container--default select2-container--below select2-container--focus"
+                                dir="ltr" data-select2-id="2" style="width: 100%;"><span class="selection"><span
+                                        class="select2-selection select2-selection--single" role="combobox"
+                                        aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false"
+                                        aria-labelledby="select2-v5ji-container"><span
+                                            class="select2-selection__rendered" id="select2-v5ji-container"
+                                            role="textbox" aria-readonly="true" title="Completed">Completed</span><span
+                                            class="select2-selection__arrow" role="presentation"><b
+                                                role="presentation"></b></span></span></span><span
+                                    class="dropdown-wrapper" aria-hidden="true"></span></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 ">
+                            <div class="total-order w-100 max-widthauto m-auto mb-4">
+                                <ul>
+                                    <li>
+                                        <h4>Thuế</h4>
+                                        <h5>$ 0</h5>
+                                    </li>
+                                    <li>
+                                        <h4>Giảm giá </h4>
+                                        <h5>$ 0</h5>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 ">
+                            <div class="total-order w-100 max-widthauto m-auto mb-4">
+                                <ul>
+                                    <li>
+                                        <h4>Shipping</h4>
+                                        <h5>$ 0.00</h5>
+                                    </li>
+                                    <li class="total">
+                                        <h4>Tổng cộng</h4>
+                                        <h5>$ {{toltalAmount}}</h5>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <a href="javascript:void(0);" class="btn btn-submit me-2">Update</a>
+                        <a href="#/order" class="btn btn-cancel">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

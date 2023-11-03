@@ -6,21 +6,22 @@
             </div>
             <div class="box_address-form">
                 <div class="card-body card-bodys">
-                    <form action="#">
+                    <form name="customerForm" ng-submit="buyProduct()" novalidate>
                         <div class="form-group row">
                             <label class="col-form-label col-md-2">Họ Và Tên</label>
                             <div class="col-md-10">
-                                <input type="text" placeholder="Họ Và Tên" class="form-control" ng-model="form_customer.name">
+                                <input type="text" placeholder="Họ Và Tên" class="form-control" ng-model="form_customer.name" required>
+                                <span style="color: red;  font-size: 1.2rem;" ng-show="form_customer_validate.name">Họ và Tên là bắt buộc.</span>  
                             </div>
                         </div>
-
+                    
                         <div class="form-group row">
                             <label class="col-form-label col-md-2">Số Điện Thoại</label>
                             <div class="col-md-10">
-                                <input type="text" placeholder="Số Điện Thoại" class="form-control" ng-model="form_customer.phone">
+                                <input type="text" placeholder="Số Điện Thoại" class="form-control" ng-model="form_customer.phone" ng-pattern="/\d{10}/" required>
+                                <span style="color: red;  font-size: 1.2rem;" ng-show="form_customer_validate.phone">Số Điện Thoại không hợp lệ. Ví dụ: 1234567890.</span>
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <label class="col-form-label col-md-2">Email</label>
                             <div class="col-md-10">
@@ -29,33 +30,33 @@
                         </div>
 
 
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label class="col-form-label col-md-2">Tỉnh/TP</label>
                             <div class="col-md-10">
-                                <input type="text" placeholder="Tỉnh/TP" class="form-control" ng-model="form_customer.tinh">
+                                <input type="text" placeholder="Tỉnh/TP" class="form-control" ng-model="form_customer.tinh" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-form-label col-md-2">Quận/huyện
                             </label>
                             <div class="col-md-10">
-                                <input type="text" placeholder="Quận/huyện" class="form-control" ng-model="form_customer.huyen">
+                                <input type="text" placeholder="Quận/huyện" class="form-control" ng-model="form_customer.huyen" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-form-label col-md-2">Phường/Xã
                             </label>
                             <div class="col-md-10">
-                                <input type="text" placeholder="Phường/Xã" class="form-control" ng-model="form_customer.xa">
+                                <input type="text" placeholder="Phường/Xã" class="form-control" ng-model="form_customer.xa" required>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-group row">
-                            <label class="col-form-label col-md-2">Địa chỉ/số nhà
+                            <label class="col-form-label col-md-2">Địa chỉ
                             </label>
                             <div class="col-md-10">
-                                <input type="text" placeholder="Địa chỉ/số nhà" class="form-control" ng-model="form_customer.diaChi">
-                            </div>
+                                <input type="text" placeholder="Địa chỉ" class="form-control" ng-model="form_customer.diaChi" required>
+                                <span  style="color: red;  font-size: 1.2rem;" ng-show="form_customer_validate.diaChi">Địa Chỉ là bắt buộc.</span></div>
                         </div>
 
 
@@ -103,7 +104,7 @@
                                             <div class="product-table" style="height: 50vh;">
                                                 <ul class="product-lists" ng-repeat="pro in lstCart"
                                                     style="padding: 0;">
-                                                    <li style="width: 50%;">
+                                                    <li class="product_items">
                                                         <div class="productimg">
                                                             <div class="productimgs">
                                                                 <img ng-src="{{pro.product.avatar[0]}}" alt="img">

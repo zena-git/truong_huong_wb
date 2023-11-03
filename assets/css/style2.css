@@ -3186,7 +3186,7 @@ nav {
 }
 
 .product_box-right {
-    width: 50%;
+    width: 100%;
     display: flex;
     justify-content:
         space-between;
@@ -3196,6 +3196,9 @@ nav {
 .product-table {
     height: 100vh;
     overflow: auto
+}
+.product_items{
+    width: 50%;
 }
 /* Produc */
 .box_product {
