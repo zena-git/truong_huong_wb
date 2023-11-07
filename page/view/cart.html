@@ -84,7 +84,82 @@
                         
                     </div>
                     <div class="cart_btn">
-                        <a  href="#/buy"  class="btn btn-success">Mua Ngay</a>
+                        <button onclick="modalShare()" class="btn btn-success btn_addPro"><img src="../assets/img/icons/plus.svg" alt="img" class="me-1"><span>Thêm Sản Phẩm</span></button>
+                        <a  href="#/buy"  class="btn btn-success btn_buy">Mua Ngay</a>
+                        
+                    </div>
+                    <div class="modal_sh hide">
+                        <div class="modal_share">
+            
+                            <div class="modal_share-box row">
+                                <div class="modal_share-close">
+                                    <div class="share_close-btn" onclick="modalShare()">
+                                        <i class="ri-close-fill"></i>
+                                    </div>
+                                </div>
+                                <div class="box_share-left col-lg-5 col-md-5 col-sm-12">
+                                    <div class="share_left-img">
+                                        <img ng-src="{{product.avatar[0]}}" alt="">
+                                    </div>
+                                    <div class="share_left-tile">
+                                        <h2> {{product.name}}</h2>
+                                    </div>
+                                    <div class="share_left-price">
+                                        <span> {{product.price | number}}</span>
+                                    </div>
+                                    <div class="share_left-dec">
+                                        {{product.description | limitTo : 200}}
+                                    </div>
+                                </div>
+            
+                                <div class="box_share-right col-lg-7 col-md-7 col-sm-12">
+                                    <div class="share_right-url">
+            
+                                        <div class="share_url">
+                                            <div class="share_url-tile">
+                                                <h3>Copy URL</h3>
+                                            </div>
+                                            <div class="share_url-input">
+                                                <input type="text" readonly id="copyText" value="{{currentURL}}">
+                                                <button onclick="copyToClipboard()"><i class="ri-file-copy-line"></i></button>
+                                            </div>
+                                        </div>
+            
+                                        <div class="share_mxh">
+                                            <div class="share_mxh-tile">
+                                                <h3>Chia Sẻ Lên</h3>
+                                            </div>
+                                            <div class="share_mxh-icon">
+                                                <a
+                                                    href="fb-messenger://share/?link= https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fsharing%2Freference%2Fsend-dialog&app_id=123456789"><i
+                                                        class="bi bi-facebook"></i></a>
+            
+            
+                                                <i class="bi bi-messenger"></i>
+                                                <i class="bi bi-twitter"></i>
+                                                <i class="bi bi-twitch"></i>
+                                            </div>
+                                        </div>
+            
+                                        <div class="share_qr">
+                                            <div class="share_qr-tile">
+                                                <h3>Chia Sẻ QR</h3>
+                                            </div>
+                                            <div class="share_qr-img">
+                                                <img src="https://chart.apis.google.com/chart?cht=qr&chs=150x150&chl={{encodedUrlQR}}"
+                                                    alt="{{encodedUrlQR}}">
+                                            </div>
+                                        </div>
+            
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+            
+                    <div class="modal_share-gay" onclick="modalShare()">
+            
                     </div>
                 </div>
 
