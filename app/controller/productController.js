@@ -40,6 +40,7 @@ app.controller('productAddBuyController', function ($scope, $rootScope, $http, $
 
     let input_quantity = document.getElementById("input_quantity");
     $scope.addCart = function (pro) {
+
         var cart = {
             product: {},
             quantity: {},
@@ -55,8 +56,8 @@ app.controller('productAddBuyController', function ($scope, $rootScope, $http, $
         } else {
             cart.product = pro;
             cart.quantity = input_quantity.value;
-            localStorage.push(cart);
-            localStorageService.set('cart', localStorage)
+            $rootScope.lstCart.push(cart);
+            localStorageService.set('cart',  $rootScope.lstCart)
             $rootScope.countCart++;
 
         }

@@ -88,72 +88,59 @@
                         <a  href="#/buy"  class="btn btn-success btn_buy">Mua Ngay</a>
                         
                     </div>
-                    <div class="modal_sh hide">
-                        <div class="modal_share">
+                    <div class="modal_sh hide" ng-controller="productController">
+                        <div class="modal_share" >
             
-                            <div class="modal_share-box row">
+                            <div class="modal_share-box row" ng-controller="addProNewCartController">
                                 <div class="modal_share-close">
                                     <div class="share_close-btn" onclick="modalShare()">
                                         <i class="ri-close-fill"></i>
                                     </div>
                                 </div>
-                                <h1>Đang Phát Triển Tính Năng</h1>
-                                <!-- <div class="box_share-left col-lg-5 col-md-5 col-sm-12">
-                                    <div class="share_left-img">
-                                        <img ng-src="{{product.avatar[0]}}" alt="">
+                                <div class="card-body pt-0">
+                                    <div class="product-table" style="height: 54vh;">
+                                        <ul class="product-lists ng-scope" ng-repeat="pro in lstProduct">
+                                            <li class="product_items">
+                                                <div class="productimg">
+                                                    <div class="productimgs">
+                                                        <img ng-src="{{pro.avatar[0]}}">
+                                                    </div>
+                                                    <div class="productcontet">
+                                                        <h4 class="ng-binding">{{pro.name}}
+                                                            <a href="javascript:void(0);" class="ms-2" data-bs-toggle="modal" data-bs-target="#edit"><img src="assets/img/icons/edit-5.svg" alt="img"></a>
+                                                        </h4>
+                                                        <div class="productlinkset">
+                                                            <h5 class="ng-binding">{{pro.category[0]}}</h5>
+                                                        </div>
+            
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <div class="product_box-right">
+            
+                                            <li class="ng-binding">{{pro.price}}</li>
+                                            <li>
+                                                <div class="increment-decrement" >
+                                                    <div class="input-groups">
+                                                        <input type="button" value="-" class="button-minus dec button" ng-click="addQuantity(-1,pro)">
+                                                        <input type="text" name="child" value="1" class="quantity-field input_quantity{{pro.id}}" id="input_quantity{{pro.id}}" >
+                                                        <input type="button" value="+" class="button-plus inc button a1 a2 a3 a4" ng-click="addQuantity(1,pro)">
+                                                    </div>
+                                                </div>
+                                            </li>
+                                           
+                                            <li >
+                                                <a onclick="modalShare()" ng-click="addCarts(pro)" class="confirm-text" href="javascript:void(0);">
+                                                    <img src="../assets/img/icons/plus.svg" alt="img" class="me-1"  style="width: 4rem">
+                                                </a>
+                                            </li>
+                                        </div>
+            
+                                        </ul>
+                                       
                                     </div>
-                                    <div class="share_left-tile">
-                                        <h2> {{product.name}}</h2>
-                                    </div>
-                                    <div class="share_left-price">
-                                        <span> {{product.price | number}}</span>
-                                    </div>
-                                    <div class="share_left-dec">
-                                        {{product.description | limitTo : 200}}
-                                    </div>
+                                    
                                 </div>
-            
-                                <div class="box_share-right col-lg-7 col-md-7 col-sm-12">
-                                    <div class="share_right-url">
-            
-                                        <div class="share_url">
-                                            <div class="share_url-tile">
-                                                <h3>Copy URL</h3>
-                                            </div>
-                                            <div class="share_url-input">
-                                                <input type="text" readonly id="copyText" value="{{currentURL}}">
-                                                <button onclick="copyToClipboard()"><i class="ri-file-copy-line"></i></button>
-                                            </div>
-                                        </div>
-            
-                                        <div class="share_mxh">
-                                            <div class="share_mxh-tile">
-                                                <h3>Chia Sẻ Lên</h3>
-                                            </div>
-                                            <div class="share_mxh-icon">
-                                                <a
-                                                    href="fb-messenger://share/?link= https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fsharing%2Freference%2Fsend-dialog&app_id=123456789"><i
-                                                        class="bi bi-facebook"></i></a>
-            
-            
-                                                <i class="bi bi-messenger"></i>
-                                                <i class="bi bi-twitter"></i>
-                                                <i class="bi bi-twitch"></i>
-                                            </div>
-                                        </div>
-            
-                                        <div class="share_qr">
-                                            <div class="share_qr-tile">
-                                                <h3>Chia Sẻ QR</h3>
-                                            </div>
-                                            <div class="share_qr-img">
-                                                <img src="https://chart.apis.google.com/chart?cht=qr&chs=150x150&chl={{encodedUrlQR}}"
-                                                    alt="{{encodedUrlQR}}">
-                                            </div>
-                                        </div>
-            
-                                    </div>
-                                </div> -->
                             </div>
                         </div>
                     </div>
