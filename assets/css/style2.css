@@ -722,7 +722,7 @@ header {
     padding: 20px 14px;
     display: flex;
     width: 100%;
-
+    height: 18rem;
 }
 
 .box_info_avt {}
@@ -737,6 +737,7 @@ header {
     font-weight: 500;
     margin-left: 20px;
     width: 100%;
+    overflow: hidden;
 }
 
 .info_tile {
@@ -814,8 +815,12 @@ footer {
 .footer_box-colum li {
     font-size: 1.25rem;
 }
-
+.mr-inner{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
 .nav_inner {
+
     padding: 20px 60px;
     display: flex;
     border-radius: 20px;
@@ -873,11 +878,13 @@ footer {
 }
 
 .box_decs p {
+    white-space: pre-wrap;
     font-size: 2.4rem;
     color: #060606;
     text-align: center;
     margin-bottom: 20px;
-    width: 50%;
+    width: 80%;
+    /* line-height:  3rem; */
 
 }
 
@@ -911,9 +918,9 @@ footer {
 
 .boxmomo_inner {
 
-    padding: 20px 60px;
+    padding: 2rem 6rem;
 
-    background-color: #E7EBF0;
+    background-color: #ffffff;
 
 
     margin-bottom: 20px;
@@ -925,29 +932,43 @@ footer {
 
 }
 
-.momo_dec {
-    display: flex;
-    justify-content: space-between;
-}
-
-.momo_dec-conten img {
-
+.item_box{
     width: 100%;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6rem;
 }
 
 .momo_logo {
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:  20rem;
+    height: 20rem;
+    border-radius: 50%;
+    background-color: var(--white-color);
 }
-
+.boxmomo_inner-dec{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.boxmomo_inner-dec h4{
+    font-size: 1.8rem;
+    margin-bottom: 8rem
+}
 .momo_logo img {
     width: 100%;
-    max-width: 112px;
-    border-radius: 50px;
+    background-color: var(--white-color);
+    max-width: 14rem;
+    
     border: 1px solid #FFF;
-    background: linear-gradient(318deg, rgba(0, 0, 0, 0.40) 0%, rgba(255, 255, 255, 0.40) 105.18%), #E7EBF0;
-    background-blend-mode: soft-light, normal;
-    box-shadow: 2.5px 2.5px 5px 0px #A6ABBD, -2.5px -2.5px 5px 0px #FAFBFF;
+
+}
+.item_box-dec>h5{
+    color: var(--black-color);
 }
 
 .table_1 {
@@ -972,7 +993,7 @@ footer {
 .table_header {
     display: flex;
     justify-content: space-evenly;
-    margin: 32px 0;
+    margin: 2.2rem 0;
     padding: 15px;
 
     font-weight: 700;
@@ -1425,6 +1446,9 @@ textarea::placeholder {
     flex-shrink: 0;
 }
 
+.box_content-reason{
+    position: relative;
+}
 .baner_img {
     height: 100%;
     max-height: 500px;
@@ -1525,6 +1549,8 @@ textarea::placeholder {
 
 .banner_color .banner_color-img {
     height: 100%;
+    padding-top: 0.6rem;
+    padding-bottom:  0.6rem;
 
 }
 
@@ -1557,7 +1583,7 @@ Vi sao chon chung toi
 
 .box_content-reason .content_reason-left h1 {
     color: var(--Black, #000);
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     font-style: normal;
     font-weight: 700;
     line-height: 120%;
@@ -1571,7 +1597,7 @@ Vi sao chon chung toi
 
     /* Heading/H6 */
     font-family: Roboto;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-style: normal;
     font-weight: 700;
     line-height: 140%;
@@ -1643,10 +1669,11 @@ Vi sao chon chung toi
 }
 
 .box_reason-right {
+
     padding: 32px;
     margin-bottom: 98px;
     border: 4px solid #000;
-    display: block;
+    display: none;
     align-self: stretch;
 }
 
@@ -3371,6 +3398,37 @@ nav {
 .btn_addPro img{
     
     
+}
+
+.box_phaply-logo{
+    display: flex;
+    justify-content: space-evenly;
+}
+.phaply_logo-img{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: #ffffff;
+   border-radius: 50%;
+}
+.phaply_logo-img img{
+    width: 128px;
+    border-radius: 80%;
+
+}
+.box_phaply{
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+}
+
+.box_phaply>h5{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: bold;
+
+}
+.box_history{
+    font-size: 2rem;
 }
 @keyframes fakeIn {
     from {

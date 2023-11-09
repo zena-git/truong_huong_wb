@@ -161,8 +161,8 @@
                         </li>
                         <li class="menu_child-li"><a ng-href="#/goi-hop-tac">Gói hợp tác</a></li>
                         <li class="menu_child-li"><a ng-href="#/quy-trinh-hop-tac">Quy trình hợp tác</a></li>
-                        <li class="menu_child-li"><a ng-href="#/dang-ky-dai-hop-tac">Đăng ký đại hợp tác</a></li>
                         <li class="menu_child-li"><a ng-href="#/mot-so-hinh-anh">Một số hình ảnh</a></li>
+                        <li class="menu_child-li"><a ng-href="#/dang-ky-dai-hop-tac">Đăng ký đại hợp tác</a></li>
                     </ul>
                 </li>
                 <li ng-class="{ 'active': isActive('/tin-tuc') }"><a ng-href="#/tin-tuc">Tin tức</a></li>
@@ -207,10 +207,11 @@
             </li>
             <li  class="menu_mobile-child" ng-click="showChildMenucn = !showChildMenucn" ng-class="{ 'ativice_mobile': isActive('/loi-the-mo-hinh') || isActive('/goi-hop-tac') || isActive('/quy-trinh-hop-tac') || isActive('/dang-ky-dai-hop-tac')  || isActive('/dang-ky-dai-hop-tac') }"><a class="menu_mobile-link">Cơm ngon</a>
                 <ul class="menu_child-list" ng-show="showChildMenucn">
+                    <li ng-click="checkboxModel = false"><a ng-href="#/loi-the-mo-hinh">Lợi thế mô hình</a></li>
                     <li ng-click="checkboxModel = false"><a ng-href="#/goi-hop-tac">Gói hợp tác</a></li>
                     <li ng-click="checkboxModel = false"><a ng-href="#/quy-trinh-hop-tac">Quy trình hợp tác</a></li>
-                    <li ng-click="checkboxModel = false"><a ng-href="#/dang-ky-dai-hop-tac">Đăng ký đại hợp tác</a></li>
                     <li ng-click="checkboxModel = false"><a ng-href="#/mot-so-hinh-anh">Một số hình ảnh</a></li>
+                    <li ng-click="checkboxModel = false"><a ng-href="#/dang-ky-dai-hop-tac">Đăng ký đại hợp tác</a></li>
                 </ul>
             </li>
             <li ng-click="checkboxModel = false" ng-class="{ 'ativice_mobile': isActive('/tin-tuc') }"><a ng-href="#/tin-tuc" class="menu_mobile-link">Tin tức</a></li>
