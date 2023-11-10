@@ -139,11 +139,35 @@ app.config(function ($routeProvider,$locationProvider) {
             templateUrl: './page/view/buy.html',
             
         })
+        .when('/job/nhan-vien-kinh-doanh', {
+            templateUrl: '/page/job/nhan-vien-kinh-doanh.html',
+            
+        })
+        .when('/job/nhan-vien-phat-trien', {
+            templateUrl: '/page/job/nhan-vien-phat-trien.html',
+            
+        })
+        .when('/job/nhan-vien-van-phong', {
+            templateUrl: '/page/job/nhan-vien-van-phong.html',
+            
+        })
 
         .otherwise({
             templateUrl: './page/home.html',
         });
 });
+app.run(['$rootScope', '$window', function($rootScope, $window) {
+    $rootScope.$on('$routeChangeSuccess', function() {
+        console.log('Route change success. Scrolling to top.');
+        setTimeout(function() {
+            $window.scrollTo(0, 0);
+            console.log("lee");
+        }, 1000); // Adjust the delay as needed
+    });
+}]);
+
+
+
 
 app.controller('myController',function($scope, $rootScope, $http,localStorageService){
     $rootScope.lstText = [];

@@ -1,70 +1,48 @@
-<html>
-   <head>
-      <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
-      </script>
-   </head>
-   
-   <body ng-app = "myApp">
-	
-      <div ng-controller = "myCtrl">
-         <input type = "file" file-model = "myFile"/>
-         <button ng-click = "uploadFile()">upload me</button>
-      </div>
-      
-      <script>
-      var myApp = angular.module('myApp', []);
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJS Scroll to Top Demo</title>
+    <!-- Include AngularJS and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Include AngularJS Route -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+</head>
+<body>
 
-myApp.directive('fileModel', ['$parse', function ($parse) {
-    return {
-        restrict: 'A',
-        link: function(scope, element, attrs) {
-            var model = $parse(attrs.fileModel);
-            var modelSetter = model.assign;
+<div ng-view></div>
 
-            element.bind('change', function() {
-                scope.$apply(function() {
-                    modelSetter(scope, element[0].files[0]);
-                });
+<script>
+    var app = angular.module('myApp', ['ngRoute']);
+
+    app.config(function ($routeProvider, $locationProvider) {
+        $locationProvider.hashPrefix('');
+        $routeProvider
+            .when('/', {
+                templateUrl: 'page/home.html',
+                controller: 'homeController',
+            })
+            .when('/login', {
+                templateUrl: 'login.html',
+                controller: 'loginController',
+            })
+            // ... Other route configurations ...
+
+            .otherwise({
+                redirectTo: '/'
             });
-        }
-    };
-}]);
+    });
 
-myApp.service('fileUpload', ['$http', function ($http) {
-    this.uploadFileToUrl = function(file, uploadUrl) {
-        const UPLOAD_PRESET = "upload_truonghuong";
-        var fd = new FormData();
-        fd.append('file', file);
-        fd.append("upload_preset", "upload_truonghuong");
-
-
-        $http.post(uploadUrl, fd, {
-            transformRequest: angular.identity,
-            headers: {'Content-Type': undefined}
-        })
-        .then(function(response) {
-            console.log(response.data);
-        })
-        .catch(function(error) {
-            console.log(error);
+    app.run(['$rootScope', '$window', function($rootScope, $window) {
+        // Scroll to the top of the page when a route change is successful
+        $rootScope.$on('$routeChangeSuccess', function() {
+            // Using jQuery to smoothly scroll to the top
+            $('html, body').animate({ scrollTop: 0 }, 'fast');
         });
-    }
-}]);
+    }]);
 
-myApp.controller('myCtrl', ['$scope', 'fileUpload', function($scope, fileUpload) {
+    // Controller definitions go here (e.g., homeController, loginController, etc.)
+</script>
 
-    const CLOUD_NAME = "dgxbxvkso";
-    const API_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
-
-    $scope.uploadFile = function() {
-        var file = $scope.myFile;
-        console.log('file is ');
-        console.dir(file);
-        fileUpload.uploadFileToUrl(file, API_URL);
-    };
-}]);
-
-      </script>
-      
-   </body>
+</body>
 </html>

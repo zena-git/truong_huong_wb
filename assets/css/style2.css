@@ -27,6 +27,7 @@ html {
     /* font-size: 0.65vw; */
     font-family: Roboto;
     overflow-x: hidden;
+    background-color: var(--white-color);
 
 }
 
@@ -712,8 +713,8 @@ header {
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    min-height: 280px;
-    max-height: 280px;
+    min-height: 300px;
+    max-height: 300px;
     height: 100%;
     object-fit: cover;
 }
@@ -1441,28 +1442,24 @@ textarea::placeholder {
 /* Cơm ngon */
 
 .bannerpro_baner {
-    display: flex;
-
-    flex-shrink: 0;
+   position: relative;
 }
 
 .box_content-reason{
     position: relative;
 }
 .baner_img {
-    height: 100%;
-    max-height: 500px;
-    width: 220px;
-    position: fixed;
-    right: 40px;
-    bottom: 10px;
-    overflow: hidden;
+    height: 60rem;
+    /* max-height: 500px; */
+    width: 20rem;
+
     border-radius: 20px;
     border: 1px solid #FFF;
     z-index: -1;
     background: linear-gradient(318deg, rgba(0, 0, 0, 0.40) 0%, rgba(255, 255, 255, 0.40) 105.18%), url(<path-to-image>), lightgray -586.222px 0px / 583.711% 100% no-repeat;
     background-blend-mode: soft-light, normal;
     box-shadow: 2.5px 2.5px 5px 0px #A6ABBD, -2.5px -2.5px 5px 0px #FAFBFF;
+    overflow: hidden;
 }
 
 .baner_img img {
@@ -2913,16 +2910,21 @@ nav {
 
 .dec_box-logo {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .dec_box-logoimg>img {
-    width: 50px;
+    width: 10rem;
 }
 
 .dec_box-logoimg {
     margin-right: 1.4rem;
 }
-
+.dec_box-tile>h4{
+    font-size: 2rem;
+    font-weight: 500;
+}
 .dec_box-right>div {
     margin-bottom: 1rem;
 }
@@ -3430,6 +3432,120 @@ nav {
 .box_history{
     font-size: 2rem;
 }
+
+/* Timeline */
+.timeline-img{
+    width: auto;
+    height:  32rem;
+    background-color: #ffffff;
+    overflow: hidden;
+    width: 46%;
+    float: right;
+    
+ 
+}
+
+.timeline-title{
+    font-weight: bold;
+    font-size: 2.2rem;
+}
+
+
+.timeline-inverted .timeline-img{
+    float: left;
+
+}
+.timeline-img {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn2 0.7s ease-in-out forwards;
+}
+.timeline-panel{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn2 1s ease-in-out forwards;
+}
+.timeline-img img{
+
+    object-fit: cover;
+}
+.timeline li{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn2 0.6s ease-in-out forwards;
+}
+/* job */
+.box_job{
+    background-color: var(--white-color);
+    /* margin: 0 6rem; */
+    /* margin: 0 10rem; */
+}
+.box_job-footer,
+.box_job-body,
+.box_job-tile{
+    
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 2rem;
+    margin-bottom: 2.2rem;
+}
+
+.job_tile h4{
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+.job-box{
+    font-size: 2rem;
+    
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+   
+}
+.box_item{
+    display: flex;
+    align-items: center;
+    margin-right: 6rem;
+}
+.box_item-dec{
+   
+    display: flex;
+    flex-direction: column;
+}
+.box_item-i{
+   
+    margin-right: 1rem;
+    background-color: var(--primary-color);
+    border-radius: 50px;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box_item-i>i{
+    font-size: 2.8rem;
+    color: white;
+}
+.job_body-tile>h4{
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.job_body-dec>p{
+    font-size: 1.6rem;
+    white-space: pre-wrap;
+}
+.box_job-footer p{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.btn-success{
+    background-color: var(--primary-color) !important;
+    padding: 1rem !important;
+}
+.box_item-dec span{
+    font-size: 1.6rem;
+}
 @keyframes fakeIn {
     from {
 
@@ -3443,6 +3559,17 @@ nav {
     }
 
 }
+@keyframes fadeIn2 {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
 
 @keyframes shake {
     10% {

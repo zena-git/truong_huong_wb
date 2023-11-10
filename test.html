@@ -1,64 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="myApp">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload ảnh lên Cloudinary</title>
-    <style>
-
-body {
-    font-family: Arial, sans-serif;
-}
-
-#imageContainer {
-    margin-top: 20px;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-    </style>
+    <title>AngularJS Scroll to Top Demo</title>
+    <!-- Include AngularJS and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Include AngularJS Route -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
 </head>
 <body>
-    <input type="file" id="fileInput">
-    <button id="uploadButton">Tải lên</button>
-    <div id="imageContainer"></div>
-    <script>
-      const CLOUD_NAME = "dgxbxvkso";
-const UPLOAD_PRESET = "upload_truonghuong";
-const API_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
 
-// Lấy đối tượng input file và theo dõi sự kiện thay đổi
-const fileInput = document.getElementById("fileInput");
-fileInput.addEventListener("change", function () {
-  const file = fileInput.files[0];
-  
-  // Tạo một đối tượng FormData để chứa dữ liệu tệp
-  const formData = new FormData();
-  formData.append("file", file);
-  formData.append("upload_preset", UPLOAD_PRESET);
+<div ng-view></div>
 
-  // Tạo yêu cầu XMLHttpRequest
-  const xhr = new XMLHttpRequest();
-  xhr.open("POST", API_URL, true);
+<script>
+    var app = angular.module('myApp', ['ngRoute']);
 
-  // Xác định hành động sau khi tải lên thành công
-  xhr.onload = function () {
-    if (xhr.status === 200) {
-      const response = JSON.parse(xhr.responseText);
-      console.log("Tải lên thành công:", response);
-      // Ở đây, bạn có thể lấy URL của ảnh từ response và làm gì bạn muốn với nó
-    } else {
-      console.error("Lỗi khi tải lên:", xhr.statusText);
-    }
-  };
+    app.config(function ($routeProvider, $locationProvider) {
+        $locationProvider.hashPrefix('');
+        $routeProvider
+            .when('/', {
+                templateUrl: 'page/home.html',
+                controller: 'homeController',
+            })
+            .when('/login', {
+                templateUrl: 'login.html',
+                controller: 'loginController',
+            })
+            // ... Other route configurations ...
 
-  // Gửi yêu cầu tải lên
-  xhr.send(formData);
-});
+            .otherwise({
+                redirectTo: '/'
+            });
+    });
 
+    app.run(['$rootScope', '$window', function($rootScope, $window) {
+        // Scroll to the top of the page when a route change is successful
+        $rootScope.$on('$routeChangeSuccess', function() {
+            // Using jQuery to smoothly scroll to the top
+            $('html, body').animate({ scrollTop: 0 }, 'fast');
+        });
+    }]);
 
-    </script>
+    // Controller definitions go here (e.g., homeController, loginController, etc.)
+</script>
+
+</body>
 </html>
