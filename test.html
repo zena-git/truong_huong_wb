@@ -1,48 +1,39 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html>
+
 <head>
-    <title>AngularJS Scroll to Top Demo</title>
-    <!-- Include AngularJS and jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <!-- Include AngularJS Route -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+  <style>
+    body {
+      height: 1500px; /* Để tạo ra thanh cuộn */
+    }
+
+    #scroll-info {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+    }
+  </style>
 </head>
-<body>
 
-<div ng-view></div>
+<body onscroll="getScrollPosition()">
 
-<script>
-    var app = angular.module('myApp', ['ngRoute']);
+  <div id="scroll-info">
+    <p>Scroll Top: <span id="scroll-top">0</span></p>
+    <p>Scroll Left: <span id="scroll-left">0</span></p>
+  </div>
 
-    app.config(function ($routeProvider, $locationProvider) {
-        $locationProvider.hashPrefix('');
-        $routeProvider
-            .when('/', {
-                templateUrl: 'page/home.html',
-                controller: 'homeController',
-            })
-            .when('/login', {
-                templateUrl: 'login.html',
-                controller: 'loginController',
-            })
-            // ... Other route configurations ...
+  <!-- Nội dung cuộn ở đây -->
 
-            .otherwise({
-                redirectTo: '/'
-            });
-    });
+  <script>
+    function getScrollPosition() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
 
-    app.run(['$rootScope', '$window', function($rootScope, $window) {
-        // Scroll to the top of the page when a route change is successful
-        $rootScope.$on('$routeChangeSuccess', function() {
-            // Using jQuery to smoothly scroll to the top
-            $('html, body').animate({ scrollTop: 0 }, 'fast');
-        });
-    }]);
-
-    // Controller definitions go here (e.g., homeController, loginController, etc.)
-</script>
+      document.getElementById("scroll-top").innerHTML = scrollTop;
+      document.getElementById("scroll-left").innerHTML = scrollLeft;
+    }
+  </script>
 
 </body>
+
 </html>

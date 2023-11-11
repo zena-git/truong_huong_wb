@@ -1,5 +1,5 @@
 
-app.controller('productController', function ($scope, $rootScope, $http, $location, $routeParams) {
+app.controller('productController', function ($scope, $rootScope, $http, $location, $routeParams, SlugService) {
     $scope.lstProduct = [];
     $scope.category = '';
     $scope.properties = '';
@@ -28,15 +28,16 @@ app.controller('productController', function ($scope, $rootScope, $http, $locati
     $scope.changePrice = function(){
         $rootScope.form_product.price = Math.floor($rootScope.form_product.listedPrice * 0.97); // Giảm giá 3%
     }
+    
     $scope.addProduct = function () {
 
-        $scope.form_product.url = encodeURIComponent($rootScope.form_product.name)+  Math.floor(Math.random() * 10000) + 1 ;
+        $scope.form_product.url = SlugService.convertToSlug($rootScope.form_product.name)+  Math.floor(Math.random() * 10000) + 1 ;
         $http.post(url, $rootScope.form_product)
         .then(function (response) {
             $http.get(url).then(function (response) {
                 $scope.lstProduct = response.data;
                 alert("Thêm thành công")
-                $location.path('/page/san-pham')
+                $location.path('/san-pham')
             });
         });
     }

@@ -1,8 +1,4 @@
-app.filter('urlify', function () {
-    return function (input) {
-        return input.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '');
-    };
-});
+
 app.controller('tintucController', function ($scope, $rootScope, $http, $location, $filter, $routeParams) {
     $scope.lstTinTuc = [];
 
@@ -10,6 +6,14 @@ app.controller('tintucController', function ($scope, $rootScope, $http, $locatio
         .then(function (response) {
             $scope.lstTinTuc = response.data;
             console.log($scope.lstTinTuc);
+        })
+        .then(function (response) {
+            // Khởi tạo DataTables sau khi dữ liệu đã được tải
+            angular.element(document).ready(function () {
+                $('#table_product').DataTable();
+                
+            });
+           
         })
         .catch(function (error) {
 
@@ -85,13 +89,12 @@ app.controller('tintucDetailController', function ($scope, $http,$rootScope, $lo
             
     });
     $scope.saveNews = function () {
-
-        $rootScope.news.url =  $rootScope.news.tile.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '');
+        $rootScope.news.url =  SlugService.convertToSlug($rootScope.news.tile)+  Math.floor(Math.random() * 10000) + 1 ;
         $http.put('https://6524c97cea560a22a4ea1a53.mockapi.io/news/'+ $rootScope.news.id,  $rootScope.news)
             .then(function (response) {
                 if (response.status === 200) {
                     alert("Save ok")
-                    $location.path('/page/tin-tuc');
+                    $location.path('/tin-tuc');
                 } else {
                     alert(response.status);
                 }

@@ -91,15 +91,15 @@ app.config(function ($routeProvider,$locationProvider) {
         })
 
          .when('/tin-tuc', {
-            templateUrl: '../admin/page/tin-tuc.html',
+            templateUrl: '../admin/view/news/tin-tuc.html',
             
         })
         .when('/tin-tuc/new', {
-            templateUrl: '../admin/page/tin-tuc-new.html',
+            templateUrl: '../admin/view/news/tin-tuc-new.html',
             controller: 'tintucNewController'
         })
         .when('/tin-tuc/:url', {
-            templateUrl: '../admin/page/tin-tuc-new.html',
+            templateUrl: '../admin/view/news/tin-tuc-new.html',
             controller: 'tintucDetailController'
             
         })
@@ -118,6 +118,7 @@ app.config(function ($routeProvider,$locationProvider) {
 
 app.controller('myController',function($scope, $rootScope, $http){
   $rootScope.lstText = [];
+
     $http.get('https://6524c97cea560a22a4ea1a53.mockapi.io/text/1')
     .then(function(response) {
         $rootScope.lstText = response.data;
@@ -149,5 +150,27 @@ app.controller('myController',function($scope, $rootScope, $http){
     }
         
    }
+
+  
 })
 
+
+// Tạo service
+app.service('SlugService', function () {
+    this.convertToSlug = function (text, randomLength) {
+        var slug = text.toLowerCase()
+            .replace(/[àáảãạăắằẳẵặâầấẩẫậ]/g, 'a')
+            .replace(/[èéẻẽẹêềếểễệ]/g, 'e')
+            .replace(/[ìíỉĩị]/g, 'i')
+            .replace(/[òóỏõọôồốổỗộơờớởỡợ]/g, 'o')
+            .replace(/[ùúủũụưừứửữự]/g, 'u')
+            .replace(/[ỳýỷỹỵ]/g, 'y')
+            .replace(/đ/g, 'd')
+            .replace(/\s+/g, '-') // thay thế khoảng trắng bằng dấu gạch ngang
+            .replace(/[^a-z0-9-]/g, '') // loại bỏ các ký tự không phải chữ cái, số, hoặc dấu gạch ngang
+            .replace(/-+/g, '-'); // loại bỏ các dấu gạch ngang liên tiếp
+
+       
+        return slug +Math.floor(Math.random() * 10000) + 1;
+    };
+});

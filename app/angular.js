@@ -156,17 +156,26 @@ app.config(function ($routeProvider,$locationProvider) {
             templateUrl: './page/home.html',
         });
 });
-app.run(['$rootScope', '$window', function($rootScope, $window) {
-    $rootScope.$on('$routeChangeSuccess', function() {
-        console.log('Route change success. Scrolling to top.');
-        setTimeout(function() {
-            $window.scrollTo(0, 0);
-            console.log("lee");
-        }, 1000); // Adjust the delay as needed
+// app.run(['$rootScope', '$window', function($rootScope, $window) {
+//     $rootScope.$on('$routeChangeSuccess', function() {
+//         console.log('Route change success. Scrolling to top.');
+//         setTimeout(function() {
+//             $window.scrollTo(0, 0);
+//             console.log("lee");
+//         }, 1000); // Adjust the delay as needed
+//     });
+// }]);
+
+app.run(function ($rootScope,$window) {
+    $rootScope.$on('$routeChangeSuccess', function () {
+        var scrollTop = $window.pageYOffset || document.documentElement.scrollTop;
+        var scrollLeft = $window.pageXOffset || document.documentElement.scrollLeft;
+        console.log(scrollTop);
+        console.log(scrollLeft);
+        $window.scrollTo();
+        console.log($window.scrollY);
     });
-}]);
-
-
+});
 
 
 app.controller('myController',function($scope, $rootScope, $http,localStorageService){
