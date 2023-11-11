@@ -114,7 +114,8 @@
                                     </label>
                                 </th>
                                 <th>Tile</th>
-                                <th>Tạo Ngày</th>
+                                <th>Lượt Xem</th>
+                                <th>Ngày Tạo</th>
                                 <th>Tạo Bởi</th>
                                 <th>Action</th>
                             </tr>
@@ -134,7 +135,8 @@
                                     <a href="javascript:void(0);">{{tt.tile}}</a>
                                 </td>
 
-                                <td>{{tt.createdAt}}</td>
+                                <td>{{tt.view}}</td>
+                                <td>{{tt.createdAt | date:'yyyy-MM-dd'}}</td>
                                 <td> Admin
                                    </td>
                                 <td>
