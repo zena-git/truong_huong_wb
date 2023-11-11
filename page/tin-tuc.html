@@ -30,7 +30,7 @@
                                         ng-if="$index > 0">
                                         <div class="single-bottom mb-35">
                                             <div class="trend-bottom-img mb-30">
-                                                <a href="#/tin-tuc/{{lstTinTucHot[0].url}}">
+                                                <a href="#/tin-tuc/{{ttHot.url}}">
                                                     <img ng-src="{{ttHot.avatar[0]}}" alt="">
                                                 </a>
                                             </div>
@@ -48,7 +48,7 @@
                             <div class="trand-right-single d-flex"
                                 ng-repeat="tt in lstTinTuc| orderBy:'-createdAt' | limitTo:5">
                                 <div class="trand-right-img">
-                                    <a href="#/tin-tuc/{{lstTinTucHot[0].url}}">
+                                    <a href="#/tin-tuc/{{tt.url}}">
                                         <img ng-src="{{tt.avatar[0]}}" alt="">
                                     </a>
                                 </div>
@@ -91,7 +91,7 @@
                                             <div class="weekly2-caption">
                                                 <span class="color1">New</span>
                                                 <p>{{tt.createdAt | date:'yyyy-MM-dd'}}</p>
-                                                <h4><a href="#">{{tt.tile}}</a></h4>
+                                                <h4><a href="#/tin-tuc/{{tt.url}}">{{tt.tile}}</a></h4>
                                             </div>
                                         </div>
                                     
@@ -106,7 +106,7 @@
                                             <div class="weekly2-caption">
                                                 <span class="color1">New</span>
                                                 <p>{{tt.createdAt | date:'yyyy-MM-dd'}}</p>
-                                                <h4><a href="#">{{tt.tile}}</a></h4>
+                                                <h4><a href="#/tin-tuc/{{tt.url}}">{{tt.tile}}</a></h4>
                                             </div>
                                         </div>
                                     </div>
