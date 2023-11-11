@@ -97,7 +97,7 @@
                                     
                                     </div>
                                 </div>
-                                <div class="carousel-item"  >
+                                <div class="carousel-item" ng-if="lstTinTuc.length >= 10" >
                                     <div class="weekly2-news-active dot-style d-flex dot-style">
                                         <div class="weekly2-single"  ng-repeat="tt in lstTinTuc | limitTo:11" ng-if="$index > 5">
                                             <div class="weekly2-img">
@@ -115,13 +115,13 @@
                             </div>
 
                             <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" style="justify-content: flex-start;">
+                                <img src="image/btnleft.png" alt="">
                                 <span class="visually-hidden">Previous</span>
                             </button>
                             <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next" style="justify-content: flex-end;">
+                                <img src="image/btnRight.png" alt="">
                                 <span class="visually-hidden">Next</span>
                             </button>
 
@@ -138,10 +138,10 @@
 
 <div class="box_banners">
     <div class="banner_overray">
-        <img src="image/Image.png" alt="">
+        <img src="https://res.cloudinary.com/dgxbxvkso/image/upload/v1699704030/x7s5lukzga6atdkxv6lc.png" alt="">
         <div class="banner_overray-dec">
             <h2>Trường Hương</h2>
-            <span>CÔNG TY CỔ PHẦN GIỐNG NÔNG NGHIỆP TRƯỜNG HƯƠNG ĐIỆN BIÊN</span>
+            <span>Thành Công Hôm Nay Vững Bước Ngày Mai</span>
         </div>
     </div>
 

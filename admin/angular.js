@@ -98,8 +98,8 @@ app.config(function ($routeProvider,$locationProvider) {
             templateUrl: '../admin/view/news/tin-tuc-new.html',
             controller: 'tintucNewController'
         })
-        .when('/tin-tuc/:url', {
-            templateUrl: '../admin/view/news/tin-tuc-new.html',
+        .when('/tin-tuc-edit/:url', {
+            templateUrl: '../admin/view/news/tin-tuc-detail.html',
             controller: 'tintucDetailController'
             
         })

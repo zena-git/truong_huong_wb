@@ -32,6 +32,7 @@ app.factory('fileUpload', ['$http', '$q', function ($http, $q) {
         // console.log(response.data);
         deferred.resolve(response.data); // Đánh dấu promise đã hoàn thành
       }, function (error) {
+        alert(error.data.error.message)
         console.error(error);
         deferred.reject(error); // Đánh dấu promise bị lỗi
       });

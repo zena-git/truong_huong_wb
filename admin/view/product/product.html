@@ -21,12 +21,7 @@
                                 <span><img src="../assets/img/icons/closes.svg" alt="img"></span>
                             </a>
                         </div>
-                        <div class="search-input">
-                            <a class="btn btn-searchset"><img src="../assets/img/icons/search-white.svg" alt="img"></a>
-                            <div id="DataTables_Table_0_filter" class="dataTables_filter"><label> <input type="search"
-                                        class="form-control form-control-sm" placeholder="Search..."
-                                        aria-controls="DataTables_Table_0"></label></div>
-                        </div>
+                       
                     </div>
                     <div class="wordset">
                         <ul>
@@ -177,109 +172,63 @@
                 </div>
 
                 <div class="table-responsive">
-                    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
-                        <table class="table datanew dataTable no-footer" id="DataTables_Table_0" role="grid"
-                            aria-describedby="DataTables_Table_0_info">
-                            <thead>
-                                <tr role="row">
-                                    <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                        colspan="1" aria-sort="ascending" aria-label="
-    
-    
-    
-    
-    : activate to sort column descending" style="width: 35px;">
-                                        <label class="checkboxs">
-                                            <input type="checkbox" id="select-all">
-                                            <span class="checkmarks"></span>
-                                        </label>
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                    colspan="1" aria-label="SKU: activate to sort column ascending"
-                                    >Mã</th>
-                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                        colspan="1" aria-label="Product Name: activate to sort column ascending"
-                                        >Tên</th>  
-                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                        colspan="1" aria-label="Category : activate to sort column ascending"
-                                        >Loại </th>
-                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                        colspan="1" aria-label="price: activate to sort column ascending"
-                                        >Giá Nhập</th>
-                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                        colspan="1" aria-label="price: activate to sort column ascending"
-                                        >Giá Niêm Yết</th>
-                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                        colspan="1" aria-label="Unit: activate to sort column ascending"
-                                        >Giá Bán</th>
-                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                        colspan="1" aria-label="Qty: activate to sort column ascending"
-                                        >Qty</th>
-                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                        colspan="1" aria-label="Created By: activate to sort column ascending"
-                                        >Created By</th>
-                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                        colspan="1" aria-label="Action: activate to sort column ascending"
-                                        >Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="odd" ng-repeat="pro in lstProduct">
-                                    <td class="sorting_1">
-                                        <label class="checkboxs">
-                                            <input type="checkbox">
-                                            <span class="checkmarks"></span>
-                                        </label>
-                                    </td>
-                                    <td>{{pro.code}}</td>
+                    <table class="table  datanew table_product" id="table_product">
+                        <thead>
+                            <tr >
+                                <th >
+                                    <label class="checkboxs">
+                                        <input type="checkbox" id="select-all">
+                                        <span class="checkmarks"></span>
+                                    </label>
+                                </th>
+                                <th>Mã</th>
+                                <th>Tên</th>  
+                                <th>Loại </th>
+                                <th>Giá Nhập</th>
+                                <th>Giá Niêm Yết</th>
+                                <th>Giá Bán</th>
+                                <th>Qty</th>
+                                <th>Created By</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="pro in lstProduct">
+                                <td>
+                                    <label class="checkboxs">
+                                        <input type="checkbox">
+                                        <span class="checkmarks"></span>
+                                    </label>
+                                </td>
+                                <td>{{pro.code}}</td>
 
-                                    <td class="productimgname">
-                                        <a href="javascript:void(0);" class="product-img">
-                                            <img  ng-src="{{pro.avatar[0]}}" alt="{{pro.avatar[0]}}">
-                                        </a>
-                                        <a href="javascript:void(0);">{{pro.name}}</a>
-                                    </td>
-                                    <td>{{pro.category[0]}}</td>
-                                    <td>{{pro.capitalPrice}}</td>
-                                    <td>{{pro.listedPrice}}</td>
-                                    <td>{{pro.price}}</td>
-                                    <td>{{pro.quantity}}</td>                 
-                                    <td>Admin</td>
-                                    <td>
-                                        <a class="me-3" href="#/san-pham/{{pro.id}}">
-                                            <img src="../../assets/img/icons/eye.svg" alt="img">
-                                        </a>
-                                        <a class="me-3" href="#/san-pham/{{pro.id}}">
-                                            <img src="../../assets/img/icons/edit.svg" alt="img">
-                                        </a>
-                                        <a class="confirm-text" href="javascript:void(0);" ng-click="deleteProduct(pro.id)">
-                                            <img src="../../assets/img/icons/delete.svg" alt="img">
-                                        </a>
-                                    </td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
-                        <div class="dataTables_length" id="DataTables_Table_0_length"><label><select
-                                    name="DataTables_Table_0_length" aria-controls="DataTables_Table_0"
-                                    class="custom-select custom-select-sm form-control form-control-sm">
-                                    <option value="10">10</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                </select></label></div>
-                        <div class="dataTables_paginate paging_numbers" id="DataTables_Table_0_paginate">
-                            <ul class="pagination">
-                                <li class="paginate_button page-item active"><a href="#"
-                                        aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0"
-                                        class="page-link">1</a></li>
-                                <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
-                                        data-dt-idx="1" tabindex="0" class="page-link">2</a></li>
-                            </ul>
-                        </div>
-                        <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">1 -
-                            10 of 11 items</div>
-                    </div>
+                                <td class="productimgname">
+                                    <a href="javascript:void(0);" class="product-img">
+                                        <img  ng-src="{{pro.avatar[0]}}" alt="{{pro.avatar[0]}}">
+                                    </a>
+                                    <a href="javascript:void(0);">{{pro.name}}</a>
+                                </td>
+                                <td>{{pro.category[0]}}</td>
+                                <td>{{pro.capitalPrice}}</td>
+                                <td>{{pro.listedPrice}}</td>
+                                <td>{{pro.price}}</td>
+                                <td>{{pro.quantity}}</td>                 
+                                <td>Admin</td>
+                                <td>
+                                    <a class="me-3" href="#/san-pham/{{pro.id}}">
+                                        <img src="../../assets/img/icons/eye.svg" alt="img">
+                                    </a>
+                                    <a class="me-3" href="#/san-pham/{{pro.id}}">
+                                        <img src="../../assets/img/icons/edit.svg" alt="img">
+                                    </a>
+                                    <a class="confirm-text" href="javascript:void(0);" ng-click="deleteProduct(pro.id)">
+                                        <img src="../../assets/img/icons/delete.svg" alt="img">
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

@@ -4,9 +4,18 @@ app.controller('productController', function ($scope, $rootScope, $http, $locati
     $scope.category = '';
     $scope.properties = '';
     var url = "https://63f23863f28929a9df564ecd.mockapi.io/product";
-    $http.get(url).then(function (response) {
+    $http.get(url)
+    .then(function (response) {
         $scope.lstProduct = response.data;
         console.log($scope.lstProduct);
+    })
+    .then(function (response) {
+        // Khởi tạo DataTables sau khi dữ liệu đã được tải
+        angular.element(document).ready(function () {
+            $('#table_product').DataTable();
+            
+        });
+       
     });
 
     $rootScope.form_product = {

@@ -40,7 +40,7 @@ app.controller('tintucController', function ($scope, $rootScope, $http, $locatio
 })
 
 
-app.controller('tintucNewController', function ($scope, $http,$rootScope, $location, $filter, $routeParams) {
+app.controller('tintucNewController', function ($scope, $http,$rootScope, $location, $filter, $routeParams,SlugService) {
     $scope.url = $routeParams.url;
 
     $rootScope.news = {
@@ -53,12 +53,12 @@ app.controller('tintucNewController', function ($scope, $http,$rootScope, $locat
     }
     $scope.saveNews = function () {
 
-        $rootScope.news.url = encodeURIComponent( $rootScope.news.tile)+  Math.floor(Math.random() * 10000) + 1 ;
+        $rootScope.news.url = SlugService.convertToSlug($rootScope.news.tile)+  Math.floor(Math.random() * 10000) + 1 ;
         $http.post('https://6524c97cea560a22a4ea1a53.mockapi.io/news', $scope.news)
             .then(function (response) {
                 if (response.status === 201) {
                     alert("Save ok")
-                    $location.path('/page/tin-tuc');
+                    $location.path('/tin-tuc');
                 } else {
                     alert(response.status);
                 }
@@ -72,7 +72,7 @@ app.controller('tintucNewController', function ($scope, $http,$rootScope, $locat
     }
 
 })
-app.controller('tintucDetailController', function ($scope, $http,$rootScope, $location, $filter, $routeParams) {
+app.controller('tintucDetailController', function ($scope, $http,$rootScope, $location, $filter, $routeParams,SlugService) {
     $scope.url = $routeParams.url;
 
     $rootScope.news = {

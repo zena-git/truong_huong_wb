@@ -1,4 +1,4 @@
-<div ng-controller="productController" class="page-wrapper" style="min-height: 715px;">
+<div  class="page-wrapper" style="min-height: 715px;">
   <div class="content">
       <div class="page-header">
           <div class="page-title">
@@ -17,7 +17,9 @@
       
               <div class="col-md-12">
                 <label class="form-label" style="font-size: 1.4rem;">Tile</label>
-                <input style="font-size: 1.4rem;" type="text" ng-model="news.tile" class="form-control">
+                <input style="font-size: 1.4rem;" type="text" ng-model="news.tile" class="form-control" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Enter your tile'"
+                placeholder="Enter your tile">
               </div>
               <div class="row mb-3" style="font-size: 1.4rem; margin: 10px 0;">
                 <div class="col-sm-2" style="padding-left: 0;">
@@ -46,7 +48,9 @@
             <div class="box_newdetail-dec" style="height: auto">
               <label class="form-label" style="font-size:1.4rem;">Content</label>
               <textarea style="font-size: 1.4rem; height: 500px" type="text" ng-model="news.dec"
-                class="form-control"></textarea>
+                class="form-control" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Enter your Content'"
+                placeholder="Enter your Content"></textarea>
             </div>
       
             <div class="row mb-3">
