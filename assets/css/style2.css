@@ -4958,11 +4958,14 @@ nav {
 }
 
 .trending-area .trending-main .trending-bottom .single-bottom .trend-bottom-img {
-    overflow: hidden
+    overflow: hidden;
+
 }
 
 .trending-area .trending-main .trending-bottom .single-bottom .trend-bottom-img img {
     width: 100%;
+    /* height: 240px; */
+    object-fit: cover;
     border-radius: 5px;
     transform: scale(1);
     transition: all 0.5s ease-out 0s
@@ -5035,6 +5038,10 @@ nav {
 .trending-area .trending-main .trand-right-single .trand-right-cap h4 {
     font-size: 18px
 }
+/* .weekly2-news-area .weekly2-wrapper .weekly2-single .weekly2-img img{
+    width: 220px;
+    height: 200px;
+} */
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .trending-area .trending-main .trand-right-single .trand-right-cap h4 {
@@ -5184,9 +5191,11 @@ nav {
     margin-right: 15px
 }
 
+
 .weekly2-news-area .weekly2-wrapper .weekly2-single .weekly2-img img {
     width: 100%;
     border-radius: 6px
+    
 }
 
 .weekly2-news-area .weekly2-wrapper .weekly2-single .weekly2-caption {
@@ -5527,8 +5536,58 @@ nav {
 }
 .weekly2-caption p{
     font-size: 1.4rem;
+    margin-bottom: 0.6rem;
 }
 
+.news_pagination{
+    display: flex;
+}
+.weekly2-caption a{
+
+    color: var(--black-color);
+    font-weight: 500;
+    line-height: 1.4;
+}
+.weekly2-news-area{
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+.paginationjs{
+    /* justify-content: space-between; */
+    display: flex;
+    font-size: 2rem;
+}
+.paginationjs .paginationjs-pages{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.paginationjs .paginationjs-pages ul{
+    display: flex;
+    justify-content: flex-end;
+}
+.paginationjs .paginationjs-pages ul li a{
+    padding: 1rem;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    margin: 0 2px;
+}
+.paginationjs_box-news{
+    margin-left: 4px;
+    margin-right: 4px;
+}
+.paginationjs_box-news .card-img-top{
+    height: 20rem;
+}
+.paginationjs{
+    flex-wrap: wrap;
+}
+.paginationjs_box{
+    width: 24rem;
+}
+.card-bodys{
+    padding: 2rem 1rem;
+}
 @media (max-width: 767px) {
     .trending-tittle p {
         display: none;
