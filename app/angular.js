@@ -176,7 +176,18 @@ app.run(function ($rootScope,$window) {
         console.log($window.scrollY);
     });
 });
-
+app.service('sharedDataService', function () {
+    var sharedData = {};
+  
+    return {
+      getSharedData: function () {
+        return sharedData;
+      },
+      setSharedData: function (data) {
+        sharedData = data;
+      }
+    };
+  });
 
 app.controller('myController',function($scope, $rootScope, $http,localStorageService){
     $rootScope.lstText = [];

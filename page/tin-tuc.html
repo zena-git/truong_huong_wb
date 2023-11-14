@@ -29,7 +29,7 @@
                                     <div class="col-lg-4" ng-repeat="ttHot in lstTinTucHot | limitTo:4"
                                         ng-if="$index > 0">
                                         <div class="single-bottom mb-35">
-                                            <div class="trend-bottom-img mb-20">
+                                            <div class="trend-bottom-img mb-10">
                                                 <a href="#/tin-tuc/{{ttHot.url}}">
                                                     <img ng-src="{{ttHot.avatar[0]}}" alt="">
                                                 </a>
@@ -66,17 +66,21 @@
     </div>
 
 
-    <div class="weekly2-news-area  weekly2-pading gray-bg box_tintuc-new">
+    <div  ng-controller="boxNewsController" class="weekly2-news-area  weekly2-pading gray-bg box_tintuc-new" >
         <div class="section-tittle mb-30">
             <h3>Tin Tức New</h3>
         </div>
-        <div id="pagination-container">
+        <div id="pagination-container" class="pagination-container">
             <div id="data-container" class="paginationjs"></div>
         </div>
+
+        <div id="pagination-container-mobile" class="pagination-container-mobile">
+            <div id="data-container-mobile" class="paginationjs data-container-mobile"></div>
+        </div>
     </div>
-    <!-- Whats New End -->
+
    
-    
+
 </div>
 
 <div class="box_banners">

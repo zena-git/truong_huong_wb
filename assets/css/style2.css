@@ -5579,15 +5579,32 @@ nav {
 .paginationjs_box-news .card-img-top{
     height: 20rem;
 }
-.paginationjs{
-    flex-wrap: wrap;
+.paginationjs_box-news img{
+    object-fit: cover;
 }
-.paginationjs_box{
-    width: 24rem;
+.paginationjs{
+    /* flex-wrap: wrap; */
+    justify-content: flex-start;
+}
+.pagination-container .paginationjs_box{
+    width: 20%;
 }
 .card-bodys{
     padding: 2rem 1rem;
 }
+.weekly2-caption{
+    height: 10rem;
+}
+.weekly2-caption h4{
+    font-size: 1.6rem;
+}
+.box_tintuc-new{
+    min-width: 1000px;
+}
+#pagination-container-mobile{
+    display: none;
+}
+
 @media (max-width: 767px) {
     .trending-tittle p {
         display: none;

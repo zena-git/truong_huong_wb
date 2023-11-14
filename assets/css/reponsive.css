@@ -375,6 +375,20 @@
 .box_tintuc-new{
     /* display: none; */
 }
+.pagination-container-mobile{
+    display: block !important;
+}
+.box_tintuc-new{
+    /* width: 100%; */
+    min-width: auto;
+}
+.paginationjs_box{
+    width: 50%;
+}
+
+.pagination-container{
+    display: none;
+}
 }
 /* tablet */
 @media only screen and (min-width: 767px) and (max-width: 1023px) {
