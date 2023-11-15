@@ -40,8 +40,9 @@ app.controller('tintucController', function ($scope, $rootScope, $http, $locatio
 })
 
 
-app.controller('tintucNewController', function ($scope, $http, $rootScope, $location, $filter, $routeParams, SlugService) {
+app.controller('tintucNewController', function ($scope, $http, $rootScope, $location, $filter, $routeParams, SlugService, $timeout) {
     $scope.url = $routeParams.url;
+    $scope.categorys = [];
 
     $rootScope.news = {
         createdAt: new Date(),
@@ -49,14 +50,35 @@ app.controller('tintucNewController', function ($scope, $http, $rootScope, $loca
         avatar: [
         ],
         url: "",
-        dec: ""
+        dec: "",
+        view: 0,
+        category: [ 
+           "0"
+        ]
     }
-    $scope.saveNews = function () {
 
+    $scope.options = [
+        { id: 1, text: 'Doanh Nghiệp' },
+        { id: 2, text: 'Thị Trường Lúa Gạo' },
+        { id: 3, text: 'Khuyến Mại' },
+     
+    ];
+    $scope.saveNews = function () {
+        $rootScope.news.category.forEach((item, index) => {
+            if (item === true) {
+                $rootScope.news.category.splice(index, 1, index+"");
+            }
+        });
+
+        // $rootScope.news.category.push($scope.categorys);
+        console.log($rootScope.news);
         $rootScope.news.url = SlugService.convertToSlug($rootScope.news.tile) + Math.floor(Math.random() * 10000) + 1;
         $http.post('https://6524c97cea560a22a4ea1a53.mockapi.io/news', $scope.news)
             .then(function (response) {
                 if (response.status === 201) {
+                    $rootScope.news. category = [ 
+                        "0"
+                     ]
                     alert("Save ok")
                     $location.path('/tin-tuc');
                 } else {
@@ -70,25 +92,46 @@ app.controller('tintucNewController', function ($scope, $http, $rootScope, $loca
             $rootScope.news.avatar.splice(index, 1);
         }
     }
+  
 
 })
-app.controller('tintucDetailController', function ($scope, $http, $rootScope, $location, $filter, $routeParams, SlugService) {
+app.controller('tintucDetailController', function ($scope, $http, $rootScope, $location, $filter, $routeParams, SlugService,$timeout) {
     $scope.url = $routeParams.url;
-
+    $scope.options = [
+        { id: 1, text: 'Doanh Nghiệp' },
+        { id: 2, text: 'Thị Trường Lúa Gạo' },
+        { id: 3, text: 'Khuyến Mại' },
+     
+    ];
     $rootScope.news = {
         createdAt: new Date(),
         tile: "",
         avatar: [
         ],
         url: "",
-        dec: ""
+        dec: "",
+        view: 0,
+        category: [ 
+           "0"
+        ]
     }
+
+    $scope.isOptionSelected = function (option) {
+        return $rootScope.news.category.indexOf(option.id) !== -1;
+    };
+    
     $http.get('https://6524c97cea560a22a4ea1a53.mockapi.io/news?url=' + $scope.url)
         .then(function (response) {
             $rootScope.news = response.data[0];
-
+            console.log( $rootScope.news);
+          
         });
     $scope.saveNews = function () {
+        $rootScope.news.category.forEach((item, index) => {
+            if (item === true) {
+                $rootScope.news.category.splice(index, 1, index+"");
+            }
+        });
         $rootScope.news.url = SlugService.convertToSlug($rootScope.news.tile) + Math.floor(Math.random() * 10000) + 1;
         $http.put('https://6524c97cea560a22a4ea1a53.mockapi.io/news/' + $rootScope.news.id, $rootScope.news)
             .then(function (response) {

@@ -5593,18 +5593,21 @@ nav {
     padding: 2rem 1rem;
 }
 .weekly2-caption{
-    height: 10rem;
+    height: 8rem;
 }
 .weekly2-caption h4{
     font-size: 1.6rem;
 }
 .box_tintuc-new{
     min-width: 1000px;
+    margin-bottom: 1.4rem;
 }
-#pagination-container-mobile{
+.pagination-container-mobile{
     display: none;
 }
-
+.box_newtime input{
+    font-size: 1.2rem
+}
 @media (max-width: 767px) {
     .trending-tittle p {
         display: none;
