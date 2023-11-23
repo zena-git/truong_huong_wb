@@ -1,4 +1,4 @@
-app.controller('tintucController', function ($scope, $rootScope, $http, $location, $routeParams, $window) {
+app.controller('tintucController', function ($scope, $rootScope, $http, $location, $routeParams, $window,$sce) {
 
 
   var url = "https://6524c97cea560a22a4ea1a53.mockapi.io/news";
@@ -9,6 +9,32 @@ app.controller('tintucController', function ($scope, $rootScope, $http, $locatio
     .then(function (response) {
       // Lưu trữ dữ liệu vào $scope
       $scope.lstTinTuc = response.data;
+      $scope.lstTinTuc.sort(function (a, b) {
+        // Chuyển đổi ngày thành đối tượng Date để so sánh
+        var dateA = new Date(a.createdAt);
+        var dateB = new Date(b.createdAt);
+
+        // So sánh theo thứ tự giảm dần
+        return dateB - dateA;
+      }).map(function (item) {
+        // Chuyển đổi createdAt sang đối tượng Date
+        var date = new Date(item.createdAt);
+
+        // Lấy thông tin ngày, tháng, năm
+        var day = date.getDate();
+        var month = date.getMonth() + 1; // Tháng bắt đầu từ 0
+        var year = date.getFullYear();
+
+        // Tạo định dạng ngày tháng năm
+        var formattedDate = day + '/' + month + '/' + year;
+
+        // Gán lại giá trị cho item.createdAt
+        item.createdAt = formattedDate;
+
+        return item;
+      });
+
+
       // sharedDataService.setSharedData(response.data);
       $scope.lstTinTucHot = angular.copy($scope.lstTinTuc);
       $scope.lstTinTucHot.sort(function (a, b) {
@@ -60,9 +86,7 @@ app.controller('tintucController', function ($scope, $rootScope, $http, $locatio
     .catch(function (error) {
       console.error('Error:', error);
     });
-
-
-
+    
   function truncateString(str, maxLength) {
     if (str.length > maxLength) {
       return str.substring(0, maxLength) + "...";

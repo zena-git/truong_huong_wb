@@ -46,7 +46,7 @@
                         <!-- Riht content -->
                         <div class="col-lg-4">
                             <div class="trand-right-single d-flex"
-                                ng-repeat="tt in lstTinTuc| orderBy:'-createdAt' | limitTo:5">
+                                ng-repeat="tt in lstTinTuc | limitTo:5">
                                 <div class="trand-right-img">
                                     <a href="#/tin-tuc/{{tt.url}}">
                                         <img ng-src="{{tt.avatar[0]}}" alt="">

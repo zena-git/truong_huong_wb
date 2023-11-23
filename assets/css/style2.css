@@ -5608,6 +5608,15 @@ nav {
 .box_newtime input{
     font-size: 1.2rem
 }
+.box_tintuc-home .paginationjs_box{
+    width: 33.3333%;
+}
+.box_tintuc-home-mobile .paginationjs_box{
+    width: 50%;
+}
+.box_tintuc-home .paginationjs_box-news img{
+    height:  27rem;
+}
 @media (max-width: 767px) {
     .trending-tittle p {
         display: none;

@@ -10,32 +10,63 @@ app.controller('homeController',function ($scope, $rootScope, $interval, $http) 
         $scope.lstTinTucHot = angular.copy($scope.lstTinTuc);
         $scope.lstTinTucHot.sort(function (a, b) {
           return b.view - a.view;
+        }).map(function (item) {
+          // Chuyển đổi createdAt sang đối tượng Date
+          var date = new Date(item.createdAt);
+  
+          // Lấy thông tin ngày, tháng, năm
+          var day = date.getDate();
+          var month = date.getMonth() + 1; // Tháng bắt đầu từ 0
+          var year = date.getFullYear();
+  
+          // Tạo định dạng ngày tháng năm
+          var formattedDate = day + '/' + month + '/' + year;
+  
+          // Gán lại giá trị cho item.createdAt
+          item.createdAt = formattedDate;
+  
+          return item;
         });
   
-        // Gọi hàm khởi tạo pagination.js
-        initializePagination();
+        initializePagination($scope.lstTinTucHot, 'pagination-container', 'data-container');
+        initializePaginationMobile($scope.lstTinTucHot, 'pagination-container-mobile', 'data-container-mobile')
+  
   
       })
       .catch(function (error) {
         console.error('Error:', error);
       });
   
-    function initializePagination() {
+    function initializePagination(data, containerId, dataContainerId) {
       // Số lượng mục trên mỗi trang
-      var itemsPerPage = 5;
+      var itemsPerPage = 3;
   
       // Khởi tạo pagination.js
-      $('#pagination-container').pagination({
-        dataSource: $scope.lstTinTuc,
+      $('#' + containerId).pagination({
+        dataSource: data,
         pageSize: itemsPerPage,
         callback: function (data, pagination) {
           // Mỗi khi trang thay đổi, cập nhật nội dung
           var html = template(data);
-          $('#data-container').html(html);
+          $('#' + dataContainerId).html(html);
         }
       });
     }
+    function initializePaginationMobile(data, containerId, dataContainerId) {
+      // Số lượng mục trên mỗi trang
+      var itemsPerPage = 2;
   
+      // Khởi tạo pagination.js
+      $('#' + containerId).pagination({
+        dataSource: data,
+        pageSize: itemsPerPage,
+        callback: function (data, pagination) {
+          // Mỗi khi trang thay đổi, cập nhật nội dung
+          var html = templateMobile(data);
+          $('#' + dataContainerId).html(html);
+        }
+      });
+    }
     // Template hiển thị mục dữ liệu
     function template(data) {
       var html = '';
@@ -58,6 +89,33 @@ app.controller('homeController',function ($scope, $rootScope, $interval, $http) 
           </div>`;
       });
       return html;
+    }
+    function templateMobile(data) {
+      var html = '';
+      $.each(data, function (index, item) {
+        var truncatedTitle = truncateString(item.tile, 30);
+        html += `<div class="paginationjs_box">
+           <div class="card paginationjs_box-news">
+           <a href="#/tin-tuc/${item.url}"> 
+           <img src="${item.avatar}" class="card-img-top" alt="...">
+           </a>
+           <div class="card-bodys weekly2-news-active">
+             <div class="weekly2-caption">
+                 <p>${item.createdAt}</p>
+                 <h4><a href="#/tin-tuc/${item.url}">${truncatedTitle}</a></h4>
+             </div>
+           </div>
+         </div>
+             
+           </div>`;
+      });
+      return html;
+    }
+    function truncateString(str, maxLength) {
+      if (str.length > maxLength) {
+        return str.substring(0, maxLength) + "...";
+      }
+      return str;
     }
 
 });
