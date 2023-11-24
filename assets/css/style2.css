@@ -5617,6 +5617,10 @@ nav {
 .box_tintuc-home .paginationjs_box-news img{
     height:  27rem;
 }
+.footer_box-tile h5{
+    
+    font-size: 1.4rem;
+}
 @media (max-width: 767px) {
     .trending-tittle p {
         display: none;
