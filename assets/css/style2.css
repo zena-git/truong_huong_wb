@@ -2393,22 +2393,27 @@ footer {
 .map_dec-body {
     padding-left: 10px;
 }
-
+.map_dec-tile h2,
 .map_dec-body h2 {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
 }
 
 .map_dec-body p {
-    font-size: 2rem !important;
+    font-size: 1.8rem !important;
     margin: 10px 0;
 }
 
 .info-addres {
-    font-size: 2rem;
+    font-size: 1.6rem;
     width: 50%;
 }
+.info-addres h3{
+    font-size: 1.9rem;
 
-
+}
+.info-addres p{
+    margin: 0;
+}
 
 .shadow h2 {
     padding-top: 20px;
@@ -5618,8 +5623,11 @@ nav {
     height:  27rem;
 }
 .footer_box-tile h5{
-    
+  
     font-size: 1.4rem;
+}
+.footer_box-tile h5 i{
+  margin-right: 0.6rem;
 }
 @media (max-width: 767px) {
     .trending-tittle p {
