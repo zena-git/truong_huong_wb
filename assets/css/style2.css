@@ -1955,11 +1955,19 @@ header {
     /* 16:9 aspect ratio, thay đổi tùy theo tỷ lệ khung hình */
 
     @media (max-width: 768px) {
+        
         padding-bottom: 75%;
+        
         /* Tùy chỉnh kích thước cho các màn hình nhỏ hơn 768px */
     }
 }
-
+.video-containers iframe{
+    @media (max-width: 768px) {
+        width: 100%;
+        display: none;
+        /* Tùy chỉnh kích thước cho các màn hình nhỏ hơn 768px */
+    }
+}
 .video-container>iframe {
     position: absolute;
     top: 0;
